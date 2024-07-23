@@ -5,4 +5,5 @@ if status is-interactive
     alias n="nvim"
     alias b="btop"
     alias z="zellij"
+    starship init fish | source
 end

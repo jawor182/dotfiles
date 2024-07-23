@@ -28,7 +28,7 @@
         //"keyboard-state",
         //"sway/language",
         "battery",
-        //"battery#bat2",
+        "battery#bat2",
         //"clock",
         "tray"
         //"custom/power"
@@ -147,7 +147,8 @@
         "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
-        "bat": "BAT2"
+        "bat": "BAT2",
+	"format":"{capacity}%"
     },
     "power-profiles-daemon": {
       "format": "{icon}",
