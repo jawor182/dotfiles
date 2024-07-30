@@ -5,6 +5,8 @@ if status is-interactive
     alias n="nvim"
     alias b="btop"
     alias z="zellij"
+    alias y="yazi"
+    alias update="sudo pacman -Syu && yay -Syu"
     starship init fish | source
     # fzf
     set -Ux FZF_DEFAULT_OPTS "\
