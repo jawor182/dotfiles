@@ -255,6 +255,16 @@ require('lazy').setup({
       },
     },
   },
+  {
+    'm4xshen/autoclose.nvim',
+    opts = {},
+  },
+  {
+    'xiyaowong/transparent.nvim',
+    opts = {
+      TransparentEnable = 'true',
+    },
+  },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
@@ -576,9 +586,16 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        --
-
+        tsserver = {},
+        bashls = {},
+        cssls = {},
+        css_variables = {},
+        emmet_ls = {},
+        html = {},
+        jsonls = {},
+        markdown_oxide = {},
+        sqls = {},
+        tailwindcss = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
