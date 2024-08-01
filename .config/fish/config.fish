@@ -6,6 +6,7 @@ if status is-interactive
     alias b="btop"
     alias z="zellij"
     alias y="yazi"
+    alias t="tmux"
     alias update="sudo pacman -Syu && yay -Syu"
     starship init fish | source
     # fzf
