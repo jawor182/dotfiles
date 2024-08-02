@@ -47,7 +47,8 @@ exec ~/.screenlayout/layout.sh
 exec xrandr --output HDMI-0 --mode 1920x1080 --rate 144 
 exec xrandr --output DP-0 --mode 1920x1080 --rate 75
 
-
+# Keyboard layout
+exec setxkbmap -layout pl
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status

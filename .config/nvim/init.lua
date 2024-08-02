@@ -596,7 +596,8 @@ require('lazy').setup({
         emmet_ls = {},
         html = {},
         jsonls = {},
-        markdown_oxide = {},
+        -- markdown_oxide = {},
+        marksman = {},
         sqls = {},
         tailwindcss = {},
         lua_ls = {
