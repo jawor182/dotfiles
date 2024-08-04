@@ -14,7 +14,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font change to 0 to avoid titlebars
-font pango:JetBrainsMonoNerdFont 10 
+font pango:JetBrainsMonoNerdFont 10
 default_border pixel 0
 default_floating_border pixel 0
 
@@ -37,15 +37,15 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 
 # Startup apps
-exec --no-startup-id polybar -r & nm-applet & blueman-applet & dunst & megasync & picom & nitrogen --restore & com.todoist.Todoist 
+exec --no-startup-id polybar -r & nm-applet & blueman-applet & dunst & megasync & picom & nitrogen --restore 
 
 #screen-layout
 exec ~/.screenlayout/layout.sh
 
 # refresh rate exec
 
-exec xrandr --output HDMI-0 --mode 1920x1080 --rate 144 
-exec xrandr --output DP-0 --mode 1920x1080 --rate 75
+exec_always xrandr --output HDMI-0 --mode 1920x1080 --rate 144
+exec_always xrandr --output DP-0 --mode 1920x1080 --rate 75
 
 # Keyboard layout
 exec setxkbmap -layout pl
@@ -64,7 +64,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty 
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -170,7 +170,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec i3-msg exit 
+bindsym $mod+Shift+e exec i3-msg exit
 
 # GAPS
 gaps inner 6
@@ -242,4 +242,3 @@ client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
-
