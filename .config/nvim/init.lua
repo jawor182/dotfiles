@@ -268,6 +268,10 @@ require('lazy').setup({
       vim.cmd 'colorscheme catppuccin-mocha'
     end,
   },
+  {
+    "windwp/nvim-ts-autotag",
+    opts = {}
+  },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --

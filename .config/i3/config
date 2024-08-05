@@ -44,8 +44,7 @@ exec ~/.screenlayout/layout.sh
 
 # refresh rate exec
 
-exec_always xrandr --output HDMI-0 --mode 1920x1080 --rate 144
-exec_always xrandr --output DP-0 --mode 1920x1080 --rate 75
+exec_always xrandr --output HDMI-0 --mode 1920x1080 --rate 144 & exec_always xrandr --output DP-0 --mode 1920x1080 --rate 75
 
 # Keyboard layout
 exec setxkbmap -layout pl
