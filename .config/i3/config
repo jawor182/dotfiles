@@ -37,14 +37,15 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 
 # Startup apps
-exec --no-startup-id polybar -r & nm-applet & blueman-applet & dunst & megasync & picom & nitrogen --restore 
+exec --no-startup-id polybar -r & nm-applet & blueman-applet & dunst & megasync & picom -b & nitrogen --restore 
 
 #screen-layout
 exec ~/.screenlayout/layout.sh
 
 # refresh rate exec
 
-exec_always xrandr --output HDMI-0 --mode 1920x1080 --rate 144 & exec_always xrandr --output DP-0 --mode 1920x1080 --rate 75
+exec_always xrandr --output HDMI-0 --mode 1920x1080 --rate 144 
+exec_always xrandr --output DP-0 --mode 1920x1080 --rate 144 
 
 # Keyboard layout
 exec setxkbmap -layout pl

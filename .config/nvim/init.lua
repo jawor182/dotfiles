@@ -269,8 +269,8 @@ require('lazy').setup({
     end,
   },
   {
-    "windwp/nvim-ts-autotag",
-    opts = {}
+    'windwp/nvim-ts-autotag',
+    opts = {},
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
@@ -600,7 +600,7 @@ require('lazy').setup({
         emmet_ls = {},
         html = {},
         jsonls = {},
-        -- markdown_oxide = {},
+        markdown_oxide = {},
         marksman = {},
         sqls = {},
         tailwindcss = {},
