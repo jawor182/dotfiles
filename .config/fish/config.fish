@@ -7,8 +7,9 @@ if status is-interactive
     alias z="zellij"
     alias y="yazi"
     alias t="tmux"
-    alias dev="pnpm run dev"
+    alias dev="npm run dev"
     alias update="sudo pacman -Syu && yay -Syu"
+    alias cat="bat"
     starship init fish | source
     # fzf
     set -Ux FZF_DEFAULT_OPTS "\
