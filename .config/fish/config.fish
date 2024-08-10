@@ -8,7 +8,7 @@ if status is-interactive
     alias y="yazi"
     alias t="tmux"
     alias dev="npm run dev"
-    alias update="sudo pacman -Syu && yay -Syu"
+    alias update="sudo pacman -Syu && yay -Syu && flatpak update"
     alias cat="bat"
     starship init fish | source
     # fzf

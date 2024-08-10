@@ -7,6 +7,9 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
+  "project_panel": {
+    "dock": "right"
+  },
   "features": {
     "inline_completion_provider": "none"
   },
@@ -16,5 +19,10 @@
     "mode": "dark",
     "light": "Catppuccin Mocha",
     "dark": "Catppuccin Mocha"
+  },
+  "vim_mode": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
   }
 }
