@@ -5,7 +5,6 @@ vim.keymap.set("n", "<leader>tr", vim.cmd.Ex)
 vim.keymap.set("n",'K', vim.lsp.buf.hover, {})
 
 local harpoon = require("harpoon")
-
 harpoon:setup()
 
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
