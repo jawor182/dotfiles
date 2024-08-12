@@ -29,6 +29,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "tsserver",
+                "gopls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -57,6 +58,13 @@ return {
                         capabilities = capabilities,
                     })
                 end,
+                ["gopls"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.gopls.setup({
+                        capabilities = capabilities,
+                    })
+                end,
+
             },
         })
 
@@ -72,7 +80,7 @@ return {
                 ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
                 ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
                 ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-                ["<C-Enter>"] = cmp.mapping.confirm({ select = true }),
+                ["<Enter>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
