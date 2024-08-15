@@ -65,12 +65,16 @@ return {
                         capabilities = capabilities,
                     })
                 end,
-
             },
         })
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
+        cmp.setup.filetype({ "sql" }, {
+            sources = {
+                { name = "vim-dadbod-completion" },
+                { name = "buffer" },
+            },
+        })
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -81,7 +85,7 @@ return {
                 ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
                 ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
                 ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-                ["<Enter>"] = cmp.mapping.confirm({ select = false}),
+                ["<Enter>"] = cmp.mapping.confirm({ select = false }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
