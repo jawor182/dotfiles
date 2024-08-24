@@ -18,7 +18,6 @@
     "modules-right": [
         //"mpd",
         //"idle_inhibitor",
-        "pulseaudio",
         //"network",
         "power-profiles-daemon",
         //"cpu",
@@ -30,13 +29,14 @@
         "battery",
         "battery#bat2",
         //"clock",
-        "tray"
+        "tray",
+        "pulseaudio"
         //"custom/power"
     ],
     // Modules configuration
     "hyprland/workspaces": {
     "disable-scroll": true,
-    "all-outputs": true,
+    "all-outputs": false,
     "warp-on-scroll": false,
     "format": "{name}"
     //"format-icons": {
