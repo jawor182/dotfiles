@@ -1,12 +1,13 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 24,
     //"output" : "DP-1",
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "tray"],
+    "modules-right": ["pulseaudio", "backlight","battery", "power-profiles-daemon","tray"],
     "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -14,7 +15,7 @@
     "format": "{name}"
     },
     "tray": {
-        "icon-size": 21,
+        "icon-size": 16,
         "spacing": 10
     },
         "clock": {
@@ -55,5 +56,16 @@
             "default": ["", "", " "]
         },
         "on-click": "pavucontrol"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      },
     },
 }

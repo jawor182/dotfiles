@@ -5,5 +5,5 @@ import = [
 opacity = 0.90
 [font]
 normal = {family = "JetBrainsMonoNerdFont", style = "Default"}
-size = 16
+size = 14
 
