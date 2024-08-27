@@ -57,6 +57,7 @@
 
 #battery {
   color: @green;
+  padding-right:2rem;
 }
 
 #battery.charging {
