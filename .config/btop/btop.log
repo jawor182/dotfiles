@@ -2,3 +2,6 @@
 2024/07/28 (23:41:15) | ===> btop++ v.1.3.2
 2024/07/28 (23:41:15) | ERROR: Couldn't determine terminal size of "STDOUT_FILENO"!
 2024/07/28 (23:41:15) | ERROR: Couldn't determine terminal size of "/dev/tty"!
+
+2024/10/03 (21:59:27) | ===> btop++ v.1.4.0
+2024/10/03 (21:59:27) | ERROR: Exception during Config::unlock() : unordered_map::at
