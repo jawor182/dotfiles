@@ -76,4 +76,4 @@ export FZF_DEFAULT_OPTS=" \
 	--multi"
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
