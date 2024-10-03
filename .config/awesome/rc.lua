@@ -18,6 +18,21 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- Autorun
+autorun = true;
+autorunApps = {
+"dunst",
+"nitrogen --restore",
+"nm-applet",
+"megasync -b",
+"blueman-applet",
+-- "pavucontrol"
+}
+if autorun then
+   for app = 1, #autorunApps do
+       awful.util.spawn(autorunApps[app])
+   end
+end
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -75,7 +90,7 @@ awful.layout.layouts = {
 	-- awful.layout.suit.tile.top,
 	-- awful.layout.suit.fair,
 	-- awful.layout.suit.fair.horizontal,
-	awful.layout.suit.spiral,
+	-- awful.layout.suit.spiral,
 	-- awful.layout.suit.spiral.dwindle,
 	-- awful.layout.suit.max,
 	-- awful.layout.suit.max.fullscreen,
