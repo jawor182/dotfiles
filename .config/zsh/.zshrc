@@ -47,7 +47,7 @@ yazii() {
 	rm -f -- "$tmp"
 }
 
-se(){
+fdf(){
     find $HOME/dotfiles/ -path "*/.git/*" -prune -o -type f -print | \
     fzf -e --bind "enter:become(nvim {})"
 }
@@ -122,13 +122,6 @@ bindkey -M visual '^[[P' vi-delete
 
 source $XDG_CONFIG_HOME/shell/shortcutsrc
 source $XDG_CONFIG_HOME/shell/aliasrc
-
-# Custom keybinds
-bindkey -s '^F' '$FILES\n'
-bindkey -s '^R' 'snc\n'
-bindkey -s '^S' 'se\n'
-bindkey -s '^H' 'mansplain\n'
-bindkey -s '^T' 'ssnizer\n'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

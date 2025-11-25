@@ -22,7 +22,7 @@ esac
 case $BLOCK_BUTTON in
     1) playerctl -p mpd play-pause ;;
     2) playerctl -p mpd next ;;
-    3) playerctl -p mpd previous ;;
+    3) xdotool key super+m ;;
     6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
     8) playerctl -p mpd pause && playerctl -p mpd position 0 ;;
 esac
