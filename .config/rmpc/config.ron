@@ -36,8 +36,7 @@
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Playing"),
             "2":       SwitchToTab("Dir"),
-            "3":       SwitchToTab("Playlists"),
-            "4":       SwitchToTab("Find"),
+            "3":       SwitchToTab("Find"),
             "q":       Quit,
             ">":       NextTrack,
             "<":       PreviousTrack,
@@ -127,10 +126,6 @@
        (
             name: "Dir",
             pane: Pane(Directories),
-        ),
-       (
-            name: "Playlists",
-            pane: Pane(Playlists),
         ),
         (
             name: "Find",
