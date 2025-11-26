@@ -75,4 +75,4 @@ application/epub+zip=calibre-ebook-viewer.desktop
 application/vnd.amazon.mobi8-ebook=calibre-ebook-viewer.desktop
 application/x-mobipocket-ebook=calibre-ebook-viewer.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
-x-scheme-handler/discord=webcord.desktop
+x-scheme-handler/discord=discord.desktop
