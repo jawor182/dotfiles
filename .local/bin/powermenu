@@ -7,7 +7,7 @@ if [ "$XDG_SESSION_TYPE" = "x11" ]; then
     LOCK="slock"
 else
     option=$(printf 'Lock Screen\nPower Off\nReboot\nSuspend' | bemenu --fixed-height -W 0.3 -c -i -l 4 -H 36 -p "What do you want to do? ")
-    LOCK="waylock -fail-color 0xfb4934 -init-color 0x282828 -input-color 0xd65d0e -ignore-empty-password -fork-on-lock"
+    LOCK="hyprlock"
 fi
 
 case $option in

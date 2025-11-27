@@ -3,6 +3,7 @@
 # shortcut              path
 
 cfz                     ~/dotfiles/.config/zsh/.zshrc
+cfh                     ~/dotfiles/.config/hypr/hyprland.conf
 cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfM                     ~/dotfiles/.config/mpd/mpd.conf
 cfm                     ~/dotfiles/.config/mpv/mpv.conf

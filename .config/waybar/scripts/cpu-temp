@@ -1,0 +1,11 @@
+#!/bin/sh
+
+host=$(cat /etc/hostname)
+
+if [ "$host" = "desktop" ]; then
+    temp=$(sensors | awk '/^Tctl:/ {print $2}' | sed 's/+//')
+else
+    temp=$(sensors | awk '/^CPU:/ {print $2}' | sed 's/+//')
+fi
+
+notify-send "Temperature of cpu:" "$temp"

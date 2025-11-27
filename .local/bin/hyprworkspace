@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+target="$1"
+active_monitor=$(hyprctl activeworkspace -j | jq -r '.monitor')
+
+if [[ "$active_monitor" == "eDP-1" || "$active_monitor" == "DP-1" ]]; then
+    workspace=$((target))
+elif [[ "$active_monitor" == "HDMI-A-1" ]]; then
+    workspace=$((10 + target))
+else
+    workspace=$((target))
+fi
+
+hyprctl dispatch workspace "$workspace"
+
