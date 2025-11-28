@@ -17,7 +17,7 @@ selectbookmark_browser() {
 addbookmark(){
     bookmark=$(wl-paste);
     if [ "$bookmark" != "" ];then
-        cut "$bmfile" -d' ' -f1 | grep -qxF "$bookmark"  && notify-send "Bookmark is already in file" && exit 1 || echo "$bookmark" >> "$bmfile" && wl-copy ""
+        cut "$bmfile" -d' ' -f1 | grep -qxF "$bookmark"  && notify-send "Bookmark is already in file" && exit 1 || echo "$bookmark" >> "$bmfile" && wl-copy --clear
         notify-send "Added $bookmark to bookmarks"
     else
         notify-send "Empty clipboard!" && exit 1
