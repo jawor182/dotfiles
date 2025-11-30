@@ -8,4 +8,4 @@ else
     temp=$(sensors | awk '/^CPU:/ {print $2}' | sed 's/+//')
 fi
 
-notify-send "Temperature of cpu:" "$temp"
+notify-send "CPU temp: $temp"
