@@ -3,6 +3,8 @@ set statusbar-v-padding 2
 set page-v-padding 2
 set page-h-padding 2
 set selection-clipboard clipboard
+set font "JetBrainsMonoNerdFont 12"
+set adjust-open "best-fit"
 map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
