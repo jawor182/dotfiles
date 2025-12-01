@@ -152,6 +152,7 @@ keymap = [
     
     # Custom 
     { on = "W",     run = "shell --confirm 'wallpaper set $1'", desc = "Set wallpaper" },
+    { on = "M",     run = "shell --confirm 'mpvq add $1'", desc = "add file to mpvq" },
 ]
 
 [tasks]
