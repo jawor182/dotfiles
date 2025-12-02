@@ -2,11 +2,11 @@
     "height": 36,
     "spacing": 4,
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
-        // "ext/workspaces",
+        // "hyprland/workspaces",
+        // "hyprland/window"
+        "ext/workspaces",
         // "dwl/tags",
-        // "dwl/window",
+        "dwl/window",
     ],
     "modules-center": [],
     "modules-right": [

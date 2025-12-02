@@ -22,7 +22,7 @@ fi
 if [ "$XDG_SESSION_TYPE" = "x11" ]; then
 OPTION=$(printf 'Copy to Clipboard\nSave\nOpen\nCancel' | dmenu -i -c -l 4 -p "What do you want to do?")
 else 
-OPTION=$(printf 'Copy to Clipboard\nSave\nOpen\nCancel' | bemenu --fixed-height -W 0.4 -c -i -l 4 -p "What do you want to do?")
+OPTION=$(printf 'Copy to Clipboard\nSave\nOpen\nCancel' | bemenu --fixed-height -W 0.3 -c -i -l 4 -p "What do you want to do?")
 fi
 
 if [ -z "$OPTION" ]; then
