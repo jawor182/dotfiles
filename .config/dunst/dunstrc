@@ -5,9 +5,9 @@
 
     # Which monitor should the notifications be displayed on.
     # X (or sway)
-    # monitor = 0
+    monitor = 0
     # Wayland
-    monitor = 1
+    # monitor = 1
 
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer

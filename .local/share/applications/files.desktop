@@ -2,4 +2,4 @@
 Type=Application
 Name=File Manager
 Icon=yazi
-Exec=/usr/bin/foot -e yazi %u
+Exec=/usr/local/bin/st -e yazi %u
