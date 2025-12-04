@@ -38,6 +38,9 @@ edit = [
 open = [
 	{ run = 'xdg-open "$1"',                        desc = "Open", for = "linux" },
 ]
+guiOpen = [
+	{ run = '$BROWSER "$1"',                        desc = "Open in Browser", for = "linux" },
+]
 reveal = [
 	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
 	{ run = '''clear; exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
@@ -54,6 +57,7 @@ play = [
 rules = [
 	# Folder
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+	{ name = "*.pdf", use = [ "open", "guiOpen", "reveal" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
     { name = "*.diff", use = [ "edit", "reveal" ] },
