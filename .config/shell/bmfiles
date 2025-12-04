@@ -5,8 +5,7 @@
 cfz                     ~/dotfiles/.config/zsh/.zshrc
 cfh                     ~/dotfiles/.config/hypr/hyprland.conf
 cfd                     ~/dotfiles/.config/dunst/dunstrc
-cfM                     ~/dotfiles/.config/mpv/mpv.conf
-cfm                     ~/dotfiles/.config/mango/config.conf
+cfm                     ~/dotfiles/.config/mpv/mpv.conf
 cfb                     ~/dotfiles/.config/newsboat/config
 cfn                     ~/dotfiles/.config/nvim/init.lua
 cfp                     ~/dotfiles/.config/picom/picom.conf
