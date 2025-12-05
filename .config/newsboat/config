@@ -31,18 +31,18 @@ macro x set browser "xdg-open" ; open-in-browser ; set browser linkhandler
 color background          color223   color0
 color listnormal          color223   color0
 color listnormal_unread   color2     color0
-color listfocus           color166   color237
-color listfocus_unread    color166   color237
+color listfocus           color166   color0
+color listfocus_unread    color166   color0
 color info                color166   color0
 color article             color223   color0
 
-# highlights
-highlight article "^(Feed|Link):.*$" color166 default bold
-highlight article "^(Title|Date|Author):.*$" color166 default bold
-highlight article "https?://[^ ]+" color2 default underline
-highlight article "\\[[0-9]+\\]" color2 default bold
-highlight article "\\[image\\ [0-9]+\\]" color2 default bold
-highlight feedlist "^─.*$" color166 color166 bold
+# and highlights:
+highlight article "^(Feed|Link):.*$" color166 color0 bold
+highlight article "^(Title|Date|Author):.*$" color166 color0 bold
+highlight article "https?://[^ ]+" color2 color0 underline
+highlight article "\\[[0-9]+\\]" color2 color0 bold
+highlight article "\\[image\\ [0-9]+\\]" color2 color0 bold
+highlight feedlist "^─.*$" color166 color0 bold
 
 reload-threads 100
 cleanup-on-quit yes
