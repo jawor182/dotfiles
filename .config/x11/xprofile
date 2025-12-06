@@ -18,6 +18,7 @@ gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 
 xset r rate 300 60 &
 setxkbmap -layout pl & 
+xautolock -time 3 -locker "pidof slock || slock" &
 xrdb -merge "$XRESOURCES"
 screen &
 wallpaper random
