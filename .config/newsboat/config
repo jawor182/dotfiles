@@ -31,8 +31,8 @@ macro x set browser "xdg-open" ; open-in-browser ; set browser linkhandler
 color background          color223   color0
 color listnormal          color223   color0
 color listnormal_unread   color2     color0
-color listfocus           color166   color0
-color listfocus_unread    color166   color0
+color listfocus           color166   color237
+color listfocus_unread    color166   color237
 color info                color166   color0
 color article             color223   color0
 
