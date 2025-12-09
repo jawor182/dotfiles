@@ -7,14 +7,22 @@ case "$1" in
     if [ "$XDG_SESSION_TYPE" = "x11" ]; then
         xwallpaper --stretch "$randomWall"
     else
-        swww img --transition-duration=0.5 --transition-fps=165 --transition-step=90 --transition-type=grow --resize=stretch "$randomWall"
+        swaybg -m stretch -i "$randomWall"
     fi
     ;;
 "set")
-    if [ "$XDG_SESSION_TYPE" = "x11" ]; then
-        xwallpaper --stretch "$2"
+    target="$2"
+
+    if [ -d "$target" ]; then
+        wall=$(find "$target" -type f -iname "*.png" -print0 | shuf -n 1 -z)
     else
-        swww img --transition-duration=0.5 --transition-fps=165 --transition-step=90 --transition-type=grow --resize=stretch "$2"
+        wall="$target"
+    fi
+
+    if [ "$XDG_SESSION_TYPE" = "x11" ]; then
+        xwallpaper --stretch "$wall"
+    else
+        swaybg -m stretch -i "$wall"
     fi
     ;;
 "open")
