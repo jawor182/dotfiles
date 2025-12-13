@@ -14,6 +14,14 @@ deduplicate() {
     fi
 }
 
+clearclip(){
+    if [ "$XDG_SESSION_TYPE" = "x11" ]; then
+        xclip -selection clipboard /dev/null
+    else
+        wl-copy --clear
+    fi
+}
+
 normalize_path() {
     local input="$1"
     if [[ "$input" =~ ^https?:// ]]; then
@@ -79,6 +87,7 @@ addclip() {
     elif [ -f "$clipfile" ]; then
         add add "$clipfile"
     fi
+    clearclip
 }
 
 show() {

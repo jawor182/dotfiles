@@ -2,14 +2,14 @@
 # Format:
 # shortcut              path
 
-cc                      ~/dotfiles/
+cC                      ~/dotfiles/
 cs                      ~/dotfiles/.local/bin/
 cS                      ~/dotfiles/.local/bin/statusbar/
 cf                      ~/dotfiles/.config/
 cl                      ~/dotfiles/.local/share
 rr                      ~/repos/
 rs                      ~/repos/szkola/
-rp                      ~/repos/personal/
+rp                      ~/repos/projects/
 nss                     ~/repos/suckless/
 nsd                     ~/repos/suckless/dwm/
 nsm                     ~/repos/suckless/dmenu/

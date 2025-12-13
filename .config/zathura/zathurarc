@@ -9,6 +9,8 @@ set statusbar-bg "#282828"
 set statusbar-fg "#ebdbb2"
 set default-bg "#282828"
 set default-fg "#ebdbb2"
+unmap =
+unmap +
 map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
@@ -18,13 +20,15 @@ map i recolor
 map p print
 map g goto top
 map b toggle_statusbar
+map = zoom in
+map + zoom original
 map [fullscreen] u scroll half-up
 map [fullscreen] d scroll half-down
 map [fullscreen] D toggle_page_mode
 map [fullscreen] r reload
 map [fullscreen] R rotate
-map [fullscreen] K zoom in
-map [fullscreen] J zoom out
+map [fullscreen] = zoom in 
+map [fullscreen] + zoom original 
 map [fullscreen] i recolor
 map [fullscreen] p print
 map [fullscreen] g goto top

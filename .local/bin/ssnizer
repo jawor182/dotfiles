@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-dirs=("$HOME/repos/personal" "$HOME/repos/suckless" "$HOME/dotfiles" "$HOME/repos/wayland-suckless")
+dirs=("$HOME/repos/projects")
 
-selected=$(find "${dirs[@]}" -mindepth 1 -maxdepth 1 -path "*/.git*" -prune -o -type d -print | fzf --height=100%)
+selected=$(find "${dirs[@]}" -mindepth 1 -maxdepth 2 -path "*/.git*" -prune -o -type d -print | fzf --height=100%)
 
 if [ -z "${selected:-}" ]; then
     exit 1

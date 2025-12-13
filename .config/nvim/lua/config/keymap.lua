@@ -1,7 +1,9 @@
 
 
 vim.g.mapleader = " "
-vim.keymap.set("n",'<leader>tr',vim.cmd.Yazi)
+vim.keymap.set("n",'<leader>f',vim.cmd.Yazi)
+vim.keymap.set("n",'<leader>bp',vim.cmd.bprev)
+vim.keymap.set("n",'<leader>bn',vim.cmd.bnext)
 vim.keymap.set("n",'K', vim.lsp.buf.hover, {})
 vim.keymap.set("n",'<leader>m',vim.cmd.Mason)
 vim.keymap.set("n",'<leader>l',vim.cmd.Lazy)
@@ -44,11 +46,10 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 vim.keymap.set({'n'}, '<leader>ca', vim.lsp.buf.code_action, {})
-vim.keymap.set('n',"<leader>db",":DBUIToggle<CR>")
 
 vim.keymap.set('n','<leader>gf', vim.lsp.buf.format, {})
 
-vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files, {})
+vim.keymap.set("n", "<leader>F", require("telescope.builtin").find_files, {})
 vim.keymap.set("n", "<leader>gr", require("telescope.builtin").live_grep, {})
 vim.keymap.set("n", "<leader>h", require("telescope.builtin").help_tags, {})
 

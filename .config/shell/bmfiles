@@ -10,6 +10,7 @@ cfb                     ~/dotfiles/.config/newsboat/config
 cfn                     ~/dotfiles/.config/nvim/init.lua
 cfp                     ~/dotfiles/.config/picom/picom.conf
 cft                     ~/dotfiles/.config/tmux/tmux.conf
+cff                     ~/dotfiles/.config/foot/foot.ini
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks
 cku                     ~/keepassxc/urls
