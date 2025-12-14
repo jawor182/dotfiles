@@ -7,14 +7,3 @@ playerctld &
 swww-daemon &
 wallpaper random &
 dunst &
-
-swayidle -w \
-    timeout 180 "brightnessctl -sd rgb:kbd_backlight set 0" \
-        resume "brightnessctl -rd rgb:kbd_backlight" \
-    timeout 180 "loginctl lock-session & pidof waylock || waylock -fail-color 0xfb4934 -init-color 0x282828 -input-color 0xd65d0e -ignore-empty-password -fork-on-lock &" \
-    timeout 600 "wlr-dpms off" \
-        resume "wlr-dpms on && brightnessctl -r" \
-    timeout 3600 "systemctl suspend" \
-    lock "pidof waylock || waylock -fail-color 0xfb4934 -init-color 0x282828 -input-color 0xd65d0e -ignore-empty-password -fork-on-lock &" \
-    before-sleep "loginctl lock-session" \
-    after-resume "wlr-dpms on"

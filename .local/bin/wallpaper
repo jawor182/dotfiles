@@ -22,7 +22,7 @@ case "$1" in
     if [ "$XDG_SESSION_TYPE" = "x11" ]; then
         xwallpaper --stretch "$wall"
     else
-        swww img --transition-duration=0.5 --transition-fps=165 --transition-step=90 --transition-type=grow --resize=stretch "$randomWall"
+        swww img --transition-duration=0.5 --transition-fps=165 --transition-step=90 --transition-type=grow --resize=stretch "$wall"
     fi
     ;;
 "open")
