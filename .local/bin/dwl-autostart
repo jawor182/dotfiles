@@ -1,7 +1,5 @@
 #!/bin/sh
 
-[ -f "$HOME/.zprofile" ] && . "$HOME/.zprofile"
-
 mpd-mpris &
 playerctld & 
 swww-daemon &
