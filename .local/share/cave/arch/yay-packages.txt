@@ -1,7 +1,5 @@
 qt5gtk2
 qt5-styleplugins
-xurls
-boomer-git
 librewolf-bin
 brave-bin
 htop-vim

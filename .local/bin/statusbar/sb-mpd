@@ -27,7 +27,7 @@ case $BLOCK_BUTTON in
     8) playerctl -p mpd pause && playerctl -p mpd position 0 ;;
 esac
 
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+if [ "$XDG_SESSION_TYPE" = "wayland" ] && [ "$XDG_CURRENT_DESKTOP" != "dwl" ]; then
     info=$(escape "$info")
     time=$(escape "$time")
 fi

@@ -3,13 +3,10 @@ mpc-git
 rmpc-git
 mpdris-bin
 ifuse-git
-xcolor
 unzip-git
 adw-gtk-theme-git
 qt5gtk2
 qt5-styleplugins
-xurls
-boomer-git
 librewolf-bin
 brave-bin
 htop-vim

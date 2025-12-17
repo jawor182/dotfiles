@@ -2,14 +2,9 @@ aria2
 socat
 tmux
 keepassxc
-lxappearance
-lxsession
 neovim
-xwallpaper
-xdotool
 mpv
 mpd
-mpd-runit
 mpv-mpris
 thunderbird
 vim
@@ -48,8 +43,6 @@ man
 man-db
 nodejs
 npm
-picom
-scrot
 pciutils
 php
 powertop
@@ -59,14 +52,10 @@ python
 ripgrep
 ruby
 syncthing
-syncthing-runit
 tlp
 tlp-runit
 usbmuxd
 usbutils
-xclip
-xlibre
-xorg-xinit
 zathura-pdf-mupdf
 zbar
 os-prober
@@ -91,5 +80,3 @@ gnome-themes-extra
 papirus-icon-theme
 cmake
 make
-xorg-xeyes
-x11-ssh-askpass

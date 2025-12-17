@@ -3,11 +3,7 @@ socat
 calibre
 tmux
 keepassxc
-lxappearance
-lxsession
 neovim
-xwallpaper
-xdotool
 mpv
 mpd
 mpc
@@ -24,7 +20,6 @@ android-tools
 udisks2
 imagemagick
 dash
-ueberzugpp
 checkbashisms
 ntfs-3g    
 cargo
@@ -51,9 +46,6 @@ man-db
 man-pages
 nodejs
 npm
-picom
-xcolor
-scrot
 pciutils
 php
 powertop
@@ -68,8 +60,6 @@ tlp
 usbmuxd
 usbutils
 unzip
-xclip
-xorg
 zathura-pdf-mupdf
 zbar
 zsh-autosuggestions
@@ -102,5 +92,4 @@ adw-gtk-theme
 papirus-icon-theme
 cmake
 make
-xorg-xeyes
 breeze
