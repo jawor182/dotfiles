@@ -93,3 +93,11 @@ papirus-icon-theme
 cmake
 make
 breeze
+bemenu-wayland
+wayland
+wayland-docs
+wayland-protocols
+wayland-utils
+xorg-xwayland
+foot
+swww-daemon
