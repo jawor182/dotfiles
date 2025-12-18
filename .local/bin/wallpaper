@@ -26,6 +26,6 @@ case "$1" in
     fi
     ;;
 "open")
-    find "$HOME/walls" -type f -iname '*.png' | shuf | nsxiv -tb -
+    find "$HOME/walls" -type f -iname '*.png' | shuf | nsxiv -t -
     ;;
 esac
