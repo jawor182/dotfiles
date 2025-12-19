@@ -1,0 +1,12 @@
+#!/bin/sh
+
+hour=$(date '+%H')
+monitors=$(ddcutil detect | grep Display | cut -d' ' -f2)
+
+if [ "$hour" -ge 18 ]; then
+    for monitor in $monitors; do
+        ddcutil --display "$monitor" setvcp 10 50
+    done
+else
+    echo "It is daytime" && exit 0
+fi

@@ -100,5 +100,8 @@ wayland-protocols
 wayland-utils
 xorg-xwayland
 foot
-swww-daemon
+swww
 wlsunset
+grim
+slurp
+ddcutil

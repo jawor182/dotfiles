@@ -7,23 +7,14 @@ TEMP_FILE="/tmp/screenshot_temp_${TIMESTAMP}.png" # Temporary file to hold the s
 
 mkdir -p "$SAVE_DIR"
 
-
-if [ "$XDG_SESSION_TYPE" = "x11" ]; then
-scrot -s "$TEMP_FILE"
-else 
 grim -g "$(slurp)" "$TEMP_FILE"
-fi
 
 if [ $? -ne 0 ] || [ ! -f "$TEMP_FILE" ]; then
     notify-send "Screenshot Aborted" "No selection made."
     exit 1
 fi
 
-if [ "$XDG_SESSION_TYPE" = "x11" ]; then
-OPTION=$(printf 'Copy to Clipboard\nSave\nOpen\nCancel' | dmenu -i -c -l 4 -p "What do you want to do?")
-else 
 OPTION=$(printf 'Copy to Clipboard\nSave\nOpen\nCancel' | bemenu --fixed-height -W 0.3 -c -i -l 4 -p "What do you want to do?")
-fi
 
 if [ -z "$OPTION" ]; then
     notify-send "Screenshot Aborted" "Action selection cancelled."
@@ -41,16 +32,7 @@ case "$OPTION" in
     fi
     ;;
 "Copy to Clipboard")
-    if command -v xclip >/dev/null 2>&1; then
-        if [ "$XDG_SESSION_TYPE" = "x11" ]; then
-            xclip -selection clipboard -target image/png -i "$TEMP_FILE"
-        else 
-            wl-copy < "$TEMP_FILE"
-        fi
-        notify-send "Screenshot Copied" "Selected area copied to clipboard."
-    else
-        notify-send "Screenshot Error" "Clipboard tool (xclip/wl-clipboard) not found."
-    fi
+    wl-copy <"$TEMP_FILE"
     rm -f "$TEMP_FILE"
     ;;
 "Open")

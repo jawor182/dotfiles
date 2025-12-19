@@ -3,12 +3,10 @@
 # shortcut              path
 
 cfz                     ~/dotfiles/.config/zsh/.zshrc
-cfh                     ~/dotfiles/.config/hypr/hyprland.conf
 cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfm                     ~/dotfiles/.config/mpv/mpv.conf
 cfb                     ~/dotfiles/.config/newsboat/config
 cfn                     ~/dotfiles/.config/nvim/init.lua
-cfp                     ~/dotfiles/.config/picom/picom.conf
 cft                     ~/dotfiles/.config/tmux/tmux.conf
 cff                     ~/dotfiles/.config/foot/foot.ini
 cfv                     ~/.local/share/mpvq/playlist.m3u                          

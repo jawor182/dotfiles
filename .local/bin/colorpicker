@@ -1,11 +1,6 @@
 #!/bin/sh
 
-if [ "$XDG_SESSION_TYPE" = "x11" ]; then
-    color=$(xcolor)
-    echo "$color" | xclip -selection clipboard
-else
-    color=$(grim -g "$(slurp -b 00000000 -p)" -t ppm - | magick - -format '#%[hex:p{0,0}]\n' info:-)
-    echo "$color" | wl-copy
-fi
+color=$(grim -g "$(slurp -b 00000000 -p)" -t ppm - | magick - -format '#%[hex:p{0,0}]\n' info:-)
+echo "$color" | wl-copy
 
 notify-send "Picked $color"
