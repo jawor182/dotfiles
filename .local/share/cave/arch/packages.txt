@@ -101,3 +101,4 @@ wayland-utils
 xorg-xwayland
 foot
 swww-daemon
+wlsunset
