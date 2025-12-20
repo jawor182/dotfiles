@@ -1,0 +1,4 @@
+#!/bin/sh
+
+tsp yt-dlp -x --audio-format mp3 --embed-metadata --embed-thumbnail --extractor-args "youtube:player_js_version=actual" -o "$HOME/media/podcasts/%(title)s.%(ext)s" "$1"
+

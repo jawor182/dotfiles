@@ -47,13 +47,13 @@ yazii() {
 	rm -f -- "$tmp"
 }
 
-fdf(){
+ff(){
     find $HOME/dotfiles/ -path "*/.git/*" -prune -o -type f -print | \
     fzf -e --bind "enter:become(nvim {})"
 }
 
 snc(){
-    shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc ; xset r rate 300 60 ; [ "$XDG_SESSION_TYPE" = "x11" ] && xrdb -m $XRESOURCES 
+    shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc
 }
 
 mansplain(){

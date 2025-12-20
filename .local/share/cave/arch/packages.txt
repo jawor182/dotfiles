@@ -105,3 +105,4 @@ wlsunset
 grim
 slurp
 ddcutil
+w3m
