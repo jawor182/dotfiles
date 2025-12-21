@@ -8,7 +8,9 @@ list-entry-date-format %b %d %Y
 # Binds
 unbind u
 unbind o
-bind a toggle-read ; jump-to-next
+unbind v
+bind V view-errors
+bind a toggle-read
 
 bind z exec zathura "%l" &
 bind i exec nsxiv "%l" &
