@@ -63,23 +63,11 @@ mansplain(){
 autoload -Uz add-zsh-hook
 
 function set-title-preexec {
-    if [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
-        if [[ $(xdotool getwindowfocus getwindowname 2>/dev/null) != "spterm" ]]; then
-            print -Pn "\e]0;${(q)1}\e\\"
-        fi
-    else
-          print -Pn "\e]2;${(q)1}\a"
-    fi
+    print -n "\e]2;$1\a"
 }
 
 function set-title-precmd {
-     if [[ "$XDG_SESSION_TYPE" == "x11" ]]; then
-         if [[ $(xdotool getwindowfocus getwindowname 2>/dev/null) != "spterm" ]]; then
-             print -Pn "\e]0;%(1j,%j job%(2j|s|); ,)%~\e\\"
-         fi
-     else
-           print -Pn "\e]2;%(1j,%j job%(2j|s|); ,)%~\a"
-     fi
+    print -Pn "\e]2;%(1j,%j job%(2j|s|); ,)%~\a"
 }
 
 add-zsh-hook preexec set-title-preexec
