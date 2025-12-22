@@ -1,0 +1,7 @@
+#!/bin/bash
+
+tmp=$(mktemp /tmp/img-XXXXXXX)
+
+curl -s "$1" -o "$tmp" 
+nsxiv "$tmp"
+rm "$tmp"
