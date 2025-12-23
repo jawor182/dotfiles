@@ -72,6 +72,7 @@ add() {
         # Clean up stale socket if it exists but MPV is dead
         [ -S "$ipc_socket" ] && rm -f "$ipc_socket"
     fi
+    return 0
 }
 
 addclip() {
