@@ -14,7 +14,7 @@ bind a toggle-read
 
 bind z exec zathura "%l" &
 bind i exec tmpimg "%l" 2>/dev/null
-bind m exec mpvq add "%l"
+bind m exec mpvq add "%l" > /dev/null 2>&1
 bind v exec dlvid "%l" 
 bind p exec dlpod "%l"
 bind w exec w3m "%l"

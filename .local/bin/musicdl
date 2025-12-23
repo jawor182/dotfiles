@@ -1,0 +1,2 @@
+#!/bin/sh
+tsp yt-dlp -x --audio-format mp3 --embed-metadata --embed-thumbnail --ppa "EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf 'crop=in_h:in_h'" -o "%(artist)s - %(title)s.%(ext)s" "$1"
