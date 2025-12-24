@@ -6,3 +6,4 @@ swww-daemon &
 wallpaper random &
 dunst &
 wlsunset -T 6500 -t 2000 -S 10:00 -s 18:00 &
+wlbrightness &
