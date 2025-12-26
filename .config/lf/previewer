@@ -20,7 +20,7 @@ audio/*)
     if [ ! -f "$cache" ]; then
         ffmpeg -loglevel quiet -y -i "$1" "$cache" || exit 1
     fi
-    chafa --format sixel --fill block "$cache" exit 0
+    chafa --format sixel -s "$2x$3" "$cache" exit 0
     ;;
 video/*)
     [ -f "$cache" ] || ffmpegthumbnailer -i "$1" -o "$cache" -s 0

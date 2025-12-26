@@ -36,14 +36,15 @@ map j move-down-redraw
 map k move-up-redraw
 map w !true
 map x cut
-map r rename-vim $fx
 map D delete $fx
+map r rename-vim
+map R bulkrename
 map M &mpvq add $fx
 map W &wallpaper set $fx
 map E extract $fx
 map i !mimetype $fx
+map V visual-accept
 map v visual
-map V invert
 
 # Commands
 
@@ -71,20 +72,47 @@ cmd delete ${{
 }}
 
 cmd rename-vim ${{
-    tmp=$(mktemp)
-    
-    echo "$fx" > "$tmp"
-    
-    $EDITOR "$tmp"
-    
-    paste "$tmp" -d '\n' <(echo "$fx") | while IFS= read -r newname; do
-        read -r oldname
-        [ -z "$newname" ] && continue
-        [ "$newname" = "$oldname" ] && continue
-        mv -- "$oldname" "$newname"
+    set -e
+
+    tmp_old="$(mktemp)"
+    tmp_new="$(mktemp)"
+    trap 'rm -f "$tmp_old" "$tmp_new"' EXIT
+
+    printf '%s\n' "$fx" > "$tmp_old"
+
+    sed 's:.*/::' "$tmp_old" > "$tmp_new"
+
+    ${EDITOR:-nvim} "$tmp_new"
+
+    paste "$tmp_old" "$tmp_new" | while IFS="$(printf '\t')" read -r old new; do
+        [ -z "$new" ] && continue
+
+        old_base="$(basename -- "$old")"
+        [ "$old_base" = "$new" ] && continue
+
+        dir="$(dirname -- "$old")"
+        mv -- "$old" "$dir/$new"
     done
-    
-    rm "$tmp"
+}}
+
+cmd bulkrename ${{
+    tmpfile_old="$(mktemp)"
+    tmpfile_new="$(mktemp)"
+
+    [ -n "$fs" ] && fs=$(basename -a $fs) || fs=$(ls)
+
+    echo "$fs" > "$tmpfile_old"
+    echo "$fs" > "$tmpfile_new"
+    $EDITOR "$tmpfile_new"
+
+    [ "$(wc -l < "$tmpfile_old")" -eq "$(wc -l < "$tmpfile_new")" ] || { rm -f "$tmpfile_old" "$tmpfile_new"; exit 1; }
+
+    paste "$tmpfile_old" "$tmpfile_new" | while IFS="$(printf '\t')" read -r src dst
+    do
+        [ "$src" = "$dst" ] || [ -e "$dst" ] || mv -- "$src" "$dst"
+    done
+
+    rm -f "$tmpfile_old" "$tmpfile_new"
     lf -remote "send $id unselect"
 }}
 
