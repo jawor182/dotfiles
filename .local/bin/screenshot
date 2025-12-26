@@ -33,6 +33,7 @@ case "$OPTION" in
     ;;
 "Copy to Clipboard")
     wl-copy <"$TEMP_FILE"
+    notify-send "Copied to Clipboard"
     rm -f "$TEMP_FILE"
     ;;
 "Open")

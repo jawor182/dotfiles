@@ -9,6 +9,7 @@ yazikeys=$HOME/.config/yazi/keys.toml
 shellfiles=$HOME/.config/shell/shortcutsrc
 yazishorts=$HOME/.config/yazi/shortcuts.toml
 yazifiles=$HOME/.config/yazi/keymap.toml
+lffiles=$HOME/.config/lf/shortcutsrc
 
 
 [ ! -d "$HOME/.config"/shell ] && mkdir "$HOME/.config/shell"
@@ -21,6 +22,11 @@ generateDirShortcuts(){
 generateFileShortcuts(){
     sed -e '/^[[:space:]]*#/d' -e '/^$/d' "$bmfiles" | \
     awk -v editor="$EDITOR" '{printf "alias %s=\"%s %s\"\n", $1, editor, $2}' >> "$shellfiles"
+}
+
+generateLFShortcuts(){
+    sed -e '/^[[:space:]]*#/d' -e '/^$/d' "$bmdirs" | \
+    awk -v editor="cd" '{printf "map g%s %s %s\n", $1, editor, $2}' >> "$lffiles"
 }
 
 generateYaziShortcuts(){
@@ -53,7 +59,9 @@ generateYaziShortcuts(){
 [ -f "$shellfiles" ] && rm "$shellfiles"
 [ -f "$yazifiles" ] && rm "$yazifiles"
 [ -f "$yazishorts" ] && rm "$yazishorts"
+[ -f "$lffiles" ] && rm "$lffiles"
 
 generateDirShortcuts
 generateFileShortcuts
-generateYaziShortcuts
+# generateYaziShortcuts
+generateLFShortcuts

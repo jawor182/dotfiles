@@ -1,0 +1,45 @@
+#!/bin/sh
+
+mime="$(file -Lb --mime-type -- "$1")"
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/lf"
+mkdir -p "$cache_dir"
+
+cache="$cache_dir/$(stat --printf '%n\0%i\0%s\0%Y' -- "$(readlink -f "$1")" |
+    sha256sum | cut -d' ' -f1).jpg"
+
+case "$mime" in
+text/* | application/x-shellscript | */xml | application/json)
+    bat --color=always --theme=gruvbox-dark --plain "$1"
+    exit 0
+    ;;
+image/*)
+    chafa --format sixel -s "$2x$3" --animate off --polite off "$1"
+    exit 0
+    ;;
+audio/*)
+    if [ ! -f "$cache" ]; then
+        ffmpeg -loglevel quiet -y -i "$1" "$cache" || exit 1
+    fi
+    chafa --format sixel --fill block "$cache" exit 0
+    ;;
+video/*)
+    [ -f "$cache" ] || ffmpegthumbnailer -i "$1" -o "$cache" -s 0
+    chafa --format sixel -s "$2x$3" --animate off --polite off "$cache"
+    exit 0
+    ;;
+*/pdf)
+    [ -f "$cache" ] || pdftoppm -jpeg -f 1 -singlefile "$1" "${cache%.jpg}"
+
+    chafa --format sixel -s "$2x$3" --animate off --polite off "$cache"
+    exit 0
+    ;;
+*/epub+zip)
+    [ -f "$cache" ] || gnome-epub-thumbnailer "$1" "$cache"
+    chafa --format sixel -s "$2x$3" --animate off --polite off "$cache"
+    exit 0
+    ;;
+application/*zip)
+    atool --list -- "$1"
+    exit 0
+    ;;
+esac

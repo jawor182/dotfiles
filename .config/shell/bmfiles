@@ -9,6 +9,7 @@ cfr                     ~/dotfiles/.config/newsraft/config
 cfn                     ~/dotfiles/.config/nvim/init.lua
 cft                     ~/dotfiles/.config/tmux/tmux.conf
 cff                     ~/dotfiles/.config/foot/foot.ini
+cfl                     ~/dotfiles/.config/lf/lfrc
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks
 cku                     ~/keepassxc/urls

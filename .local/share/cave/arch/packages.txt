@@ -69,7 +69,7 @@ os-prober
 tree
 perl-image-exiftool
 btop
-yazi
+lf
 fzf
 lshw
 jq
@@ -106,3 +106,5 @@ grim
 slurp
 ddcutil
 w3m
+gnome-epub-thumbnailer
+atool
