@@ -53,7 +53,7 @@ cmd open &{{
         image/x-xcf) gimp "$fx" ;;
         image/vnd.djvu|application/pdf|application/postscript) zathura "$fx" ;; 
         image/*) nsxiv "$fx" ;; 
-        audio/*|video/x-ms-asf) mpv --audio-display=no "$f" ;;
+        audio/*|video/x-ms-asf) mpv "$f" ;;
         video/*) setsid -f mpv "$f" -quiet >/dev/null 2>&1 ;;
         application/*tar|application/*zip) lf -remote "send $id extract \$fx" ;;
         *) for f in $fx; do setsid -f $OPENER "$f" > /dev/null 2> /dev/null & done ;;
