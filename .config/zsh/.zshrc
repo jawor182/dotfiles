@@ -40,8 +40,13 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 lfcd () {
-    # `command` is needed in case `lfcd` is aliased to `lf`
-    cd "$(command lf -print-last-dir "$@")"
+    tmp="$(mktemp -uq)"
+    trap 'rm -f $tmp >/dev/null 2>&1 && trap - HUP INT QUIT TERM PWR EXIT' HUP INT QUIT TERM PWR EXIT
+    lfub -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
 }
 
 ff(){
@@ -50,7 +55,7 @@ ff(){
 }
 
 snc(){
-    shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc
+    shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc ; xset r rate 300 60 ; [ "$XDG_SESSION_TYPE" = "x11" ] && xrdb -m $XRESOURCES 
 }
 
 mansplain(){
@@ -60,11 +65,15 @@ mansplain(){
 autoload -Uz add-zsh-hook
 
 function set-title-preexec {
-    print -n "\e]2;$1\a"
+    if [[ $(xdotool getwindowfocus getwindowname 2>/dev/null) != "spterm" ]]; then
+        print -Pn "\e]0;${(q)1}\e\\"
+    fi
 }
 
 function set-title-precmd {
-    print -Pn "\e]2;%(1j,%j job%(2j|s|); ,)%~\a"
+    if [[ $(xdotool getwindowfocus getwindowname 2>/dev/null) != "spterm" ]]; then
+        print -Pn "\e]0;%(1j,%j job%(2j|s|); ,)%~\e\\"
+    fi
 }
 
 add-zsh-hook preexec set-title-preexec

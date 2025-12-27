@@ -15,11 +15,12 @@ la="ls -la" \
 ll="ls -l" \
 ls="ls --color=always --group-directories-first -hN" \
 restow="cd ~/dotfiles && stow -R ." \
-zshupdate="source ~/dotfiles/.zshrc" \
+xcopy="xclip -selection clipboard" \
 t="tmux" \
 dev="npm run dev" \
 nr="newsraft" \
 f="$FILES" \
+lf="lfcd" \
 diff="diff --color" \
 rm="rm -fr" \
 cp="cp -r" \

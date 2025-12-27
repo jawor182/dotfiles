@@ -7,14 +7,14 @@ TEMP_FILE="/tmp/screenshot_temp_${TIMESTAMP}.png" # Temporary file to hold the s
 
 mkdir -p "$SAVE_DIR"
 
-grim -g "$(slurp)" "$TEMP_FILE"
+scrot -s "$TEMP_FILE"
 
 if [ $? -ne 0 ] || [ ! -f "$TEMP_FILE" ]; then
     notify-send "Screenshot Aborted" "No selection made."
     exit 1
 fi
 
-OPTION=$(printf 'Copy to Clipboard\nSave\nOpen\nCancel' | bemenu --fixed-height -W 0.3 -c -i -l 4 -p "What do you want to do?")
+OPTION=$(printf 'Copy to Clipboard\nSave\nOpen\nCancel' | dmenu -i -c -l 4 -p "What do you want to do?")
 
 if [ -z "$OPTION" ]; then
     notify-send "Screenshot Aborted" "Action selection cancelled."
@@ -32,8 +32,12 @@ case "$OPTION" in
     fi
     ;;
 "Copy to Clipboard")
-    wl-copy <"$TEMP_FILE"
-    notify-send "Copied to Clipboard"
+    if command -v xclip >/dev/null 2>&1; then
+        xclip -selection clipboard -target image/png -i "$TEMP_FILE"
+        notify-send "Screenshot Copied" "Selected area copied to clipboard."
+    else
+        notify-send "Screenshot Error"
+    fi
     rm -f "$TEMP_FILE"
     ;;
 "Open")

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+. "$XPROFILE"
+
+# Apps autostart
+dwmblocks &
+picom -b &
+dunst &
+playerctld &
+mpd-mpris &
+
+dbus-update-activation-environment --all
+dbus-launch ssh-agent
+exec dwm

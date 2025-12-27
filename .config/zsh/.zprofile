@@ -27,5 +27,5 @@ export BEMENU_OPTS="-f --hp 8 --fb '#282828' --ff '#ebdbb2' --nb '#282828' --nf 
 export BAT_THEME="gruvbox-dark"
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec dwl-start-session
+        exec startx
 fi

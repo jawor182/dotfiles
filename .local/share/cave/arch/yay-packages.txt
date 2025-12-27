@@ -1,6 +1,7 @@
 qt5gtk2
 qt5-styleplugins
 librewolf-bin
+xurls
 brave-bin
 htop-vim
 playerctl-git

@@ -1,0 +1,66 @@
+Xft.dpi: 120
+*.alpha: 0.9
+*.font: JetBrainsMonoNerdFont:size=16
+*.font2: NotoColorEmoji:size=14
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.autohint: 1
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter:  lcddefault
+Xcursor.size: 30
+Xcursor.theme: breeze_cursors
+
+// Catppuccin Mocha
+ ! *.color0: #1e1e2e
+ ! *.color1: #f38ba8
+ ! *.color2: #a6e3a1
+ ! *.color3: #f9e2af
+ ! *.color4: #89b4fa
+ ! *.color5: #f5c2e7
+ ! *.color6: #94e2d5
+ ! *.color7: #cdd6f4
+ ! *.color8: #585b70
+ ! *.color9: #f38ba8
+ ! *.color10: #a6e3a1
+ ! *.color11: #f9e2af
+ ! *.color12: #89b4fa
+ ! *.color13: #f5c2e7
+ ! *.color14: #94e2d5
+ ! *.color15: #a6adc8
+ ! *.background: #1e1e2e
+ ! *.foreground: #cdd6f4
+ ! *.cursorColor: #f5e0dc
+ ! *.normbgcolor : #1e1e2e
+ ! *.normbordercolor : #585b70
+ ! *.normfgcolor : #cdd6f4
+ ! *.selbgcolor : #cba6f7
+ ! *.selbordercolor : #cba6f7
+ ! *.selfgcolor : #181926
+
+// Gruvbox Dark
+*.color0: #282828
+*.color1: #cc241d
+*.color2: #98971a
+*.color3: #d79921
+*.color4: #458588
+*.color5: #b16286
+*.color6: #689d6a
+*.color7: #a89984
+*.color8: #928374
+*.color9: #fb4934
+*.color10: #b8bb26
+*.color11: #fabd2f
+*.color12: #83a598
+*.color13: #d3869b
+*.color14: #8ec07c
+*.color15: #ebdbb2
+*.background: #282828
+*.foreground: #ebdbb2
+*.cursorColor: #ebdbb2
+*.normbgcolor: #282828
+*.normbordercolor: #928374
+*.normfgcolor: #ebdbb2
+*.selbgcolor: #d65d0e
+*.selbordercolor: #d65d0e
+*.selfgcolor: #282828
