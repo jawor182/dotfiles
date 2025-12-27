@@ -38,7 +38,7 @@ map R bulkrename
 map M &mpvq add $fx
 map W &wallpaper set $fx
 map E extract $fx
-map i !mimetype $fx
+map i !file --dereference --brief --mime-type -- $fx
 map V visual-accept
 map v visual
 

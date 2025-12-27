@@ -8,6 +8,7 @@ picom -b &
 dunst &
 playerctld &
 mpd-mpris &
+redshift &
 
 dbus-update-activation-environment --all
 dbus-launch ssh-agent

@@ -101,7 +101,7 @@ papirus-icon-theme
 cmake
 make
 breeze
-ddcutil
 w3m
 gnome-epub-thumbnailer
 atool
+redshift
