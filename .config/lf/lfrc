@@ -41,6 +41,8 @@ map E extract $fx
 map i !file --dereference --brief --mime-type -- $fx
 map V visual-accept
 map v visual
+map o &mimeopen $fx
+map O $mimeopen --ask $fx
 
 # Commands
 
@@ -52,7 +54,7 @@ cmd open &{{
         image/*) nsxiv "$fx" ;; 
         audio/*|video/x-ms-asf) mpv "$f" ;;
         video/*) setsid -f mpv "$f" -quiet >/dev/null 2>&1 ;;
-        application/*tar|application/*zip) lf -remote "send $id extract \$fx" ;;
+        application/*tar|application/gzip|application/zip|application/x-7z-compressed|application/x-xz) lf -remote "send $id extract \$fx" ;;
         *) for f in $fx; do setsid -f $OPENER "$f" > /dev/null 2> /dev/null & done ;;
     esac
 }}

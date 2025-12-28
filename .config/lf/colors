@@ -101,7 +101,6 @@ fi      00      # FILE
 *.cab   01;31
 *.wim   01;31
 *.swm   01;31
-*.dwm   01;31
 *.esd   01;31
 
 # image formats (dircolors defaults)

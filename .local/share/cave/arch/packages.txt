@@ -102,6 +102,5 @@ cmake
 make
 breeze
 w3m
-gnome-epub-thumbnailer
 atool
 redshift
