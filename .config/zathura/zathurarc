@@ -21,6 +21,8 @@ map p print
 map g goto top
 map b toggle_statusbar
 map = zoom in
+map I zoom in
+map O zoom out
 map + zoom original
 map [fullscreen] u scroll half-up
 map [fullscreen] d scroll half-down
@@ -28,6 +30,8 @@ map [fullscreen] D toggle_page_mode
 map [fullscreen] r reload
 map [fullscreen] R rotate
 map [fullscreen] = zoom in 
+map [fullscreen] I zoom in 
+map [fullscreen] O zoom out 
 map [fullscreen] + zoom original 
 map [fullscreen] i recolor
 map [fullscreen] p print
