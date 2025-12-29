@@ -25,10 +25,13 @@ bind U mark-unread-all
 bind o exec setsid -f $BROWSER "%l" &
 
 # Colors
+color-list-section                      default default
+color-list-section-selected             color237 color166 bold
+color-list-section-unread               color2 default
 color-list-item-unread                  green default
-color-list-item-selected                color166 color237 bold
+color-list-item-selected                color237 color166 bold
 color-list-feed                         default default
 color-list-feed-unread                  green default
-color-list-feed-selected                color166 color237 bold
+color-list-feed-selected                color237 color166 bold
 color-status-info                       color166 default
 color-status                            color166 default
