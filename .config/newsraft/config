@@ -1,0 +1,34 @@
+# Options
+scrolloff 0
+status-placeholder ""
+global-section-hide true
+list-entry-date-format %b %d %Y 
+
+
+# Binds
+unbind u
+unbind o
+unbind v
+bind V view-errors
+bind a toggle-read
+
+bind z exec zathura "%l" &
+bind i exec tmpimg "%l" 2>/dev/null
+bind m exec mpvq add "%l"
+bind v exec dlvid "%l" 
+bind p exec dlpod "%l"
+bind w exec w3m "%l"
+bind x exec setsid -f xdg-open "%l"
+bind E exec sh -c "nvim ~/keepassxc/urls"
+bind u mark-unread ; jump-to-next
+bind U mark-unread-all
+bind o exec setsid -f $BROWSER "%l" &
+
+# Colors
+color-list-item-unread                  green default
+color-list-item-selected                color166 color237 bold
+color-list-feed                         default default
+color-list-feed-unread                  green default
+color-list-feed-selected                color166 color237 bold
+color-status-info                       color166 default
+color-status                            color166 default
