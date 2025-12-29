@@ -1,0 +1,14 @@
+{
+    "palettes": {
+        "gruvbox": [
+            [
+                "header",
+                "black",
+                "brown",
+                "standout",
+                "#282828",
+                "#d65d0e"
+            ]
+        ]
+    }
+}

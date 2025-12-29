@@ -15,14 +15,17 @@ bind-key U show-urls
 
 unbind-key SPACE
 bind-key SPACE macro-prefix
+external-url-viewer "urlscan -dc -C true -r 'linkhandler {}'"
+browser linkhandler
 
 macro SPACE open-in-browser
-macro d set browser "dlvid" ; open-in-browser ; set browser xdg-open
-macro p set browser "dlpod" ; open-in-browser ; set browser xdg-open
-macro i set browser "tmpimg" ; open-in-browser ; set browser xdg-open
-macro q set browser "mpvq add" ; open-in-browser ; set browser xdg-open
-macro w set browser "w3m" ; open-in-browser ; set browser xdg-open
-macro x set browser "xdg-open" ; open-in-browser ; set browser xdg-open
+macro d set browser "dlvid" ; open-in-browser ; set browser linkhandler
+macro p set browser "dlpod" ; open-in-browser ; set browser linkhandler
+macro i set browser "tmpimg" ; open-in-browser ; set browser linkhandler
+macro q set browser "mpvq add" ; open-in-browser ; set browser linkhandler
+macro w set browser "w3m" ; open-in-browser ; set browser linkhandler
+macro z set browser "zathura" ; open-in-browser ; set browser linkhandler
+macro x set browser "xdg-open" ; open-in-browser ; set browser linkhandler
 
 color background          color223   default
 color listnormal          color223   default
