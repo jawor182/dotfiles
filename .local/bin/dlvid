@@ -1,3 +1,3 @@
 #!/bin/sh
 
-tsp yt-dlp -f "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]/best[ext=mp4]" --cookies-from-browser brave --merge-output-format mp4 --embed-thumbnail --extractor-args "youtube:player_js_version=actual" -o "$HOME/media/vids/%(title)s.%(ext)s" "$1"
+tsp yt-dlp -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]" --remote-components ejs:github --cookies-from-browser brave --merge-output-format mkv --write-thumbnail --convert-thumbnails jpg --embed-thumbnail --add-metadata --extractor-args "youtube:player_js_version=actual" -o "$HOME/media/vids/%(title)s.%(ext)s" --exec "rm %(thumbnails.-1.filepath)q" "$1"

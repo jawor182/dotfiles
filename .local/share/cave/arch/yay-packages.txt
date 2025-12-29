@@ -7,4 +7,3 @@ htop-vim
 playerctl-git
 task-spooler
 bluetuith-git
-newsraft-git

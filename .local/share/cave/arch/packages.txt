@@ -104,3 +104,4 @@ breeze
 w3m
 atool
 redshift
+newsboat

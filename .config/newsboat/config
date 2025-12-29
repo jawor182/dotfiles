@@ -1,0 +1,51 @@
+bind-key j down
+bind-key k up
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key U show-urls
+
+unbind-key SPACE
+bind-key SPACE macro-prefix
+
+macro SPACE open-in-browser
+macro d set browser "dlvid" ; open-in-browser ; set browser xdg-open
+macro p set browser "dlpod" ; open-in-browser ; set browser xdg-open
+macro i set browser "tmpimg" ; open-in-browser ; set browser xdg-open
+macro q set browser "mpvq add" ; open-in-browser ; set browser xdg-open
+macro w set browser "w3m" ; open-in-browser ; set browser xdg-open
+macro x set browser "xdg-open" ; open-in-browser ; set browser xdg-open
+
+color background          color223   default
+color listnormal          color223   default
+color listnormal_unread   color2     default
+color listfocus           color0     color166 bold
+color listfocus_unread    color0     color166
+color info                color166   default
+color article             color223   default
+color hint-key            color166   default
+color hint-keys-delimiter color166   default
+color hint-separator      color166   default   bold
+color hint-description    color166   default
+
+
+# and highlights:
+highlight article "^(Feed|Link):.*$" color166 default bold
+highlight article "^(Title|Date|Author):.*$" color166 default bold
+highlight article "https?://[^ ]+" color2 default underline
+highlight article "\\[[0-9]+\\]" color2 default bold
+highlight article "\\[image\\ [0-9]+\\]" default color0 bold
+highlight feedlist "^─.*$" color166 default bold
+
+reload-threads 100
+cleanup-on-quit yes
+
+# vim: filetype=conf
