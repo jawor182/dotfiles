@@ -17,6 +17,8 @@ export QT_FONT_DPI=96
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 
 xset r rate 300 60 &
+xset s 600 600 &
+xset dpms 600 600 600 &
 setxkbmap -layout pl & 
 xrdb -merge "$XRESOURCES"
 screen &
