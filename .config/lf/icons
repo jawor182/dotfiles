@@ -181,5 +181,4 @@ ex              
 *robots.txt             󰚩
 *.docx                  󰏆
 *.doc                   󰏆
-
-
+*go.mod                 
