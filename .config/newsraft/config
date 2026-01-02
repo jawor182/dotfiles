@@ -22,7 +22,7 @@ bind x exec setsid -f xdg-open "%l"
 bind E exec sh -c "nvim ~/keepassxc/urls"
 bind u mark-unread ; jump-to-next
 bind U mark-unread-all
-bind o exec setsid -f $BROWSER "%l" &
+bind o exec setsid -f $BROWSER "%l"
 
 # Colors
 color-list-section                      default default
