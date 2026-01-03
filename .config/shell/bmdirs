@@ -8,6 +8,7 @@ cS                      ~/dotfiles/.local/bin/statusbar/
 cf                      ~/dotfiles/.config/
 cl                      ~/dotfiles/.local/share/
 rp                      ~/repos/projects/
+rr                      ~/repos/
 ss                      ~/repos/suckless/
 sd                      ~/repos/suckless/dwm/
 N                       ~/dox/notes/

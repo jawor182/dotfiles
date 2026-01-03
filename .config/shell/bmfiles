@@ -8,7 +8,8 @@ cfm                     ~/dotfiles/.config/mpv/mpv.conf
 cfr                     ~/dotfiles/.config/newsraft/config
 cfn                     ~/dotfiles/.config/nvim/init.lua
 cft                     ~/dotfiles/.config/tmux/tmux.conf
+cfi                     ~/dotfiles/.config/i3/config
 cfl                     ~/dotfiles/.config/lf/lfrc
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks
-cku                     ~/keepassxc/urls
+cku                     ~/keepassxc/urls/

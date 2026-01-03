@@ -66,7 +66,7 @@ autoload -Uz add-zsh-hook
 
 function set-title-preexec {
     if [[ $(xdotool getwindowfocus getwindowname 2>/dev/null) != "spterm" ]]; then
-        print -Pn "\e]0;${(q)1}\e\\"
+        print -Pn "\e]0;${1}\e\\"
     fi
 }
 
