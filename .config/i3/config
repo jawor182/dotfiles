@@ -108,10 +108,10 @@ exec --no-startup-id st -T spterm
 exec --no-startup-id st -T spmusic -e rmpc
 
 for_window [title="spterm"] floating enable, resize set 60 ppt 70 ppt, move position center, move scratchpad
-bindsym $mod+Shift+Return exec --no-startup-id i3-msg '[title="spterm"] scratchpad show' || ( st -T spterm && sleep 0.1 && xdotool key --clearmodifiers super+shift+Return )
+bindsym $mod+s exec --no-startup-id i3-msg '[title="spterm"] scratchpad show' || st -T spterm
 
 for_window [title="spmusic"] floating enable, resize set 60 ppt 70 ppt, move position center, move scratchpad
-bindsym $mod+m exec --no-startup-id i3-msg '[title="spmusic"] scratchpad show' || ( st -T spmusic -e rmpc && sleep 0.1 && xdotool key super+m )
+bindsym $mod+m exec --no-startup-id i3-msg '[title="spmusic"] scratchpad show' || st -T spmusic -e rmpc
 
 # kill focused window
 bindsym $mod+q kill
