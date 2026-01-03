@@ -100,6 +100,7 @@ assign [class="KeePassXC"] 9
 assign [class="qBittorrent"] 7
 assign [class="calibre-gui"] 4
 assign [class="discord"] 14
+assign [title="newsraft"] 5
 for_window [class="floatingTerm"] floating enable
 for_window [class=".*"] border normal 4
 

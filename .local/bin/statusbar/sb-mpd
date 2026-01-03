@@ -10,9 +10,9 @@ escape() {
 
 case "$status" in
     "playing")
-        statusIcon="" ;;
+        statusIcon="" ;;
     "paused")
-        statusIcon="" ;;
+        statusIcon="" ;;
     *)
         statusIcon=""
         info="off" 
