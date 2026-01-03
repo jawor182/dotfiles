@@ -12,4 +12,4 @@ cfi                     ~/dotfiles/.config/i3/config
 cfl                     ~/dotfiles/.config/lf/lfrc
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks
-cku                     ~/keepassxc/urls/
+cku                     ~/keepassxc/urls
