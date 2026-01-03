@@ -2,14 +2,6 @@
 # is used in the bar {} block below.
 font pango:JetBrainsMonoNerd 12
 
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-
 set $refresh_volume pkill -RTMIN+9 i3blocks
 set $refresh_brightness pkill -RTMIN+11 i3blocks
 
@@ -88,7 +80,7 @@ bindsym $mod+Shift+p exec colorpicker
 bindsym $mod+Shift+Escape exec powermenu
 bindsym $mod+Shift+m exec mpvq play
 bindsym $mod+Shift+a exec mpvq addclip
-bindsym $mod+Shift+grave exec dmenubookmarks select_browser
+bindsym $mod+Shift+asciitilde exec dmenubookmarks select_browser
 bindsym $mod+grave exec dmenubookmarks select
 bindsym $mod+Mod1+b exec dmenubookmarks add
 bindsym $mod+c move position center
@@ -98,7 +90,7 @@ assign [class="mpv"] output HDMI-0
 assign [class="org.mozilla.Thunderbird"] 3
 assign [class="KeePassXC"] 9
 assign [class="qBittorrent"] 7
-assign [class="calibre-gui"] 4
+assign [class="calibre" instance="calibre-gui"] 4
 assign [class="discord"] 14
 assign [title="newsraft"] 5
 for_window [class="floatingTerm"] floating enable
@@ -108,14 +100,13 @@ exec --no-startup-id st -T spterm
 exec --no-startup-id st -T spmusic -e rmpc
 
 for_window [title="spterm"] floating enable, resize set 60 ppt 70 ppt, move position center, move scratchpad
-bindsym $mod+s exec --no-startup-id i3-msg '[title="spterm"] scratchpad show' || st -T spterm
+bindsym $mod+control+Return exec --no-startup-id i3-msg '[title="spterm"] scratchpad show' || (st -T spterm & sleep 0.1 && i3-msg '[title="spterm"] scratchpad show')
 
 for_window [title="spmusic"] floating enable, resize set 60 ppt 70 ppt, move position center, move scratchpad
-bindsym $mod+m exec --no-startup-id i3-msg '[title="spmusic"] scratchpad show' || st -T spmusic -e rmpc
+bindsym $mod+m exec --no-startup-id pgrep -f rmpc && i3-msg '[title="spmusic"] scratchpad show' || (st -T spmusic -e rmpc & sleep 0.1 && i3-msg '[title="spmusic"] scratchpad show')
 
 # kill focused window
 bindsym $mod+q kill
-
 # change focus
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -148,10 +139,7 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-#bindsym $mod+d focus child
-
+# Monitors config
 workspace 1 output eDP-0
 workspace 2 output eDP-0
 workspace 4 output eDP-0
