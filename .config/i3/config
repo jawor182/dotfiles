@@ -66,6 +66,7 @@ bindsym $mod+e exec --no-startup-id $email
 bindsym $mod+p exec --no-startup-id $passwords
 bindsym $mod+Escape exec --no-startup-id $lockscreen
 bindsym $mod+f exec --no-startup-id st -e lfub
+bindsym $mod+Shift+n exec --no-startup-id st -e newsraft
 bindsym $mod+Mod1+f exec --no-startup-id $guifiles
 bindsym $mod+n exec --no-startup-id st -T notes -e sh -c "cd $HOME/dox/notes && $EDITOR"
 bindsym $mod+shift+w exec --no-startup-id $wallpaper
@@ -103,17 +104,13 @@ for_window [class="floatingTerm"] floating enable
 for_window [class=".*"] border normal 4
 
 exec --no-startup-id st -T spterm
-exec --no-startup-id st -T spnews -e newsraft
 exec --no-startup-id st -T spmusic -e rmpc
 
 for_window [title="spterm"] floating enable, resize set 60 ppt 70 ppt, move position center, move scratchpad
-bindsym $mod+Control+Return exec --no-startup-id i3-msg '[title="spterm"] scratchpad show' || st -T spterm
-
-for_window [title="spnews"] floating enable, resize set 60 ppt 70 ppt, move position center, move scratchpad
-bindsym $mod+Shift+n exec --no-startup-id i3-msg '[title="spnews"] scratchpad show' || st -T spnews -e newsraft
+bindsym $mod+Shift+Return exec --no-startup-id i3-msg '[title="spterm"] scratchpad show' || ( st -T spterm && sleep 0.1 && xdotool key --clearmodifiers super+shift+Return )
 
 for_window [title="spmusic"] floating enable, resize set 60 ppt 70 ppt, move position center, move scratchpad
-bindsym $mod+m exec --no-startup-id i3-msg '[title="spmusic"] scratchpad show' || st -T spmusic -e rmpc
+bindsym $mod+m exec --no-startup-id i3-msg '[title="spmusic"] scratchpad show' || ( st -T spmusic -e rmpc && sleep 0.1 && xdotool key super+m )
 
 # kill focused window
 bindsym $mod+q kill

@@ -12,8 +12,8 @@ unbind v
 bind V view-errors
 bind a toggle-read
 
-bind z exec zathura "%l"
-bind i exec tmpimg "%l" 2>/dev/null
+bind z exec setsid -f zathura "%l" 2>/dev/null
+bind i exec setsid -f tmpimg "%l" 2>/dev/null
 bind m exec mpvq add "%l"
 bind v exec dlvid "%l" 
 bind p exec dlpod "%l"
