@@ -41,8 +41,6 @@ gaps inner 4
 gaps outer 4
 focus_wrapping workspace
 smart_gaps on
-# Do u want title bar or just 4px border?
-# default_border pixel 4
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
