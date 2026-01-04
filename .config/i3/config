@@ -49,7 +49,7 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+tiling_drag modifier
 
 bindsym $mod+d exec --no-startup-id $menu
 bindsym $mod+Return exec --no-startup-id st
@@ -95,6 +95,10 @@ assign [class="discord"] 14
 assign [title="newsboat"] 5
 for_window [class="floatingTerm"] floating enable
 for_window [class=".*"] border normal 4
+
+# No focus rule for annoying windows
+no_focus [class="brave-browser"]
+no_focus [class="librewolf"]
 
 exec --no-startup-id st -T spterm
 exec --no-startup-id st -T spmusic -e rmpc
