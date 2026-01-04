@@ -75,14 +75,14 @@ bindsym $mod+Mod1+minus exec playerctl -p mpd volume 0.05- && $refresh_blocks
 
 bindsym $mod+Shift+s exec screenshot
 bindsym Print exec screenshot
-bindsym $mod+Shift+u exec dmenuunicode
-bindsym $mod+Shift+p exec colorpicker
-bindsym $mod+Shift+Escape exec powermenu
-bindsym $mod+Shift+m exec mpvq play
+bindsym $mod+Shift+u exec --no-startup-id dmenuunicode
+bindsym $mod+Shift+p exec --no-startup-id colorpicker
+bindsym $mod+Shift+Escape exec --no-startup-id powermenu
+bindsym $mod+Shift+m exec --no-startup-id mpvq play
 bindsym $mod+Shift+a exec mpvq addclip
 bindsym $mod+Shift+asciitilde exec dmenubookmarks select_browser
-bindsym $mod+grave exec dmenubookmarks select
-bindsym $mod+Mod1+b exec dmenubookmarks add
+bindsym $mod+grave exec --no-startup-id dmenubookmarks select
+bindsym $mod+Mod1+b exec --no-startup-id dmenubookmarks add
 bindsym $mod+c move position center
 
 # Rules
@@ -118,6 +118,8 @@ bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
+
+bindsym $mod+Tab workspace back_and_forth
 
 # split in horizontal orientation
 bindsym $mod+b split h
