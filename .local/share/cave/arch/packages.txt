@@ -104,3 +104,8 @@ breeze
 w3m
 atool
 redshift
+newsboat
+i3-wm
+i3status
+i3blocks
+bemenu

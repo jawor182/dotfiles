@@ -1,6 +1,6 @@
 #!/bin/sh
 
-option=$(printf 'Lock Screen\nPower Off\nReboot\nSuspend' | dmenu -c -i -l 4 -p "What do you want to do? ")
+option=$(printf 'Lock Screen\nPower Off\nReboot\nSuspend' | bemenu --fixed-height -W 0.3 -c -i -l 4 -p "What do you want to do? ")
 LOCK="i3slock"
 
 case $option in

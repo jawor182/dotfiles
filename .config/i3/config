@@ -26,7 +26,7 @@ set $down j
 set $up k
 set $right l
 
-set $menu dmenu_run
+set $menu bemenu-run
 set $browser brave
 set $email thunderbird
 set $passwords keepassxc
@@ -58,7 +58,7 @@ bindsym $mod+e exec --no-startup-id $email
 bindsym $mod+p exec --no-startup-id $passwords
 bindsym $mod+Escape exec --no-startup-id $lockscreen
 bindsym $mod+f exec --no-startup-id st -e lfub
-bindsym $mod+Shift+n exec --no-startup-id st -e newsraft
+bindsym $mod+Shift+n exec --no-startup-id st -e newsboat
 bindsym $mod+Mod1+f exec --no-startup-id $guifiles
 bindsym $mod+n exec --no-startup-id st -T notes -e sh -c "cd $HOME/dox/notes && $EDITOR"
 bindsym $mod+shift+w exec --no-startup-id $wallpaper
@@ -92,7 +92,7 @@ assign [class="KeePassXC"] 9
 assign [class="qBittorrent"] 7
 assign [class="calibre" instance="calibre-gui"] 4
 assign [class="discord"] 14
-assign [title="newsraft"] 5
+assign [title="newsboat"] 5
 for_window [class="floatingTerm"] floating enable
 for_window [class=".*"] border normal 4
 

@@ -5,7 +5,7 @@
 cfz                     ~/dotfiles/.config/zsh/.zshrc
 cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfm                     ~/dotfiles/.config/mpv/mpv.conf
-cfr                     ~/dotfiles/.config/newsraft/config
+cfb                     ~/dotfiles/.config/newsboat/config
 cfn                     ~/dotfiles/.config/nvim/init.lua
 cft                     ~/dotfiles/.config/tmux/tmux.conf
 cfi                     ~/dotfiles/.config/i3/config
