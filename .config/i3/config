@@ -97,6 +97,7 @@ for_window [class=".*"] border normal 4
 # No focus rule for annoying windows
 no_focus [class="brave-browser"]
 no_focus [class="librewolf"]
+no_focus [class="Navigator"]
 
 exec --no-startup-id st -T spterm
 exec --no-startup-id st -T spmusic -e rmpc
