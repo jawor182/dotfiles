@@ -98,15 +98,16 @@ for_window [class=".*"] border normal 4
 # No focus rule for annoying windows
 no_focus [class="brave-browser"]
 no_focus [class="librewolf"]
+no_focus [class="LibreWolf"]
 no_focus [class="Navigator"]
 
 exec --no-startup-id st -T spterm
 exec --no-startup-id st -T spmusic -e rmpc
 
-for_window [title="spterm"] floating enable, resize set 60 ppt 70 ppt, move position center, move scratchpad
+for_window [title="spterm"] floating enable, move position center, move scratchpad
 bindsym $mod+control+Return exec --no-startup-id i3-msg '[title="spterm"] scratchpad show' || (st -T spterm & sleep 0.1 && i3-msg '[title="spterm"] scratchpad show')
 
-for_window [title="spmusic"] floating enable, resize set 60 ppt 70 ppt, move position center, move scratchpad
+for_window [title="spmusic"] floating enable, move position center, move scratchpad
 bindsym $mod+m exec --no-startup-id pgrep -f rmpc && i3-msg '[title="spmusic"] scratchpad show' || (st -T spmusic -e rmpc & sleep 0.1 && i3-msg '[title="spmusic"] scratchpad show')
 
 # kill focused window
@@ -208,7 +209,6 @@ bindsym $mod+Shift+comma move output left
 bindsym $mod+Shift+period move output right
 
 bindsym $mod+r reload
-# bindsym $mod+Shift+r restart
 bindsym $mod+Shift+q exit
 
 # Colors
