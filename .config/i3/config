@@ -26,6 +26,7 @@ set $down j
 set $up k
 set $right l
 
+set $term st
 set $menu bemenu-run
 set $browser brave
 set $email thunderbird
@@ -41,6 +42,8 @@ gaps inner 4
 gaps outer 4
 focus_wrapping workspace
 smart_gaps on
+focus_on_window_activation smart
+hide_edge_borders smart
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -49,38 +52,38 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier
 
-bindsym $mod+d exec --no-startup-id $menu
-bindsym $mod+Return exec --no-startup-id st
-bindsym $mod+w exec --no-startup-id $browser
-bindsym $mod+e exec --no-startup-id $email
-bindsym $mod+p exec --no-startup-id $passwords
-bindsym $mod+Escape exec --no-startup-id $lockscreen
-bindsym $mod+f exec --no-startup-id st -e lfub
-bindsym $mod+Shift+n exec --no-startup-id st -e newsboat
-bindsym $mod+Mod1+f exec --no-startup-id $guifiles
-bindsym $mod+n exec --no-startup-id st -T notes -e sh -c "cd $HOME/dox/notes && $EDITOR"
-bindsym $mod+shift+w exec --no-startup-id $wallpaper
-bindsym $mod+Control+w exec --no-startup-id $randWallpaper
-bindsym $mod+Shift+c exec --no-startup-id $communicator
-bindsym $mod+shift+b exec --no-startup-id $books
+bindsym $mod+d exec $menu
+bindsym $mod+Return exec $term
+bindsym $mod+w exec $browser
+bindsym $mod+e exec $email
+bindsym $mod+p exec $passwords
+bindsym $mod+Escape exec $lockscreen
+bindsym $mod+f exec $term -e lfub
+bindsym $mod+Shift+n exec $term -e newsboat
+bindsym $mod+Mod1+f exec $guifiles
+bindsym $mod+n exec $term -T notes -e sh -c "cd $HOME/dox/notes && $EDITOR"
+bindsym $mod+shift+w exec $wallpaper
+bindsym $mod+Control+w exec $randWallpaper
+bindsym $mod+Shift+c exec $communicator
+bindsym $mod+shift+b exec $books
 
-bindsym $mod+Mod1+p exec playerctl -p mpd play-pause && $refresh_blocks
-bindsym $mod+Mod1+s exec playerctl -p mpd pause && playerctl -p mpd position 0 && $refresh_blocks
-bindsym $mod+Mod1+period exec playerctl -p mpd next && $refresh_blocks
-bindsym $mod+Mod1+comma exec playerctl -p mpd previous && $refresh_blocks
-bindsym $mod+Mod1+equal exec playerctl -p mpd volume 0.05+ && $refresh_blocks
-bindsym $mod+Mod1+minus exec playerctl -p mpd volume 0.05- && $refresh_blocks
+bindsym $mod+Mod1+p exec --no-startup-id playerctl -p mpd play-pause && $refresh_blocks
+bindsym $mod+Mod1+s exec --no-startup-id playerctl -p mpd pause && playerctl -p mpd position 0 && $refresh_blocks
+bindsym $mod+Mod1+period exec --no-startup-id playerctl -p mpd next && $refresh_blocks
+bindsym $mod+Mod1+comma exec --no-startup-id playerctl -p mpd previous && $refresh_blocks
+bindsym $mod+Mod1+equal exec --no-startup-id playerctl -p mpd volume 0.05+ && $refresh_blocks
+bindsym $mod+Mod1+minus exec --no-startup-id playerctl -p mpd volume 0.05- && $refresh_blocks
 
 bindsym $mod+Shift+s exec screenshot
 bindsym Print exec screenshot
-bindsym $mod+Shift+u exec --no-startup-id dmenuunicode
-bindsym $mod+Shift+p exec --no-startup-id colorpicker
-bindsym $mod+Shift+Escape exec --no-startup-id powermenu
-bindsym $mod+Shift+m exec --no-startup-id mpvq play
-bindsym $mod+Shift+a exec mpvq addclip
+bindsym $mod+Shift+u exec dmenuunicode
+bindsym $mod+Shift+p exec colorpicker
+bindsym $mod+Shift+Escape exec powermenu
+bindsym $mod+Shift+m exec mpvq play
+bindsym $mod+Shift+a exec --no-startup-id mpvq addclip
 bindsym $mod+Shift+asciitilde exec dmenubookmarks select_browser
-bindsym $mod+grave exec --no-startup-id dmenubookmarks select
-bindsym $mod+Mod1+b exec --no-startup-id dmenubookmarks add
+bindsym $mod+grave exec dmenubookmarks select
+bindsym $mod+Mod1+b exec dmenubookmarks add
 bindsym $mod+c move position center
 
 # Rules
@@ -95,20 +98,14 @@ assign [title="newsboat"] 5
 for_window [class="floatingTerm"] floating enable
 for_window [class=".*"] border normal 4
 
-# No focus rule for annoying windows
-no_focus [class="brave-browser"]
-no_focus [class="librewolf"]
-no_focus [class="LibreWolf"]
-no_focus [class="Navigator"]
-
-exec --no-startup-id st -T spterm
-exec --no-startup-id st -T spmusic -e rmpc
+exec --no-startup-id $term -T spterm
+exec --no-startup-id $term -T spmusic -e rmpc
 
 for_window [title="spterm"] floating enable, move position center, move scratchpad
-bindsym $mod+control+Return exec --no-startup-id i3-msg '[title="spterm"] scratchpad show' || (st -T spterm & sleep 0.1 && i3-msg '[title="spterm"] scratchpad show')
+bindsym $mod+control+Return exec --no-startup-id i3-msg '[title="spterm"] scratchpad show' || ($term -T spterm & sleep 0.1 && i3-msg '[title="spterm"] scratchpad show')
 
 for_window [title="spmusic"] floating enable, move position center, move scratchpad
-bindsym $mod+m exec --no-startup-id pgrep -f rmpc && i3-msg '[title="spmusic"] scratchpad show' || (st -T spmusic -e rmpc & sleep 0.1 && i3-msg '[title="spmusic"] scratchpad show')
+bindsym $mod+m exec --no-startup-id pgrep -f rmpc && i3-msg '[title="spmusic"] scratchpad show' || ($term -T spmusic -e rmpc & sleep 0.1 && i3-msg '[title="spmusic"] scratchpad show')
 
 # kill focused window
 bindsym $mod+q kill
@@ -147,15 +144,6 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # Monitors config
-workspace 1 output eDP-0
-workspace 2 output eDP-0
-workspace 4 output eDP-0
-workspace 5 output eDP-0
-workspace 6 output eDP-0
-workspace 7 output eDP-0
-workspace 8 output eDP-0
-workspace 9 output eDP-0
-workspace 10 output eDP-0
 
 workspace 1 output DP-0
 workspace 2 output DP-0
@@ -209,6 +197,7 @@ bindsym $mod+Shift+comma move output left
 bindsym $mod+Shift+period move output right
 
 bindsym $mod+r reload
+bindsym $mod+Shift+r restart
 bindsym $mod+Shift+q exit
 
 # Colors
