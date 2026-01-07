@@ -165,6 +165,7 @@ ex              
 *.bashprofile           
 *favicon.ico            
 *license                
+*LICENSE                
 *node_modules           
 *react.jsx              
 *procfile               
@@ -177,8 +178,13 @@ ex              
 *config.ru              
 *gemfile                
 *makefile               
+*Makefile               
 *cmakelists.txt         
 *robots.txt             󰚩
 *.docx                  󰏆
 *.doc                   󰏆
 *go.mod                 
+*.mk                    
+*.o                     
+*.desktop               󰍹
+*.info                  
