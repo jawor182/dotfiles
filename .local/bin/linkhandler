@@ -18,7 +18,7 @@ case "$url" in
 	*png|*jpg|*jpe|*jpeg|*gif|*webp)
 		setsid -f tmpimg "$url" >/dev/null ;;
 	*pdf|*cbz|*cbr)
-		zathura "$url" ;;
+		setsid -f zathura "$url" >/dev/null ;;
 	*mp3|*flac|*opus|*mp3?source*)
 		dlpod "$url" ;;
 	*)
