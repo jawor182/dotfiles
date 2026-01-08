@@ -12,6 +12,6 @@ esac
 volume=$(wpctl get-volume @DEFAULT_SINK@ )
 [ "$volume" != "${volume%\[MUTED\]}" ] && echo " " && exit
 volume=$(wpctl get-volume @DEFAULT_SINK@ | awk '{print $2 * 100 }')
-icon=" "
+icon=""
 
 printf "%s %s\n" "$icon" "$volume%"

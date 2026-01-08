@@ -16,7 +16,7 @@ case "$url" in
 	*mkv|*webm|*mp4|*youtube.com/watch*|*youtube.com/playlist*|*youtube.com/shorts*|*youtu.be*|*hooktube.com*|*bitchute.com*|*videos.lukesmith.xyz*|*odysee.com*)
 		setsid -f mpv -quiet "$url" >/dev/null 2>&1 ;;
 	*png|*jpg|*jpe|*jpeg|*gif|*webp|*svg)
-		setsid -f tmpimg "$url" >/dev/null ;;
+		setsid -f tmpimg "$url" >/dev/null 2>&1 ;;
 	*pdf|*cbz|*cbr)
 		setsid -f zathura "$url" >/dev/null ;;
 	*mp3|*flac|*opus|*mp3?source*)
