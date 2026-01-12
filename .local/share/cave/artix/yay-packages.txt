@@ -1,7 +1,6 @@
 calibre-bin
 mpc-git
 rmpc-git
-mpdris-bin
 ifuse-git
 unzip-git
 adw-gtk-theme-git

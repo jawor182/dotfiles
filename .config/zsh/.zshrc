@@ -58,26 +58,11 @@ snc(){
     shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc ; xset r rate 300 60 ; [ "$XDG_SESSION_TYPE" = "x11" ] && xrdb -m $XRESOURCES 
 }
 
-mansplain(){
+ex(){
     man -k . | fzf -e | cut -d' '  -f1 | xargs -r man
 }
 
 autoload -Uz add-zsh-hook
-
-function set-title-preexec {
-    if [[ $(xdotool getwindowfocus getwindowname 2>/dev/null) != "spterm" ]]; then
-        print -Pn "\e]0;${1}\e\\"
-    fi
-}
-
-function set-title-precmd {
-    if [[ $(xdotool getwindowfocus getwindowname 2>/dev/null) != "spterm" ]]; then
-        print -Pn "\e]0;%(1j,%j job%(2j|s|); ,)%~\e\\"
-    fi
-}
-
-add-zsh-hook preexec set-title-preexec
-add-zsh-hook precmd set-title-precmd
 
 function osc7-pwd() {
     emulate -L zsh # also sets localoptions for us

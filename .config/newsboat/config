@@ -18,6 +18,7 @@ bind-key SPACE macro-prefix
 # external-url-viewer "urlscan -dc -C true -r 'linkhandler {}'"
 browser linkhandler
 datetime-format "%b %d %Y"
+text-width 80
 
 macro SPACE open-in-browser
 macro d set browser "dlvid" ; open-in-browser ; set browser linkhandler

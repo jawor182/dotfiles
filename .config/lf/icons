@@ -29,6 +29,7 @@ ex              
 *.pdf           
 *.djv           
 *.epub          
+*.djvu          
 *.mobi          
 *.csv           
 *.xls           

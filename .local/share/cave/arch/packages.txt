@@ -16,7 +16,6 @@ mpv
 mpd
 mpc
 rmpc
-mpd-mpris
 mpv-mpris
 thunderbird
 vim
@@ -69,6 +68,7 @@ usbmuxd
 usbutils
 unzip
 zathura-pdf-mupdf
+zathura-djvu
 zbar
 zsh-autosuggestions
 zsh-completions
@@ -106,3 +106,4 @@ atool
 redshift
 newsboat
 bemenu
+djview

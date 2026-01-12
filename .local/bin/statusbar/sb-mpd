@@ -1,12 +1,8 @@
 #!/bin/sh
 
-status=$(mpc status %state%)
-info=$(mpc status --format "[%artist% - %title%]" | head -n 1)
-time=$(mpc status "[%currenttime%/%totaltime%]" | head -n 1)
-
-escape() {
-    echo "$1" | sed 's/&/&amp;/g; s/</\&lt;/g; s/>/\&gt;/g'
-}
+status=$(mpc status "%state%")
+info=$(mpc current --format "[%artist% - %title%]")
+time=$(mpc status "[%currenttime%/%totaltime%]")
 
 case "$status" in
     "playing")
@@ -20,16 +16,17 @@ case "$status" in
 esac
 
 case $BLOCK_BUTTON in
-    1) playerctl -p mpd play-pause ;;
-    2) playerctl -p mpd next ;;
+    1) mpc toggle ;;
+    2) mpc next ;;
     3) xdotool key super+m ;;
     6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
-    8) playerctl -p mpd pause && playerctl -p mpd position 0 ;;
+    8) mpc pause && mpc seek 0 ;;
 esac
 
-if [ "$XDG_SESSION_TYPE" = "wayland" ] && [ "$XDG_CURRENT_DESKTOP" != "dwl" ]; then
-    info=$(escape "$info")
-    time=$(escape "$time")
+if [ "$time" = "" ]; then
+    output="$info"
+else
+    output="$info $time"
 fi
 
-printf " %s %s %s\n" "$statusIcon" "$info" "$time"
+printf " %s %s\n" "$statusIcon" "$output"

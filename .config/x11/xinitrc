@@ -7,7 +7,6 @@ dwmblocks &
 picom -b &
 dunst &
 playerctld &
-mpd-mpris &
 redshift &
 
 dbus-update-activation-environment --all
