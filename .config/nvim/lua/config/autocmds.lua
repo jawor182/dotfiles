@@ -28,3 +28,13 @@ autocmd("FileType", {
         vim.opt.tabstop = 2
     end
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "~/.local/share/calcurse/notes/*",
+  command = "set filetype=markdown",
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "/tmp/calcurse*",
+  command = "set filetype=markdown",
+})
