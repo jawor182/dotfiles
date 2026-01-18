@@ -15,7 +15,6 @@ bind-key U show-urls
 
 unbind-key SPACE
 bind-key SPACE macro-prefix
-# external-url-viewer "urlscan -dc -C true -r 'linkhandler {}'"
 browser linkhandler
 datetime-format "%b %d %Y"
 text-width 80

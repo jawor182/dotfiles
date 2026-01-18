@@ -3,21 +3,21 @@
 randomWall=$(find "$HOME/walls" -type f -iname "*.png" -print0 | shuf -n 1 -z)
 
 case "$1" in
-"random")
-    xwallpaper --stretch "$randomWall"
-    ;;
-"set")
-    target="$2"
+    "random")
+        swww img --transition-duration=0.5 --transition-fps=165 --transition-step=90 --transition-type=grow --resize=stretch "$randomWall"
+        ;;
+    "set")
+        target="$2"
 
-    if [ -d "$target" ]; then
-        wall=$(find "$target" -type f -iname "*.png" -print0 | shuf -n 1 -z)
-    else
-        wall="$target"
-    fi
+        if [ -d "$target" ]; then
+            wall=$(find "$target" -type f -iname "*.png" -print0 | shuf -n 1 -z)
+        else
+            wall="$target"
+        fi
 
-    xwallpaper --stretch "$wall"
-    ;;
-"open")
-    find "$HOME/walls" -type f -iname '*.png' | shuf | nsxiv -t -
-    ;;
+        swww img --transition-duration=0.5 --transition-fps=165 --transition-step=90 --transition-type=grow --resize=stretch "$wall"
+        ;;
+    "open")
+        find "$HOME/walls" -type f -iname '*.png' | shuf | nsxiv -t -
+        ;;
 esac

@@ -20,7 +20,6 @@ t="tmux" \
 dev="npm run dev" \
 nb="newsboat" \
 f="$FILES" \
-lf="lfcd" \
 diff="diff --color" \
 rm="rm -fr" \
 cp="cp -r" \

@@ -11,7 +11,7 @@ generic-select  SPC
 generic-credits  @ 
 generic-help  ? 
 generic-quit  q Q 
-generic-save  s S ^S 
+generic-save  s 
 generic-reload  R 
 generic-copy  c 
 generic-paste  p ^V 

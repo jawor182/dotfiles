@@ -2,7 +2,7 @@ export PATH="$PATH:/$HOME/.local/bin/"
 export PATH="$PATH:/$HOME/.local/bin/statusbar"
 export EDITOR="nvim"
 export FILES="lfcd"
-export BROWSER="brave"
+export BROWSER="librewolf"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -24,9 +24,9 @@ export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 export SPOTDL_CONFIG_DIR="$XDG_CONFIG_HOME/spotdl"
 export W3M_DIR="$XDG_CONFIG_HOME/w3m"
 export FZF_DEFAULT_OPTS="--layout=reverse"
-export BEMENU_OPTS="--fn 'JetBrainsMonoNerdFont 20' -H 38 -i -p '' --hp 8 --fb '#282828' --ff '#ebdbb2' --nb '#282828' --nf '#ebdbb2' --tb '#d65d0e' --tf '#282828' --hf '#282828' --hb '#d65d0e' --nf '#ebdbb2' --af '#ebdbb2' --ab '#282828'"
+export BEMENU_OPTS="--fn 'JetBrainsMonoNerdFont 14' -H 36 -i -p '' --hp 8 --fb '#282828' --ff '#ebdbb2' --nb '#282828' --nf '#ebdbb2' --tb '#d65d0e' --tf '#282828' --hf '#282828' --hb '#d65d0e' --nf '#ebdbb2' --af '#ebdbb2' --ab '#282828'"
 export BAT_THEME="gruvbox-dark"
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec startx
+        exec start-hyprland
 fi
