@@ -11,7 +11,7 @@ cff                     ~/dotfiles/.config/foot/foot.ini
 cfh                     ~/dotfiles/.config/hypr/hyprland.conf
 cfw                     ~/dotfiles/.config/waybar/config.jsonc
 cft                     ~/dotfiles/.config/tmux/tmux.conf
-cfl                     ~/dotfiles/.config/lf/lfrc
+cfy                     ~/dotfiles/.config/yazi/yazi.toml
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks
 cku                     ~/keepassxc/urls

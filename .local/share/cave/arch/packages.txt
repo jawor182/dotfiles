@@ -69,7 +69,7 @@ os-prober
 tree
 perl-image-exiftool
 btop
-lf
+yazi
 fzf
 lshw
 jq
@@ -118,3 +118,5 @@ wayland
 wl-clipboard
 grim
 slurp
+sane
+simple-scan

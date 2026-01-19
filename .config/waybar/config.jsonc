@@ -144,7 +144,6 @@
         "format-ethernet": "",
         "format-disconnected": "",
         "tooltip": false,
-        "on-click": "$TERMINAL --app-id floatingterm -e speedtest",
     },
     "idle_inhibitor": {
         "format": "{icon}",

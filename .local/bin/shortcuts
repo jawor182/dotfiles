@@ -63,5 +63,5 @@ generateYaziShortcuts(){
 
 generateDirShortcuts
 generateFileShortcuts
-# generateYaziShortcuts
-generateLFShortcuts
+generateYaziShortcuts
+# generateLFShortcuts
