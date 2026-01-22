@@ -1,6 +1,7 @@
 # vim:ft=bash
 alias \
 h="htop" \
+b="btop" \
 n="nvim" \
 sn="sudoedit" \
 p="sudo pacman" \
