@@ -4,10 +4,6 @@ status=$(mpc status "%state%")
 info=$(mpc current --format "[%artist% - %title%]")
 time=$(mpc status "[%currenttime%/%totaltime%]")
 
-escape() {
-    echo "$1" | sed 's/&/&amp;/g; s/</\&lt;/g; s/>/\&gt;/g'
-}
-
 case "$status" in
     "playing")
         statusIcon="" ;;
@@ -32,7 +28,5 @@ if [ "$time" = "" ]; then
 else
     output="$info $time"
 fi
-
-output=$(escape "$output")
 
 printf " %s %s\n" "$statusIcon" "$output"
