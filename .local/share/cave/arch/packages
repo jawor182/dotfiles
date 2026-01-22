@@ -33,7 +33,6 @@ cargo
 cups 
 cups-pdf
 cups-filters
-system-config-printer
 gutenprint
 foomatic-db-gutenprint-ppds
 clang

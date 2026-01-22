@@ -7,9 +7,7 @@ cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfm                     ~/dotfiles/.config/mpv/mpv.conf
 cfb                     ~/dotfiles/.config/newsboat/config
 cfn                     ~/dotfiles/.config/nvim/init.lua
-cff                     ~/dotfiles/.config/foot/foot.ini
-cfh                     ~/dotfiles/.config/hypr/hyprland.conf
-cfw                     ~/dotfiles/.config/waybar/config.jsonc
+cfp                     ~/dotfiles/.config/picom/picom.conf
 cft                     ~/dotfiles/.config/tmux/tmux.conf
 cfl                     ~/dotfiles/.config/lf/lfrc
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
