@@ -1,9 +1,5 @@
-calibre-bin
-mpc-git
-rmpc-git
 ifuse-git
 unzip-git
-adw-gtk-theme-git
 qt5gtk2
 qt5-styleplugins
 librewolf-bin
@@ -12,3 +8,5 @@ htop-vim
 playerctl-git
 task-spooler
 ttf-sazanami-hanazono
+bluetuith-git
+xurls

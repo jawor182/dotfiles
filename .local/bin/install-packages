@@ -2,11 +2,11 @@
 
 os_id=$(grep ^ID= /etc/os-release | cut -d= -f2)
 if [ "$os_id" = "arch" ]; then
-    packages="$HOME/dotfiles/.local/share/cave/arch/packages.txt"
-    yayPackages="$HOME/dotfiles/.local/share/cave/arch/yay-packages.txt"
+    packages="$HOME/dotfiles/.local/share/cave/arch/packages"
+    yayPackages="$HOME/dotfiles/.local/share/cave/arch/yay-packages"
 else
-    packages="$HOME/dotfiles/.local/share/cave/artix/packages.txt"
-    yayPackages="$HOME/dotfiles/.local/share/cave/artix/yay-packages.txt"
+    packages="$HOME/dotfiles/.local/share/cave/artix/packages"
+    yayPackages="$HOME/dotfiles/.local/share/cave/artix/yay-packages"
 fi
 
 sudo pacman -Syyuu --needed $(cat "$packages")

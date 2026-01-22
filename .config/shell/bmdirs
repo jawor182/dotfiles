@@ -9,7 +9,12 @@ cf                      ~/dotfiles/.config/
 cl                      ~/dotfiles/.local/share/
 rp                      ~/repos/projects/
 rr                      ~/repos/
-ss                      ~/repos/suckless/
+nss                     ~/repos/suckless/
+nsd                     ~/repos/suckless/dwm/
+nst                     ~/repos/suckless/st/
+nsn                     ~/repos/suckless/nsxiv/
+nsm                     ~/repos/suckless/dmenu/
+nsb                     ~/repos/suckless/blocks/
 ws                      ~/repos/wayland-suckless/
 dx                      ~/dox/
 dn                      ~/dox/notes/
