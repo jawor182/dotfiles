@@ -9,7 +9,7 @@ else
     yayPackages="$HOME/dotfiles/.local/share/cave/artix/yay-packages"
 fi
 
-sudo pacman -Syyuu --needed $(cat "$packages")
+sudo pacman -Syyuu --needed $(grep -v "^#" "$packages")
 
 if [ ! -d "$HOME/.local/yay" ]; then
     setup-yay

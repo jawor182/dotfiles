@@ -1,12 +1,11 @@
-ifuse-git
-unzip-git
-qt5gtk2
-qt5-styleplugins
-librewolf-bin
+bluetuith-git
 brave-bin
 htop-vim
+ifuse-git
+librewolf-bin
 playerctl-git
+qt5-styleplugins
+qt5gtk2
 task-spooler
 ttf-sazanami-hanazono
-bluetuith-git
 xurls
