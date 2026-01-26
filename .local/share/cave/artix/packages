@@ -1,9 +1,7 @@
 # X and it's utilities
 lxappearance
-lxsession
 scrot
 xclip
-xcolor
 xdotool
 xlibre
 xwallpaper
@@ -66,7 +64,6 @@ checkbashisms
 clang
 cmake
 dash
-djview
 ffmpeg
 go
 gvfs

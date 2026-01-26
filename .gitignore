@@ -6,3 +6,4 @@
 .config/yazi/keymap.toml
 .config/yazi/shortcuts.toml
 .config/ncmpcpp/error.log
+.config/mutt/accounts

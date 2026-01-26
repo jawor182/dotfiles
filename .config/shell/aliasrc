@@ -3,6 +3,7 @@ alias \
 h="htop" \
 b="btop" \
 n="nvim" \
+nm="neomutt" \
 sn="sudoedit" \
 p="sudo pacman" \
 y="yay" \
