@@ -10,6 +10,7 @@ cfn                     ~/dotfiles/.config/nvim/init.lua
 cfp                     ~/dotfiles/.config/picom/picom.conf
 cft                     ~/dotfiles/.config/tmux/tmux.conf
 cfl                     ~/dotfiles/.config/lf/lfrc
+cfe                     ~/dotfiles/.config/mutt/muttrc
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks
 cku                     ~/keepassxc/urls

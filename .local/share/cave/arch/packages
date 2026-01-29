@@ -37,6 +37,7 @@ btop
 calcurse
 fzf
 lf
+neomutt
 neovim
 newsboat
 tmux
@@ -75,6 +76,7 @@ gvfs-afc
 gvfs-mtp
 ifuse
 imagemagick
+isync
 jq
 libimobiledevice
 libmtp
@@ -86,10 +88,12 @@ make
 man-db
 man-pages
 mokutil
+msmtp
 nodejs
 npm
 ntfs-3g    
 os-prober
+pass
 pciutils
 perl-image-exiftool
 php

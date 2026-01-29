@@ -36,7 +36,7 @@ map x cut
 map D delete $fx
 map r rename-vim
 map R bulkrename
-map M &mpvq add $fx
+map M &for f in $fx; do mpvq add $f;done
 map W &wallpaper set $fx
 map E extract $fx
 map i !file --dereference --brief --mime-type -- $fx
