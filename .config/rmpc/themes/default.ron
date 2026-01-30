@@ -41,7 +41,7 @@
         trace: (fg: "magenta", bg: "black"),
     ),
     progress_bar: (
-        symbols: ["", "█", "", "█", "" ],
+        symbols: ["█", "█", "", "█", "" ],
         track_style: (fg: "#282828"),
         elapsed_style: (fg: "#d65d0e"),
         thumb_style: (fg: "#d65d0e", bg: "#282828"),
@@ -193,19 +193,23 @@
         panes: [
             (
                 pane: Component("header"),
-                size: "2",
+                size: "4",
+                borders: "ALL"
             ),
             (
                 pane: Pane(Tabs),
                 size: "3",
+                borders: "ALL"
             ),
             (
                 pane: Pane(TabContent),
                 size: "100%",
+                borders: "ALL"
             ),
             (
                 pane: Component("progress_bar"),
-                size: "1",
+                size: "3",
+                borders: "ALL",
             ),
         ],
     ),
@@ -226,7 +230,4 @@
             default: (kind: Property(Filename))
         ),
     ],
-    lyrics: (
-        timestamp: false
-    )
 )
