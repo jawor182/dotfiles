@@ -58,7 +58,7 @@ video/*)
     [ ! -f "$CACHE.jpg" ] && ebook-meta "$1" --get-cover="$CACHE.jpg" >/dev/null 2>&1
     image "$CACHE.jpg" "$2" "$3" "$4" "$5" "$1"
     ;;
-application/*zip) atool --list -- "$1" ;;
+application/*zip) exiftool "$1" ;;
 application/pgp-encrypted) gpg -d -- "$1" ;;
 esac
 exit 1
