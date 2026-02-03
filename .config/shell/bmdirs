@@ -9,8 +9,13 @@ cf                      ~/dotfiles/.config/
 cl                      ~/dotfiles/.local/share/
 rp                      ~/repos/projects/
 rr                      ~/repos/
-ss                      ~/repos/suckless/
-sd                      ~/repos/suckless/dwm/
+nss                     ~/repos/suckless/
+nsd                     ~/repos/suckless/dwm/
+nst                     ~/repos/suckless/st/
+nsb                     ~/repos/suckless/blocks/
+nsm                     ~/repos/suckless/dmenu/
+nsn                     ~/repos/suckless/nsxiv/
+nsl                     ~/repos/suckless/slock/
 dx                      ~/dox/
 dn                      ~/dox/notes/
 db                      ~/dox/boox/
