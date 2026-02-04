@@ -29,9 +29,6 @@ end
 
 function M:preload(job)
 	local cache = ya.file_cache(job)
-	if not cache or fs.cha(cache) then
-		return true
-	end
 
 	local output, err = Command("ffmpegthumbnailer")
         :arg("-i" .. tostring(job.file.url))
