@@ -17,7 +17,6 @@ unbind-key SPACE
 bind-key SPACE macro-prefix
 browser linkhandler
 datetime-format "%b %d %Y"
-text-width 80
 
 macro SPACE open-in-browser
 macro d set browser "dlvid" ; open-in-browser ; set browser linkhandler

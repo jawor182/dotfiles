@@ -16,6 +16,9 @@ nsb                     ~/repos/suckless/blocks/
 nsm                     ~/repos/suckless/dmenu/
 nsn                     ~/repos/suckless/nsxiv/
 nsl                     ~/repos/suckless/slock/
+wss                     ~/repos/wayland-suckless/
+wsd                     ~/repos/wayland-suckless/dwl/
+wsb                     ~/repos/wayland-suckless/someblocks/
 dx                      ~/dox/
 dn                      ~/dox/notes/
 db                      ~/dox/boox/
