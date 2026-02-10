@@ -30,6 +30,7 @@ foomatic-db-gutenprint-ppds
 gutenprint
 sane
 simple-scan
+system-config-printer
 # DE utils
 dunst
 gammastep
@@ -74,7 +75,7 @@ checkbashisms
 clang
 cmake
 dash
-djview
+djvulibre
 ffmpeg
 go
 gvfs
