@@ -2,6 +2,7 @@
 
 playerctld & 
 swww-daemon &
-wallpaper random &
 dunst &
 nightlight &
+foot -s &
+wallpaper random &
