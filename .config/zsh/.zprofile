@@ -1,6 +1,6 @@
 export PATH="$PATH:/$HOME/.local/bin/"
 export PATH="$PATH:/$HOME/.local/bin/statusbar"
-export EDITOR="ncd"
+export EDITOR="nvim"
 export FILES="yz"
 export BROWSER="librewolf"
 export XDG_CONFIG_HOME="$HOME/.config"

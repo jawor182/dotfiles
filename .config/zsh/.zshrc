@@ -49,7 +49,7 @@ function yz() {
 
 ff(){
     find $HOME/dotfiles/ -path "*/.git/*" -prune -o -type f -print | \
-    fzf -e --bind "enter:become(nvim {})"
+    fzf -e --bind "enter:become(ncd {})"
 }
 
 snc(){
