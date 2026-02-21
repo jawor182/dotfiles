@@ -1,0 +1,19 @@
+#!/bin/sh
+
+[ "$#" -eq 0 ] && exec nvim
+
+file=$1
+shift
+
+dir=$(dirname -- "$file") || exit 1
+base=$(basename -- "$file") || exit 1
+
+# Only cd if directory is not "."
+if [ "$dir" != "." ]; then
+    cd -- "$dir" || {
+        printf 'Failed to cd into %s\n' "$dir" >&2
+        exit 1
+    }
+fi
+
+exec nvim "$base" "$@"

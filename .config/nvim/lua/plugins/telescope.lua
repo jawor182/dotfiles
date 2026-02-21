@@ -13,6 +13,9 @@ return {
 						require("telescope.themes").get_dropdown({}),
 					},
 				},
+                defaults = {
+                    file_ignore_patterns = { "4 Archive/", "^.git/"}
+                }
 			})
 			require("telescope").load_extension("ui-select")
 		end,
