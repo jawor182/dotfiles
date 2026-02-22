@@ -19,3 +19,5 @@ vim.opt_local.conceallevel = 2
 
 vim.opt.termguicolors = true
 vim.opt.mouse = "a"
+
+vim.opt.autochdir = true
