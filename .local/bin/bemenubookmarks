@@ -5,7 +5,7 @@ bmfile=$HOME/keepassxc/bookmarks
 selectbookmark() {
     selected=$(cat "$bmfile" | bemenu -i -l 30 -p "Select bookmark:"| cut -d ' ' -f 1)
     [ -z "$selected" ] && exit
-    echo -n "$selected" | wl-copy
+    printf "%s" "$selected" | wl-copy
 }
 
 selectbookmark_browser() {

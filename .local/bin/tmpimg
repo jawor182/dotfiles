@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 tmp=$(mktemp /tmp/img-XXXXXXX)
 

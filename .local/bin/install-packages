@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 os_id=$(grep ^ID= /etc/os-release | cut -d= -f2)
 if [ "$os_id" = "arch" ]; then
