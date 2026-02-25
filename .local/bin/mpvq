@@ -15,11 +15,7 @@ deduplicate() {
 }
 
 clearclip(){
-    if [ "$XDG_SESSION_TYPE" = "x11" ]; then
-        xclip -selection clipboard /dev/null
-    else
-        wl-copy --clear
-    fi
+    wl-copy --clear
 }
 
 normalize_path() {
@@ -77,11 +73,7 @@ add() {
 
 addclip() {
     local clipfile
-    if [ "$XDG_SESSION_TYPE" = "x11" ]; then
-        clipfile=$(xclip -o -selection clipboard 2>/dev/null)
-    else
-        clipfile=$(wl-paste 2>/dev/null)
-    fi
+    clipfile=$(wl-paste 2>/dev/null)
 
     if echo "$clipfile" | grep -Eq '^https?://'; then
         add add "$clipfile"

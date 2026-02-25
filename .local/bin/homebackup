@@ -1,17 +1,23 @@
-#!/bin/bash
+#!/bin/sh
 
-dirs=("$HOME/dox/" "$HOME/repos/" "$HOME/keepassxc/" "$HOME/.ssh/")
-targetDir="/mnt/backup/"
+targetDir="/mnt/backup"
 currentDate=$(date "+%F")
 backupFile="backup-$currentDate.tar.gz"
 outputFile="$targetDir/$backupFile"
 
-[ ! -d $targetDir ] && echo "Could not find target directory" && exit 1
+[ ! -d "$targetDir" ] && echo "Could not find target directory" && exit 1
 [ -f "$outputFile" ] && echo "Backup for today ($currentDate) already exists" && exit 1
 
-echo "🔄 Starting backup: ${outputFile}"
+echo "🔄 Starting backup: $outputFile"
 
-if tar -czvf "$outputFile" --exclude="$HOME/dox/ISO" "${dirs[@]}"; then
+if tar -czvf "$outputFile" \
+    --exclude="$HOME/dox/ISO" \
+    "$HOME/dox" \
+    "$HOME/repos" \
+    "$HOME/keepassxc" \
+    "$HOME/dotfiles" \
+    "$HOME/.ssh"
+then
     echo "✅ Backup completed successfully!"
     echo "📦 Saved to: $outputFile"
 else

@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/sh
+
+exec 0</dev/null
 
 bmfile=$HOME/keepassxc/bookmarks
 
@@ -15,7 +17,7 @@ selectbookmark_browser() {
 }
 
 addbookmark(){
-    bookmark=$(wl-paste);
+    bookmark=$(wl-paste)
     if [ "$bookmark" != "" ];then
         cut "$bmfile" -d' ' -f1 | grep -qxF "$bookmark"  && notify-send "Bookmark is already in file" && exit 1 || echo "$bookmark" >> "$bmfile" && wl-copy --clear
         notify-send "Added $bookmark to bookmarks"
