@@ -15,7 +15,7 @@ deduplicate() {
 }
 
 clearclip(){
-    wl-copy --clear
+    xclip -selection clipboard /dev/null
 }
 
 normalize_path() {
@@ -23,13 +23,7 @@ normalize_path() {
     if [[ "$input" =~ ^https?:// ]]; then
         echo "$input"
     else
-        local abs
-        abs=$(realpath "$input" 2>/dev/null)
-        if [ -n "$abs" ]; then
-            echo "file://$abs"
-        else
-            echo "$input"
-        fi
+        realpath "$input" 2>/dev/null || echo "$input"
     fi
 }
 
@@ -62,7 +56,7 @@ add() {
         local current_playlist
         current_playlist=$(mpv_playlist)
         if ! echo "$current_playlist" | grep -Fxq "$normalized"; then
-            echo '{ "command": ["loadfile", "'"$normalized"'", "append"] }' | socat - "$ipc_socket"
+            jq -nc --arg f "$normalized" '{command:["loadfile",$f,"append"]}' | socat - "$ipc_socket"
         fi
     else
         # Clean up stale socket if it exists but MPV is dead
@@ -73,7 +67,7 @@ add() {
 
 addclip() {
     local clipfile
-    clipfile=$(wl-paste 2>/dev/null)
+    clipfile=$(xclip -o)
 
     if echo "$clipfile" | grep -Eq '^https?://'; then
         add add "$clipfile"

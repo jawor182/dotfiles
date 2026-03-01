@@ -7,7 +7,7 @@ TEMP_FILE="/tmp/screenshot_temp_${TIMESTAMP}.png" # Temporary file to hold the s
 
 mkdir -p "$SAVE_DIR"
 
-grim -g "$(slurp)" "$TEMP_FILE"
+scrot -s "$TEMP_FILE"
 
 if [ $? -ne 0 ] || [ ! -f "$TEMP_FILE" ]; then
     notify-send "Screenshot Aborted" "No selection made."
@@ -32,7 +32,7 @@ case "$OPTION" in
     fi
     ;;
 "Copy to Clipboard")
-    wl-copy <"$TEMP_FILE"
+    xclip -selection clipboard -target image/png -i "$TEMP_FILE"
     notify-send "Copied to Clipboard"
     rm -f "$TEMP_FILE"
     ;;

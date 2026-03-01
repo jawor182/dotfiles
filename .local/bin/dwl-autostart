@@ -1,7 +1,0 @@
-#!/bin/sh
-
-playerctld & 
-swww-daemon &
-dunst &
-nightlight &
-wallpaper random &

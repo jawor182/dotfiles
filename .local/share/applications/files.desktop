@@ -2,6 +2,6 @@
 Type=Application
 Name=File Manager
 Icon=yazi
-Exec=/usr/bin/foot -e yazi %f
+Exec=/usr/local/bin/st -e yazi %f
 Categories=System;FileManager;
 MimeType=inode/directory;

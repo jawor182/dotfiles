@@ -2,7 +2,7 @@
 # Format:
 # shortcut              path
 
-cC                      ~/dotfiles/
+cc                      ~/dotfiles/
 cs                      ~/dotfiles/.local/bin/
 cS                      ~/dotfiles/.local/bin/statusbar/
 cf                      ~/dotfiles/.config/
@@ -16,9 +16,6 @@ rsb                     ~/repos/suckless/blocks/
 rsm                     ~/repos/suckless/dmenu/
 rsn                     ~/repos/suckless/nsxiv/
 rsl                     ~/repos/suckless/slock/
-wss                     ~/repos/wayland-suckless/
-wsd                     ~/repos/wayland-suckless/dwl/
-wsb                     ~/repos/wayland-suckless/someblocks/
 dx                      ~/dox/
 dn                      ~/dox/notes/
 db                      ~/dox/boox/
