@@ -1,5 +1,5 @@
 text/plain; $EDITOR %s ;
-text/html; setsid -f $BROWSER %s; nametemplate=%s.html; copiousoutput;
+text/html; w3m %s; nametemplate=%s.html; copiousoutput;
 image/*; nsxiv %s ;
 video/*; setsid mpv --quiet %s &; copiousoutput
 audio/*; mpv %s ;
