@@ -2,6 +2,7 @@
 # Format:
 # shortcut              path
 
+cfa                     ~/dotfiles/.config/aerc/aerc.conf
 cfb                     ~/dotfiles/.config/newsboat/config
 cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfe                     ~/dotfiles/.config/mutt/muttrc

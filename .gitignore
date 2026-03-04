@@ -7,3 +7,4 @@
 .config/yazi/shortcuts.toml
 .config/ncmpcpp/error.log
 .config/mutt/accounts
+.config/aerc/accounts.conf

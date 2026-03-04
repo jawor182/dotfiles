@@ -1,0 +1,52 @@
+#
+# aerc gruvbox styleset
+#
+
+*.default=true
+*.dim=false
+
+title.reverse=true
+header.bold=true
+
+*error.bold=true
+error.fg=#cc241d
+warning.fg=#d79921
+success.fg=#689d6a
+
+statusline*.default=false
+statusline_default.reverse=false
+statusline_error.reverse=false
+
+completion_pill.reverse=true
+
+border.reverse=false
+
+selector_focused.reverse=true
+selector_chooser.bold=true
+
+*.selected.bg=#d65d0e
+*.selected.fg=#282828
+
+msglist_marked.fg=#282828
+msglist_marked.bg=#fabd2f
+msglist_flagged.fg=#b16286
+msglist_flagged.bold=true
+# msglist_default.bg=#282828
+
+msglist_unread.fg=#fb4934
+# msglist_unread.bg=#282828
+msglist_unread.selected.bg=#fb4934
+
+statusline_default.fg=#ebdbb2
+# statusline_default.bg=#282828
+statusline_error.fg=#fb4934
+
+tab.fg=#ebdbb2
+# tab.bg=#282828
+tab.selected.bg=#d65d0e
+tab.selected.fg=#282828
+
+dirlist_unread.fg=#fabd2f
+dirlist_recent.fg=#fabd2f
+# dirlist_default.bg=#282828
+dirlist_default.fg=#ebdbb2

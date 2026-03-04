@@ -58,6 +58,7 @@ rules = [
 	# Text
 	{ mime = "text/*",  use = [ "edit", "reveal" ] },
 	{ url = "*.diff",   use = [ "edit", "reveal" ] },
+	{ url = "*.conf",   use = [ "edit", "reveal" ] },
 	{ url = "*.patch",  use = [ "edit", "reveal" ] },
 	# Image
 	{ mime = "image/*", use = [ "open", "reveal" ] },
