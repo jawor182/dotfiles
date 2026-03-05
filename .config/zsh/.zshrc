@@ -48,7 +48,7 @@ function yz() {
 }
 
 ff(){
-    fd -H --full-path $HOME/dotfiles/ -E "*/.git" -t f | \
+    fd $HOME -H --full-path $HOME/dotfiles/ -E "*.git" -t f | \
     fzf -e --bind "enter:become(nvim {})"
 }
 
