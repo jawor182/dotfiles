@@ -1,6 +1,6 @@
 #!/bin/sh
 
-selected=$(find "$HOME/repos/projects" -mindepth 1 -maxdepth 1 -path "*/.git*" -prune -o -path "*archive" -prune -o -type d -print | fzf --height=100%)
+selected=$(fd --full-path "$HOME/repos/projects" --exact-depth 3 -E "*/.git*" -E "*archive" --type d | fzf)
 
 if [ -z "$selected" ]; then
     exit 1

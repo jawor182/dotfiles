@@ -48,7 +48,7 @@ function yz() {
 }
 
 ff(){
-    find $HOME/dotfiles/ -path "*/.git/*" -prune -o -type f -print | \
+    fd -H --full-path $HOME/dotfiles/ -E "*/.git" -t f | \
     fzf -e --bind "enter:become(nvim {})"
 }
 

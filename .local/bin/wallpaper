@@ -1,6 +1,6 @@
 #!/bin/sh
 
-randomWall=$(find "$HOME/walls" -type f -iname "*.png" -print0 | shuf -n 1 -z)
+randomWall=$(fd --full-path "$HOME/walls" --type f -e png | shuf -n 1)
 
 case "$1" in
     "random")
@@ -10,7 +10,7 @@ case "$1" in
         target="$2"
 
         if [ -d "$target" ]; then
-            wall=$(find "$target" -type f -iname "*.png" -print0 | shuf -n 1 -z)
+            wall=$(fd --full-path "$target" --type f -e png | shuf -n 1)
         else
             wall="$target"
         fi
@@ -18,6 +18,6 @@ case "$1" in
         xwallpaper --stretch "$wall"
         ;;
     "open")
-        find "$HOME/walls" -type f -iname '*.png' | shuf | nsxiv -t -
+        fd --full-path "$HOME/walls" --type f -e png | shuf | nsxiv -t -
         ;;
 esac
