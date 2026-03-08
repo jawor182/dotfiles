@@ -33,6 +33,7 @@ keepassxc
 pcmanfm-qt
 thunderbird
 # Terminal programs
+aerc
 btop
 calcurse
 fzf
