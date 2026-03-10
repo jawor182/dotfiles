@@ -1,6 +1,6 @@
 #!/bin/sh
 
-selected=$(fd --full-path "$HOME/repos/projects" --exact-depth 3 -E "*/.git*" -E "*archive" --type d | fzf)
+selected=$(fd . "$HOME/repos/projects" --exact-depth 1 -E "*/.git*" -E "*archive" --type d | fzf)
 
 if [ -z "$selected" ]; then
     exit 1
