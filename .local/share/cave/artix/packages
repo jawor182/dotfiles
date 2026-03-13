@@ -24,6 +24,7 @@ foomatic-db-gutenprint-ppds
 gutenprint
 sane
 simple-scan
+system-config-printer
 # DE utils
 dunst
 redshift
