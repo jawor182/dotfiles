@@ -15,4 +15,5 @@ cfv                     ~/.local/share/mpvq/playlist.m3u
 cfy                     ~/dotfiles/.config/yazi/yazi.toml
 cfz                     ~/dotfiles/.config/zsh/.zshrc
 ckb                     ~/keepassxc/bookmarks
+cke                     ~/keepassxc/accounts.conf
 cku                     ~/keepassxc/urls
