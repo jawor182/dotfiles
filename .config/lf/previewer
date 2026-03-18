@@ -56,6 +56,6 @@ video/*)
     ;;
 application/*zip) atool --list -- "$1" ;;
 application/pgp-encrypted) gpg -d -- "$1" ;;
-*) mediainfo "$1" ;;
+*) exiftool "$1" ;;
 esac
 exit 1
