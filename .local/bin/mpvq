@@ -15,7 +15,7 @@ deduplicate() {
 }
 
 clearclip(){
-    xclip -selection clipboard /dev/null
+    wl-copy --clear
 }
 
 normalize_path() {
@@ -67,7 +67,7 @@ add() {
 
 addclip() {
     local clipfile
-    clipfile=$(xclip -o)
+    clipfile=$(wl-paste)
 
     if echo "$clipfile" | grep -Eq '^https?://'; then
         add add "$clipfile"
