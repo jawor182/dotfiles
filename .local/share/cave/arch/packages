@@ -37,11 +37,11 @@ aerc
 btop
 calcurse
 fzf
+lf
 neomutt
 neovim
 newsboat
 tmux
-yazi
 # Appearance
 adw-gtk-theme
 gnome-themes-extra
@@ -88,6 +88,7 @@ luarocks
 make
 man-db
 man-pages
+mediainfo
 mokutil
 msmtp
 nodejs

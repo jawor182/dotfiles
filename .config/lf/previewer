@@ -7,8 +7,7 @@ IFS="$(printf '%b_' '\n')"
 IFS="${IFS%_}"
 
 image() {
-    # chafa "$1" -f sixel -s "$(($2-2))x$(($3-2))" --animate false --fill block --polite on -t 1 --bg "#282828" && exit 0
-    chafa "$1" -f sixel -s "$(($2-2))x$(($3-2))" --animate false --fill block  && exit 0
+    chafa "$1" -f sixel -s "$(($2-2))x$(($3-2))" --animate false --fill block --polite on -t 1 --bg "#282828" && exit 0
 }
 
 case "$(mimetype -b "$1")" in
@@ -57,5 +56,6 @@ video/*)
     ;;
 application/*zip) atool --list -- "$1" ;;
 application/pgp-encrypted) gpg -d -- "$1" ;;
+*) mediainfo "$1" ;;
 esac
 exit 1
