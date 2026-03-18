@@ -95,7 +95,6 @@ play() {
         --player-operation-mode=pseudo-gui \
         --input-ipc-server="$ipc_socket" \
         --script="$HOME/.config/mpv/scripts/mpvq-live-sync.lua" \
-        --x11-name="mpvq" \
         --script="/usr/lib/mpv-mpris/mpris.so" >/dev/null 2>&1 &
 }
 

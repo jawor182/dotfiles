@@ -8,7 +8,6 @@ cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfe                     ~/dotfiles/.config/mutt/muttrc
 cfm                     ~/dotfiles/.config/mpv/mpv.conf
 cfn                     ~/dotfiles/.config/nvim/init.lua
-cfp                     ~/dotfiles/.config/picom/picom.conf
 cfr                     ~/dotfiles/.config/rmpc/config.ron
 cft                     ~/dotfiles/.config/tmux/tmux.conf
 cfv                     ~/.local/share/mpvq/playlist.m3u                          

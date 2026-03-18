@@ -36,5 +36,3 @@ gd="git diff" \
 gs="git status" \
 gr="git restore" \
 gl="git log" \
-xcopy="xclip -selection clipboard" \
-xclipclear="xclip -selection clipboard /dev/null"
