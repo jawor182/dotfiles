@@ -46,7 +46,7 @@ map O $mimeopen --ask $fx
 
 cmd open &{{
     case $(mimetype -b "$f") in
-        text/*|application/x-troff-man|application/json|application/mbox|application/x-shellscript|inode/x-empty|application/x-subrip) lf -remote "send $id \$$EDITOR \$fx" ;;
+        text/*|application/x-desktop|application/x-troff-man|application/json|application/mbox|application/x-shellscript|inode/x-empty|application/x-subrip|audio/x-mod) lf -remote "send $id \$$EDITOR \$fx" ;;
         image/x-xcf) gimp "$fx" ;;
         image/vnd.djvu|application/pdf|application/postscript) zathura "$fx" ;; 
         image/*) nsxiv "$fx" ;; 
