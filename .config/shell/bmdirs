@@ -4,7 +4,6 @@
 
 cc                      ~/dotfiles/
 cs                      ~/dotfiles/.local/bin/
-cS                      ~/dotfiles/.local/bin/statusbar/
 cf                      ~/dotfiles/.config/
 cl                      ~/dotfiles/.local/share/
 rp                      ~/repos/projects/
@@ -12,14 +11,9 @@ rr                      ~/repos/
 rss                     ~/repos/suckless/
 rsd                     ~/repos/suckless/dwm/
 rst                     ~/repos/suckless/st/
-rsb                     ~/repos/suckless/blocks/
-rsm                     ~/repos/suckless/dmenu/
 rsn                     ~/repos/suckless/nsxiv/
-rsl                     ~/repos/suckless/slock/
 wss                     ~/repos/wayland-suckless/
 wsd                     ~/repos/wayland-suckless/dwl/
-wsb                     ~/repos/wayland-suckless/someblocks/
-dx                      ~/dox/
 dn                      ~/dox/notes/
 db                      ~/dox/boox/
 dp                      ~/dox/pix/

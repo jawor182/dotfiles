@@ -6,13 +6,15 @@ cfa                     ~/dotfiles/.config/aerc/aerc.conf
 cfb                     ~/dotfiles/.config/newsboat/config
 cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfe                     ~/dotfiles/.config/mutt/muttrc
+cff                     ~/dotfiles/.config/foot/foot.ini
+cfl                     ~/dotfiles/.config/lf/lfrc
 cfm                     ~/dotfiles/.config/mpv/mpv.conf
 cfn                     ~/dotfiles/.config/nvim/init.lua
 cfr                     ~/dotfiles/.config/rmpc/config.ron
 cft                     ~/dotfiles/.config/tmux/tmux.conf
-cfv                     ~/.local/share/mpvq/playlist.m3u                          
 cfy                     ~/dotfiles/.config/yazi/yazi.toml
 cfz                     ~/dotfiles/.config/zsh/.zshrc
+cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks
 cke                     ~/keepassxc/accounts.conf
 cku                     ~/keepassxc/urls

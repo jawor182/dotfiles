@@ -1,7 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=File Manager
-Icon=yazi
-Exec=/usr/bin/foot -e yazi %f
-Categories=Syfootem;FileManager;
+Exec=/usr/bin/foot -e lf %f
+Categories=System;FileManager;
 MimeType=inode/directory;
