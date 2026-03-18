@@ -1,11 +1,11 @@
 # X and it's utilites
-lxappearance
-scrot
-xclip
-xcolor
-xdotool
-xlibre
-xwallpaper
+foot
+grim
+nwg-look
+slurp
+swww
+wayland
+wlroots0.19
 # media 
 calibre
 mpc
@@ -27,12 +27,11 @@ simple-scan
 system-config-printer
 # DE utils
 dunst
+gammastep
 syncthing
-redshift
 # GUI
 keepassxc
 pcmanfm-qt
-thunderbird
 # Terminal programs
 aerc
 btop
