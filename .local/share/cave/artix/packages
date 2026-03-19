@@ -1,10 +1,10 @@
 # X and it's utilities
-grim
-nwg-look
-slurp
-swww
-wayland
-wlroots0.19
+lxappearance
+scrot
+xclip
+xdotool
+xlibre
+xwallpaper
 # media
 calibre
 mpc
@@ -27,7 +27,7 @@ simple-scan
 system-config-printer
 # DE utils
 dunst
-gammastep
+redshift
 syncthing
 # GUI
 keepassxc
@@ -36,8 +36,8 @@ pcmanfm-qt
 aerc
 btop
 calcurse
-fzf
 lf
+fzf
 neovim
 newsboat
 tmux
@@ -81,7 +81,6 @@ luarocks
 make
 man
 man-db
-mediainfo
 mokutil
 nodejs
 npm

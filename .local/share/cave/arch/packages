@@ -1,11 +1,11 @@
 # X and it's utilites
-foot
-grim
-nwg-look
-slurp
-swww
-wayland
-wlroots0.19
+lxappearance
+scrot
+xclip
+xcolor
+xdotool
+xlibre
+xwallpaper
 # media 
 calibre
 mpc
@@ -27,21 +27,22 @@ simple-scan
 system-config-printer
 # DE utils
 dunst
-gammastep
 syncthing
+redshift
 # GUI
 keepassxc
 pcmanfm-qt
+thunderbird
 # Terminal programs
 aerc
 btop
 calcurse
 fzf
-lf
 neomutt
 neovim
 newsboat
 tmux
+yazi
 # Appearance
 adw-gtk-theme
 gnome-themes-extra
@@ -88,7 +89,6 @@ luarocks
 make
 man-db
 man-pages
-mediainfo
 mokutil
 msmtp
 nodejs

@@ -4,7 +4,7 @@ randomWall=$(fd --full-path "$HOME/walls" --type f -e png | shuf -n 1)
 
 case "$1" in
     "random")
-        swww img --transition-duration=0.5 --transition-fps=165 --transition-step=90 --transition-type=grow --resize=stretch "$randomWall"
+        xwallpaper --stretch "$randomWall"
         ;;
     "set")
         target="$2"
@@ -15,7 +15,7 @@ case "$1" in
             wall="$target"
         fi
 
-        swww img --transition-duration=0.5 --transition-fps=165 --transition-step=90 --transition-type=grow --resize=stretch "$wall"
+        xwallpaper --stretch "$wall"
         ;;
     "open")
         fd --full-path "$HOME/walls" --type f -e png | shuf | nsxiv -t -

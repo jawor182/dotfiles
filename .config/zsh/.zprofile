@@ -1,7 +1,7 @@
 export PATH="$PATH:/$HOME/.local/bin/"
 export PATH="$PATH:/$HOME/.local/bin/statusbar"
 export EDITOR="nvim"
-export FILES="lf"
+export FILES="lfub"
 export BROWSER="librewolf"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -29,5 +29,5 @@ export BEMENU_OPTS="--fn 'JetBrainsMonoNerdFont 16' -H 30 -i -p '' --hp 8 --fb '
 export BAT_THEME="gruvbox-dark"
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec dwl-start-session
+        exec startx
 fi

@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Mail
-Exec=/usr/bin/foot -e aerc %u
+Exec=/usr/local/bin/st -e aerc %u
