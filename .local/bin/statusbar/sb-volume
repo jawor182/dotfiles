@@ -14,4 +14,5 @@ volume=$(wpctl get-volume @DEFAULT_SINK@ )
 volume=$(wpctl get-volume @DEFAULT_SINK@ | awk '{print $2 * 100 }')
 icon=""
 
-printf "%s %s\n" "$icon" "$volume%"
+# printf "%s %s\n" "$icon" "$volume%"
+printf "%s" "$volume%"

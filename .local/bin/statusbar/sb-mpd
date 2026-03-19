@@ -29,4 +29,5 @@ else
     output="$info $time"
 fi
 
-printf " %s %s\n" "$statusIcon" "$output"
+# printf " %s %s\n" "$statusIcon" "$output"
+printf "%s\n" "$output"

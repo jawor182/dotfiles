@@ -1,0 +1,5 @@
+#!/bin/sh
+
+weather=$(curl -s "wttr.in/Szczecin?format=3" | awk '{print $3}' | sed 's/+//')
+
+printf "%s\n" "$weather"

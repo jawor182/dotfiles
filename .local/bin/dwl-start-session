@@ -22,4 +22,5 @@ export BEMENU_OPTS="--fn 'JetBrainsMonoNerdFont 16' -H 30 -i -p '' --hp 8 --fb '
 
 dbus-update-activation-environment --all
 
-someblocks -p | dwl -s "$HOME/.local/bin/dwl-autostart <&- "
+dwl -s "$HOME/.local/bin/dwl-autostart <&- "
+# someblocks -p | dwl -s "$HOME/.local/bin/dwl-autostart <&- "
