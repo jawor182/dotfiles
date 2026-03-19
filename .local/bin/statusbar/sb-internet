@@ -6,8 +6,6 @@
 # 󰖪 there is no internet via wifi
 
 case $BLOCK_BUTTON in
-    1) setsid -f nm-connection-editor ;;
-    3) "$TERMINAL" -c "floatingTerm" -e nmtui ;;
     6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
