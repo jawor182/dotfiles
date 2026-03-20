@@ -15,7 +15,7 @@ ex              
 *.ico           
 *.jpg           
 *.jpe           
-*.jpe           
+*.jpeg          
 *.gif           
 *.svg           
 *.tif           
@@ -182,8 +182,8 @@ ex              
 *Makefile               
 *cmakelists.txt         
 *robots.txt             󰚩
-*.docx                  󰏆
-*.doc                   󰏆
+*.docx                  
+*.doc                   
 *go.mod                 
 *.mk                    
 *.o                     
@@ -191,3 +191,9 @@ ex              
 *.info                  
 *.ics                   
 *.kdbx                  
+*.odp                   󰈧
+*.pptx                  󰈧
+*.stl                   
+*.3mf                   
+*.fcstd                 
+*.fcbak                 

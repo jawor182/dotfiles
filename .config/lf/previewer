@@ -37,7 +37,8 @@ image/x-xcf)
     ;;
 image/*) image "$1" "$2" "$3" "$4" "$5" ;;
 application/x-troff-man) man ./ "$1" | col -b ;;
-text/*|*/xml|application/x-desktop|application/json|application/x-ndjson|application/mbox|audio/x-mod|application/x-shellscript|inode/symlink) bat --color=always -p --theme gruvbox-dark "$1" ;;
+text/*|*/xml|application/x-desktop|application/json|application/x-ndjson|application/mbox|audio/x-mod|application/x-shellscript|inode/symlink|application/vnd.ms-publisher|application/pgp-signature|application/x-trash)
+    bat --color=always -p --theme gruvbox-dark "$1" ;;
 audio/*|application/octet-stream)
     CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/lf/thumb.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | cut -d' ' -f1).jpg"
     [ ! -f "$CACHE" ] && ffmpegthumbnailer -i "$1" -o "$CACHE" -s 0 -m 100%
