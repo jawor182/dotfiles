@@ -140,7 +140,6 @@ return {
                 ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Enter>"] = cmp.mapping.confirm({ select = true }),
                 ["<Enter>"] = cmp.mapping.confirm({ select = false }),
-                ["<Tab>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({

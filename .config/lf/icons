@@ -96,6 +96,9 @@ ex              
 *.mustache      
 *.hbs           
 *.conf          
+*.config        
+*config         
+*conf           
 *.ini           
 *.yml           
 *.yaml          
