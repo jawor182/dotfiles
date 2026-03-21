@@ -1,3 +1,0 @@
-#!/bin/sh
-
-"$TERMINAL" -c floatingTerm -e sh -ic "cat $HOME/.local/share/cave/unicode | fzf | cut -d' ' -f1 | tr -d '\n' | xclip -selection clipboard"
