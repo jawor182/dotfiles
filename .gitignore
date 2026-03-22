@@ -9,3 +9,4 @@
 .config/mutt/accounts
 .config/aerc/accounts.conf
 .config/zsh/.zcompcache
+.config/shell/shortcutsrc

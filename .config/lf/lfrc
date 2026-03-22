@@ -39,14 +39,14 @@ map R bulkrename
 map M &mpvq add $fx
 map W &wallpaper set $fx
 map E extract $fx
-map i !mimetype -b $fx
+map i !file --mime-type -Lb $fx
 map o &mimeopen $fx
 map O $mimeopen --ask $fx
 
 # Commands
 
 cmd open &{{
-    case $(mimetype -b "$f") in
+    case $(file --mime-type -Lb "$f") in
         text/*|application/x-desktop|application/x-troff-man|application/json|application/mbox|application/x-shellscript|inode/x-empty|application/x-subrip|audio/x-mod|inode/symlink) lf -remote "send $id \$$EDITOR \$fx" ;;
         image/x-xcf) gimp "$fx" ;;
         image/vnd.djvu|application/pdf|application/postscript) zathura "$fx" ;; 
