@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 path="$HOME/.local/share/mpvq"
 playlist="$path/playlist.m3u"
@@ -18,13 +18,12 @@ clearclip(){
     xclip -selection clipboard /dev/null
 }
 
-normalize_path() {
-    local input="$1"
-    if [[ "$input" =~ ^https?:// ]]; then
-        echo "$input"
-    else
-        realpath "$input" 2>/dev/null || echo "$input"
-    fi
+normalize_path(){
+    input="$1"
+    case "$input" in
+        http://*|https://*) echo "$input" ;;
+        *) realpath "$input" 2>/dev/null || echo "$input";;
+    esac
 }
 
 mpv_running() {
@@ -43,17 +42,15 @@ mpv_playlist() {
 }
 
 add() {
-    local file_or_url="$2"
+    file_or_url="$2"
     [ -z "$file_or_url" ] && { echo "Usage: mpvq add <file-or-url>"; exit 1; }
 
-    local normalized
     normalized=$(normalize_path "$file_or_url")
 
     echo "$normalized" >>"$playlist"
     deduplicate
 
     if mpv_running; then
-        local current_playlist
         current_playlist=$(mpv_playlist)
         if ! echo "$current_playlist" | grep -Fxq "$normalized"; then
             jq -nc --arg f "$normalized" '{command:["loadfile",$f,"append"]}' | socat - "$ipc_socket"
@@ -66,7 +63,6 @@ add() {
 }
 
 addclip() {
-    local clipfile
     clipfile=$(xclip -o)
 
     if echo "$clipfile" | grep -Eq '^https?://'; then
@@ -86,8 +82,8 @@ show() {
 }
 
 play() {
-    exec 200>"$lockfile"
-    flock -n 200 || { echo "Another mpvq instance is already running!"; exit 1; }
+    exec 9>"$lockfile"
+    flock -n 9 || { echo "Another mpvq instance is already running!"; exit 1; }
 
     setsid -f mpv \
         --playlist="$playlist" \
