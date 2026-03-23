@@ -40,7 +40,6 @@ lf
 fzf
 neovim
 newsboat
-tmux
 # Appearance
 adw-gtk-theme
 gnome-themes-extra

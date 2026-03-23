@@ -19,7 +19,6 @@ la="ls -la" \
 ll="ls -l" \
 ls="ls --color=always --group-directories-first -hN" \
 restow="cd ~/dotfiles && stow -R ." \
-t="tmux" \
 dev="npm run dev" \
 nb="newsboat" \
 f="lfcd" \
