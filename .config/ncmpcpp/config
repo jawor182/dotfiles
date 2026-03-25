@@ -1,0 +1,62 @@
+ # vim: filetype=conf
+
+ncmpcpp_directory = "~/.config/ncmpcpp"
+lyrics_directory = "~/.local/share/lyrics"
+mpd_music_dir = "~/media/musik/"
+message_delay_time = "1"
+visualizer_type = "ellipse"
+visualizer_fps = 165
+
+# --- Song Formats ---
+
+song_list_format = {%a - }{%t}|{$8%f$9}$R{(%l)}
+song_status_format = $b{{$8"%t"}} $(167)by {$(167)%a{ $(167)- $7%b} $(167)}|{$8%f}
+song_library_format = {%n - }{%t}|{%f}
+song_columns_list_format = "(20)[]{a} (35)[]{t} (30)[]{b} (15)[]{l}"
+
+# --- Alternative Header ---
+
+alternative_header_first_line_format = $b$1$aqqu$/a$9 {$(167)$b%b} $1$atqq$/a$9$/b
+alternative_header_second_line_format = {{$(167)$b%a$/b$9}{ - %t}}|{%D}
+
+# --- UI & Colors ---
+
+user_interface = alternative
+main_window_color = 167
+empty_tag_color = 167
+color1 = 256
+color2 = 167
+discard_colors_if_item_is_selected = yes
+
+# Selection Bar (Active and Inactive)
+
+current_item_prefix = "$(256)$(167)$r$b"
+current_item_suffix = "$/r$(end)$/b"
+now_playing_prefix = "$b$(167)"
+now_playing_suffix = "$/b$(end)"
+current_item_inactive_column_prefix = "$(256)$(167)$r"
+current_item_inactive_column_suffix = $/r$(end)
+
+# Progress Bar & Status
+
+progressbar_color = black:b
+progressbar_elapsed_color = 167:b
+statusbar_color = 167
+statusbar_time_color = 167:b
+volume_color = 167:b
+
+# --- Behavior ---
+
+playlist_display_mode = columns
+browser_display_mode = columns
+header_visibility = no
+progressbar_look = =>
+media_library_primary_tag = album_artist
+media_library_albums_split_by_date = no
+startup_screen = "playlist"
+display_volume_level = yes
+volume_change_step = 5
+ignore_leading_the = yes
+external_editor = nvim
+use_console_editor = yes
+seek_time = 5 
