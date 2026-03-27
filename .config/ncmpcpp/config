@@ -16,25 +16,25 @@ song_columns_list_format = "(20)[]{a} (35)[]{t} (30)[]{b} (15)[]{l}"
 
 # --- Alternative Header ---
 
-alternative_header_first_line_format = $b$1$aqqu$/a$9 {$(167)$b%b} $1$atqq$/a$9$/b
-alternative_header_second_line_format = {{$(167)$b%a$/b$9}{ - %t}}|{%D}
+alternative_header_first_line_format = $b$(16)$9 {$(167)$b%b} $(16)$9$/b
+alternative_header_second_line_format = {{$(167)$b%a$/b$9}{ - $(16)%t}}|{%D}
 
 # --- UI & Colors ---
 
 user_interface = alternative
-main_window_color = 167
+main_window_color = 16
 empty_tag_color = 167
-color1 = 256
+color1 = 16
 color2 = 167
 discard_colors_if_item_is_selected = yes
 
 # Selection Bar (Active and Inactive)
 
-current_item_prefix = "$(256)$(167)$r$b"
+current_item_prefix = "$(16)$(167)$r$b"
 current_item_suffix = "$/r$(end)$/b"
 now_playing_prefix = "$b$(167)"
 now_playing_suffix = "$/b$(end)"
-current_item_inactive_column_prefix = "$(256)$(167)$r"
+current_item_inactive_column_prefix = "$(16)$(167)$r"
 current_item_inactive_column_suffix = $/r$(end)
 
 # Progress Bar & Status
@@ -44,6 +44,9 @@ progressbar_elapsed_color = 167:b
 statusbar_color = 167
 statusbar_time_color = 167:b
 volume_color = 167:b
+state_flags_color = 16:b
+player_state_color = 16:b
+alternative_ui_separator_color = 167
 
 # --- Behavior ---
 
@@ -60,3 +63,4 @@ ignore_leading_the = yes
 external_editor = nvim
 use_console_editor = yes
 seek_time = 5 
+enable_window_title = no

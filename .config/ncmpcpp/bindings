@@ -455,20 +455,18 @@ def_key "g"
   move_home
 def_key "U"
   update_database
-# def_key "s"
-#   reset_search_engine
-# def_key "s"
-#   show_search_engine
+def_key "S"
+  reset_search_engine
+def_key "S"
+  show_search_engine
 def_key "f"
  seek_forward
 def_key "f"
   change_browse_mode
 def_key "d"
  delete_playlist_items
-
 def_key "d"
  delete_browser_items
-
 def_key "d"
  delete_stored_playlist
 def_key "P"
@@ -483,6 +481,13 @@ def_key "D"
  clear_main_playlist
 def_key "space"
  select_item
+def_key "space"
+ toggle_visualization_type
 def_key "a"
  add_selected_items
-
+def_key "c"
+ toggle_consume
+def_key "s"
+ toggle_single
+def_key "ctrl-s"
+ save_playlist
