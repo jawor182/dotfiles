@@ -95,6 +95,11 @@ ex              
 *.coffee        
 *.mustache      
 *.hbs           
+*zathurarc      
+*dunstrc        
+*muttrc         
+*lfrc           
+*wgetrc         
 *.conf          
 *.config        
 *config         
@@ -200,3 +205,4 @@ ex              
 *.3mf                   
 *.fcstd                 
 *.fcbak                 
+*Xresources             

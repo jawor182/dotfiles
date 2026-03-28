@@ -27,7 +27,7 @@ map . set hidden!
 map <enter> shell
 map <esc> unselect-all
 map A push :mkdir<space>""<left>
-map a :push %touch<space>
+map a push :%touch<space>""<left>
 map H cd ~
 map w !true
 map x cut
