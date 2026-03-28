@@ -13,7 +13,6 @@ mpd
 mpv
 mpv-mpris
 ncmpcpp
-rmpc
 zathura
 zathura-djvu
 zathura-pdf-mupdf
@@ -35,7 +34,6 @@ keepassxc
 pcmanfm-qt
 thunderbird
 # Terminal programs
-aerc
 btop
 calcurse
 fzf

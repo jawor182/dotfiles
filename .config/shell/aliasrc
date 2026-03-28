@@ -5,7 +5,6 @@ b="btop" \
 n="nvim" \
 nm="neomutt" \
 np="ncmpcpp" \
-ac="aerc" \
 s="ssnizer" \
 sn="sudoedit" \
 p="sudo pacman" \

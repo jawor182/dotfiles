@@ -2,7 +2,6 @@
 # Format:
 # shortcut              path
 
-cfa                     ~/dotfiles/.config/aerc/aerc.conf
 cfb                     ~/dotfiles/.config/newsboat/config
 cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfe                     ~/dotfiles/.config/mutt/muttrc
@@ -10,7 +9,6 @@ cfl                     ~/dotfiles/.config/lf/lfrc
 cfm                     ~/dotfiles/.config/mpv/mpv.conf
 cfn                     ~/dotfiles/.config/nvim/init.lua
 cfp                     ~/dotfiles/.config/picom/picom.conf
-cfr                     ~/dotfiles/.config/rmpc/config.ron
 cfz                     ~/dotfiles/.config/zsh/.zshrc
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks

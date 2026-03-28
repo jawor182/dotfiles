@@ -12,7 +12,6 @@ mpd
 mpv
 mpv-mpris
 ncmpcpp
-rmpc
 zathura
 zathura-djvu
 zathura-pdf-mupdf
@@ -34,7 +33,6 @@ syncthing
 keepassxc
 pcmanfm-qt
 # Terminal programs
-aerc
 btop
 calcurse
 lf
