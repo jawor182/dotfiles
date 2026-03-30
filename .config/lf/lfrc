@@ -49,6 +49,7 @@ cmd open &{{
         image/x-xcf) gimp "$fx" ;;
         image/vnd.djvu|application/pdf|application/postscript) zathura "$fx" ;; 
         image/*) nsxiv "$fx" ;; 
+        audio/ogg) setsid -f $TERMINAL -e mpv "$fx" ;;
         audio/*|video/x-ms-asf|video/*) setsid -f mpv "$fx" -quiet >/dev/null 2>&1 ;;
         application/*tar|application/gzip|application/zip|application/x-7z-compressed|application/x-xz) lf -remote "send $id extract \$fx" ;;
         *) for f in $fx; do setsid -f $OPENER "$f" > /dev/null 2> /dev/null & done ;;
@@ -59,11 +60,12 @@ cmd mkdir $mkdir -p "$@"
 cmd unselect-all :clear; unselect; visual-unselect
 
 cmd delete ${{
-    set -f
-    printf "$fx\n"
+    for f in $fx; do
+        printf "%s\n" "$f"
+    done
     printf "delete? [y/N] "
     read ans
-    [ "$ans" = "y" ] && rm -rf $fx
+    [ "$ans" = "y" ] && for f in $fx; do rm -rf -- "$f"; done
 }}
 
 cmd rename-vim ${{

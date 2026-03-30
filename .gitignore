@@ -10,3 +10,4 @@
 .config/aerc/accounts.conf
 .config/zsh/.zcompcache
 .config/shell/shortcutsrc
+.config/mutt/.mailsynclastrun

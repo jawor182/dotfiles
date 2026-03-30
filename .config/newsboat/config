@@ -4,8 +4,6 @@ bind-key J next-feed articlelist
 bind-key K prev-feed articlelist
 bind-key G end
 bind-key g home
-bind-key d pagedown
-bind-key u pageup
 bind-key l open
 bind-key h quit
 bind-key a toggle-article-read
@@ -47,5 +45,10 @@ highlight feedlist "^─.*$" color166 default bold
 
 reload-threads 100
 cleanup-on-quit yes
+
+# Podboat
+download-path "~/media/podcasts/"
+max-downloads 10
+player mpv
 
 # vim: filetype=conf

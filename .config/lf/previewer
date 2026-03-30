@@ -29,7 +29,8 @@ image/*) image "$1" "$2" "$3" "$4" "$5" ;;
 text/troff) man ./ "$1" | col -b ;;
 text/*|*/xml|application/x-desktop|application/json|application/x-ndjson|application/mbox|audio/x-mod|application/x-shellscript|inode/symlink|application/vnd.ms-publisher|application/pgp-signature|application/x-trash|application/x-wine-extension-ini)
     bat --color=always -p --theme gruvbox-dark "$1" ;;
-audio/*|application/octet-stream)
+audio/ogg) mediainfo "$1" ;;
+audio/mpeg)
     CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/lf/thumb.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | cut -d' ' -f1).jpg"
     [ ! -f "$CACHE" ] && ffmpegthumbnailer -i "$1" -o "$CACHE" -s 0 -m 100%
     image "$CACHE" "$2" "$3" "$4" "$5" "$1"
@@ -51,5 +52,6 @@ video/*)
     ;;
 application/*zip) atool --list -- "$1" ;;
 application/pgp-encrypted) gpg -d -- "$1" ;;
+*) exiftool "$1"
 esac
 exit 1

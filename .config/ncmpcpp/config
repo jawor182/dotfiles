@@ -12,7 +12,7 @@ visualizer_fps = 165
 song_list_format = {%a - }{%t}|{$8%f$9}$R{(%l)}
 song_status_format = $b{{$8"%t"}} $(167)by {$(167)%a{ $(167)- $7%b} $(167)}|{$8%f}
 song_library_format = {%n - }{%t}|{%f}
-song_columns_list_format = "(20)[]{a} (35)[]{t} (30)[]{b} (15)[]{l}"
+song_columns_list_format = "(30)[]{a} (30)[]{t} (35)[]{b} (5)[]{l}"
 
 # --- Alternative Header ---
 

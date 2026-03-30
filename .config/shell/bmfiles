@@ -3,6 +3,7 @@
 # shortcut              path
 
 cfb                     ~/dotfiles/.config/newsboat/config
+cfc                     ~/dotfiles/.config/ncmpcpp/config
 cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfe                     ~/dotfiles/.config/mutt/muttrc
 cfl                     ~/dotfiles/.config/lf/lfrc
