@@ -226,7 +226,7 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-q>', '<C-w>q', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', 'Y', "'+y", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'Y', '"+y', { noremap = true, silent = true })
 vim.keymap.set(
     'n',
     '<leader>R',
