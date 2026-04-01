@@ -7,7 +7,7 @@ TEMP_FILE="/tmp/screenshot_temp_${TIMESTAMP}.png" # Temporary file to hold the s
 
 mkdir -p "$SAVE_DIR"
 
-scrot -s "$TEMP_FILE"
+maim -s -B "$TEMP_FILE"
 
 if [ $? -ne 0 ] || [ ! -f "$TEMP_FILE" ]; then
     notify-send "Screenshot Aborted" "No selection made."
