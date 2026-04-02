@@ -31,8 +31,9 @@ ex              
 *.epub          
 *.djvu          
 *.mobi          
-*.csv           
-*.xls           
+*.csv           󰈛
+*.xls           󰈛
+*.ods           󰈛
 *.tex           
 *.md            
 *.r	            
@@ -113,7 +114,7 @@ ex              
 *.cxx           
 *.cc            
 *.cp            
-*.c             
+*.c             
 *.cs            󰌛
 *.h             
 *.hh            
@@ -137,6 +138,7 @@ ex              
 *.sql           
 *.dump          
 *.go            
+*go.mod         
 *.rss           
 *.rs            
 *.rlib          
@@ -190,9 +192,8 @@ ex              
 *Makefile               
 *cmakelists.txt         
 *robots.txt             󰚩
-*.docx                  
-*.doc                   
-*go.mod                 
+*.docx                  󰈬
+*.doc                   󰈬
 *.mk                    
 *.o                     
 *.desktop               󰍹

@@ -197,9 +197,7 @@ require('telescope').setup({
     defaults = {
         preview = { treesitter = true },
         color_devicons = true,
-        defaults = {
-            file_ignore_patterns = { '4 Archive/', '^.git/' },
-        },
+        file_ignore_patterns = { '4 Archive/', '^%.git/' },
     },
 })
 require('telescope').load_extension('ui-select')
