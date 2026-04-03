@@ -32,7 +32,6 @@ map H cd ~
 map w !true
 map x cut
 map D delete $fx
-map r rename-vim
 map R bulkrename
 map M &mpvq add $fx
 map W &wallpaper set $fx
@@ -40,6 +39,12 @@ map E extract $fx
 map i !file --mime-type -Lb $fx
 map o &mimeopen $fx
 map O $mimeopen --ask $fx
+map A :rename; cmd-end # at the very end
+map c push A<c-u> # new rename
+map I :rename; cmd-home # at the very beginning
+map i :rename # before extension
+map a :rename; cmd-right # after extension
+map r rename-vim
 
 # Commands
 
