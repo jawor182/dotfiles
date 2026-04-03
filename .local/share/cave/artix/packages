@@ -70,7 +70,6 @@ gvfs-afc
 gvfs-mtp
 imagemagick
 jq
-libimobiledevice
 libmtp
 lm_sensors
 lshw
