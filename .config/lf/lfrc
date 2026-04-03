@@ -27,12 +27,13 @@ map . set hidden!
 map <enter> shell
 map <esc> unselect-all
 map A push :mkdir<space>""<left>
-map a push :%touch<space>""<left>
+map a push :mkfile<space>""<left>
 map H cd ~
 map w !true
 map x cut
 map D delete $fx
-map R bulkrename
+map B bulkrename
+map R rename-vim
 map M &mpvq add $fx
 map W &wallpaper set $fx
 map E extract $fx
@@ -41,12 +42,12 @@ map o &mimeopen $fx
 map O $mimeopen --ask $fx
 
 map r
-map rA :rename; cmd-end # at the very end
-map rc push A<c-u> # new rename
-map rI :rename; cmd-home # at the very beginning
-map ri :rename # before extension
-map ra :rename; cmd-right # after extension
-map rr rename-vim
+map rA :rename; cmd-end # change ext
+map ra :rename; cmd-right # after .
+# map rr push A<c-u> # replace
+map rr :rename; cmd-home; cmd-delete-end
+map rI :rename; cmd-home # rename at start
+map ri :rename # rename before .
 
 # Commands
 
@@ -64,6 +65,7 @@ cmd open &{{
 }}
 
 cmd mkdir $mkdir -p "$@"
+cmd mkfile $touch "$@"
 cmd unselect-all :clear; unselect; visual-unselect
 
 cmd delete ${{

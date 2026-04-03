@@ -47,6 +47,9 @@ vim.pack.add({
     }
 })
 
+vim.cmd("packadd nvim.undotree")
+vim.keymap.set("n", "<leader>u", require("undotree").open)
+
 require('nvim-treesitter.configs').setup({
     ensure_installed = { 'lua', 'php', 'javascript', 'html', 'css', 'tsx', 'typescript', 'go' },
     sync_install = true,
