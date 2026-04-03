@@ -4,7 +4,7 @@
 
 # Apps autostart
 dwmblocks &
-fastcompmgr &
+picom -b &
 dunst &
 playerctld &
 redshift &
