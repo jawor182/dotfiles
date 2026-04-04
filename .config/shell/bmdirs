@@ -10,6 +10,8 @@ rp                      ~/repos/projects/
 rr                      ~/repos/
 rss                     ~/repos/suckless/
 rsd                     ~/repos/suckless/dwm/
+wss                     ~/repos/wayland-suckless/
+wsd                     ~/repos/wayland-suckless/dwl/
 dx                      ~/dox/
 dn                      ~/dox/notes/
 db                      ~/dox/boox/

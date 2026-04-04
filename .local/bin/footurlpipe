@@ -1,0 +1,15 @@
+#!/bin/sh
+
+urls=$(xurls)
+
+[ -z "$urls" ] || selUrl=$(echo "$urls" | bemenu -l 10 -i -p "Choose Link")
+
+[ -z "$selUrl" ] && exit 1
+
+case $1 in
+    "-o")
+       setsid -f xdg-open "$selUrl";;
+    "-y")
+        echo "$selUrl" | wl-copy;;
+      *)
+esac

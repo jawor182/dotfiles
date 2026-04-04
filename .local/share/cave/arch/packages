@@ -1,11 +1,18 @@
-# X and it's utilites
-lxappearance
-maim
-xclip
-xcolor
-xdotool
-xlibre
-xwallpaper
+# Wayland and it's utilites
+bemenu
+foot
+gammastep
+grim
+nwg-look
+slurp
+swww
+wayland
+wayland-protocols
+wayland-utils
+waylock
+wl-clipboard
+wlroots0.19
+wlroots0.20
 # media 
 calibre
 mpc
@@ -28,11 +35,9 @@ system-config-printer
 # DE utils
 dunst
 syncthing
-redshift
 # GUI
 keepassxc
 pcmanfm-qt
-thunderbird
 # Terminal programs
 btop
 calcurse

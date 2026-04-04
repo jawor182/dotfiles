@@ -16,7 +16,6 @@ set scrolloff 0
 set icons
 set drawbox
 set previewer "~/.config/lf/previewer"
-set cleaner "~/.config/lf/cleaner"
 set mouse
 
 set cursorpreviewfmt "\033[7;2m"
