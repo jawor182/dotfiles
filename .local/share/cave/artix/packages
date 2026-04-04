@@ -1,15 +1,15 @@
 # Wayland and it's utilites
+awww
 bemenu
 foot
+gammastep
 grim
 nwg-look
 slurp
-gammastep
-awww
+tllist
 wayland
 wayland-protocols
 wayland-utils
-waylock
 wl-clipboard
 wlroots0.19
 # media
@@ -19,6 +19,7 @@ mpd
 mpv
 mpv-mpris
 ncmpcpp
+playerctl
 zathura
 zathura-djvu
 zathura-pdf-mupdf
