@@ -15,6 +15,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.mouse = 'a'
+vim.opt.conceallevel = 2
 
 vim.pack.add({
     { src = 'https://github.com/windwp/nvim-autopairs' },
@@ -23,8 +24,7 @@ vim.pack.add({
     { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
     { src = 'https://github.com/lewis6991/gitsigns.nvim' },
     { src = 'https://github.com/nvim-lua/plenary.nvim' },
-    { src = 'https://github.com/nvim-telescope/telescope.nvim' },
-    { src = 'https://github.com/nvim-telescope/telescope-ui-select.nvim' },
+    { src = 'https://github.com/nvim-mini/mini.pick' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/kylechui/nvim-surround' },
@@ -40,23 +40,45 @@ vim.pack.add({
     { src = 'https://github.com/rafamadriz/friendly-snippets' },
     { src = 'https://github.com/honza/vim-snippets' },
     { src = 'https://github.com/j-hui/fidget.nvim' },
+    { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
+    { src = 'https://github.com/stevearc/conform.nvim' },
     {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',
-        version = 'master',
+        version = 'main',
         build = ':TSUpdate',
     }
 })
 
-vim.cmd("packadd nvim.undotree")
-vim.keymap.set("n", "<leader>u", require("undotree").open)
-
-require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'lua', 'php', 'javascript', 'html', 'css', 'tsx', 'typescript', 'go' },
-    sync_install = true,
-    highlight = { enable = true },
-    indent = { enable = true },
-    auto_install = true,
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "c","cpp","go","nix", "markdown" },
+    callback = function ()
+        vim.opt.shiftwidth = 2
+        vim.opt.tabstop = 2
+    end
 })
+
+vim.api.nvim_create_autocmd('FileType', {
+    callback = function()
+        pcall(vim.treesitter.start)
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
+})
+
+vim.cmd('packadd nvim.undotree')
+vim.keymap.set('n', '<leader>u', require('undotree').open)
+
+
+local function treesitter_install()
+    local ensure_installed = { 'c', 'cpp', 'lua', 'php', 'javascript', 'html', 'css', 'tsx', 'typescript', 'go', 'markdown', 'python' }
+    local alreadyInstalled = require('nvim-treesitter.config').get_installed()
+    local parsersToInstall = vim.iter(ensure_installed)
+    :filter(function(parser)
+        return not vim.tbl_contains(alreadyInstalled, parser)
+    end)
+    :totable()
+    require('nvim-treesitter').install(parsersToInstall)
+end
+treesitter_install()
 
 local function pack_clean()
     local active_plugins = {}
@@ -167,8 +189,8 @@ require('gruvbox').setup({
     inverse = false,
     strikethrough = true,
 })
-
 vim.cmd.colorscheme('gruvbox')
+
 require('lualine').setup({
     sections = {
         lualine_a = { 'mode' },
@@ -190,31 +212,55 @@ require('oil').setup({
         'icon',
     },
     float = {
-        max_width = 0.3,
+        max_width = 0.5,
         max_height = 0.6,
         border = 'rounded',
     },
 })
 
-require('telescope').setup({
-    defaults = {
-        preview = { treesitter = true },
-        color_devicons = true,
-        file_ignore_patterns = { '4 Archive/', '^%.git/' },
-    },
+require('mini.pick').setup({
+  window = {
+    config = function()
+      local height = math.floor(0.6 * vim.o.lines)
+      local width = math.floor(0.6 * vim.o.columns)
+      return {
+        anchor = 'NW',
+        height = height,
+        width = width,
+        row = math.floor((vim.o.lines - height) / 2),
+        col = math.floor((vim.o.columns - width) / 2),
+        border = 'rounded',
+      }
+    end,
+  },
 })
-require('telescope').load_extension('ui-select')
+
+vim.ui.select = function(items, opts, on_choice)
+  require('mini.pick').ui_select(items, opts, on_choice)
+end
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
 
 require('luasnip').setup({ enable_autosnippets = true })
 require('luasnip.loaders.from_vscode').lazy_load()
 
 require('nvim-highlight-colors').setup({})
 
+require("conform").setup({
+    formatters_by_ft = {
+        markdown = { "prettierd", "prettier", stop_after_first = true },
+    },
+})
+
+vim.api.nvim_set_hl(0, 'RenderMarkdownBullet', { fg = '#d65d0e' })
+require('render-markdown').setup({
+    completions = { lsp = { enabled = true } },
+})
+
 for i = 1, 8 do
     vim.keymap.set({ 'n', 't' }, '<Leader>' .. i, '<Cmd>tabnext ' .. i .. '<CR>')
 end
 
-vim.keymap.set('n', '<leader>f', vim.cmd.Oil)
+vim.keymap.set('n', '<leader>f', "<cmd>Oil --float<CR>")
 vim.keymap.set('n', '<leader>P', vim.cmd.bprev)
 vim.keymap.set('n', '<leader>N', vim.cmd.bnext)
 vim.keymap.set('n', '<leader>T', vim.cmd.tabnew)
@@ -228,20 +274,10 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-q>', '<C-w>q', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'Y', '"+y', { noremap = true, silent = true })
-vim.keymap.set(
-    'n',
-    '<leader>R',
-    '<cmd>w<CR><cmd>restart<CR>',
-    { desc = 'write and restart', silent = true, noremap = true }
-)
-vim.keymap.set(
-    'n',
-    '<leader>cc',
-    '<cmd>nohlsearch<CR>',
-    { desc = 'Clear search highlights', silent = true, noremap = true }
-)
+vim.keymap.set('n', '<leader>R', '<cmd>w<CR><cmd>restart<CR>', { desc = 'write and restart', silent = true, noremap = true })
+vim.keymap.set('n', '<leader>cc', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlights', silent = true, noremap = true })
 vim.keymap.set('n', 'q:', '<Nop>')
-vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, {})
+vim.keymap.set('n', '<leader>gf', function() require("conform").format({ async = true, lsp_fallback = true }) end, { desc = "Format buffer" })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
@@ -253,11 +289,6 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 vim.keymap.set({ 'n' }, '<leader>ca', vim.lsp.buf.code_action, {})
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-vim.keymap.set('n', '<leader>F', require('telescope.builtin').find_files, {})
-vim.keymap.set('n', '<leader>gr', require('telescope.builtin').live_grep, {})
-vim.keymap.set('n', '<leader>h', require('telescope.builtin').help_tags, {})
+vim.keymap.set('n', '<leader>F', function() require('mini.pick').builtin.files({tool = "fd"}) end)
+vim.keymap.set('n', '<leader>gr', function() require('mini.pick').builtin.grep_live() end)
+vim.keymap.set('n', '<leader>h', function() require('mini.pick').builtin.help() end)
