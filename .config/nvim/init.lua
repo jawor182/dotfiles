@@ -23,7 +23,6 @@ vim.pack.add({
     { src = 'https://github.com/brenoprata10/nvim-highlight-colors' },
     { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
     { src = 'https://github.com/lewis6991/gitsigns.nvim' },
-    { src = 'https://github.com/nvim-lua/plenary.nvim' },
     { src = 'https://github.com/nvim-mini/mini.pick' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
@@ -251,7 +250,7 @@ require("conform").setup({
     },
 })
 
-vim.api.nvim_set_hl(0, 'RenderMarkdownBullet', { fg = '#d65d0e' })
+vim.api.nvim_set_hl(0, 'RenderMarkdownBullet', { fg = '#fe8019' })
 require('render-markdown').setup({
     completions = { lsp = { enabled = true } },
 })
