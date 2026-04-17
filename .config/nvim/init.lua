@@ -39,7 +39,6 @@ vim.pack.add({
     { src = 'https://github.com/rafamadriz/friendly-snippets' },
     { src = 'https://github.com/honza/vim-snippets' },
     { src = 'https://github.com/j-hui/fidget.nvim' },
-    { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
     { src = 'https://github.com/stevearc/conform.nvim' },
     {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',
@@ -248,11 +247,6 @@ require("conform").setup({
     formatters_by_ft = {
         markdown = { "prettierd", "prettier", stop_after_first = true },
     },
-})
-
-vim.api.nvim_set_hl(0, 'RenderMarkdownBullet', { fg = '#fe8019' })
-require('render-markdown').setup({
-    completions = { lsp = { enabled = true } },
 })
 
 for i = 1, 8 do
