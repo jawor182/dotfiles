@@ -63,7 +63,7 @@ ff(){
 }
 
 snc(){
-    shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc ; xset r rate 300 60 ; [ "$XDG_SESSION_TYPE" = "x11" ] && xrdb -m $XRESOURCES 
+    shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc
 }
 
 ex(){
