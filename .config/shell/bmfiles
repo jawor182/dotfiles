@@ -8,8 +8,10 @@ cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfe                     ~/dotfiles/.config/mutt/muttrc
 cff                     ~/dotfiles/.config/foot/foot.ini
 cfl                     ~/dotfiles/.config/lf/lfrc
-cfm                     ~/dotfiles/.config/mpv/mpv.conf
+cfM                     ~/dotfiles/.config/mpv/mpv.conf
+cfm                     ~/dotfiles/.config/mango/config.conf
 cfn                     ~/dotfiles/.config/nvim/init.lua
+cfw                     ~/dotfiles/.config/waybar/config.jsonc
 cfz                     ~/dotfiles/.config/zsh/.zshrc
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks

@@ -7,6 +7,7 @@ grim
 nwg-look
 slurp
 swayidle
+waybar
 wayland
 wayland-protocols
 wayland-utils

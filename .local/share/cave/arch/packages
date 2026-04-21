@@ -11,6 +11,7 @@ wayland
 wayland-protocols
 wayland-utils
 waylock
+waybar
 wl-clipboard
 wlroots0.19
 wlroots0.20
