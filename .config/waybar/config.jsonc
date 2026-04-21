@@ -31,12 +31,12 @@
         "format": "{}",
     },
     "dwl/window": {
-        "format": "{title}",
+        "format": "[{layout}] {title}",
         // "format": "{}",
         "rewrite": {},
         "separate-outputs": true,
         "tooltip": false,
-        "icon": true,
+        "icon": false,
         "icon-size": 24,
     },
     "ext/workspaces": {
