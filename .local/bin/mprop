@@ -1,0 +1,3 @@
+#!/bin/sh
+
+slurp -p > /dev/null && wlrctl pointer click && mmsg  -g -c -x
