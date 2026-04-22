@@ -20,6 +20,11 @@ image/avif)
     [ ! -f "$CACHE" ] && magick "$1" "$CACHE.jpg"
     image "$CACHE.jpg" "$2" "$3" "$4" "$5" "$1"
     ;;
+image/svg*)
+    CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/lf/thumb.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | cut -d' ' -f1).png"
+    [ ! -f "$CACHE" ] && rsvg-convert -w 1000 -h 1000 "$1" -o "$CACHE"
+    image "$CACHE" "$2" "$3" "$4" "$5" "$1"
+    ;;
 image/vnd.djvu*)
     CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/lf/thumb.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | cut -d' ' -f1)"
     [ ! -f "$CACHE" ] && djvused "$1" -e 'select 1; save-page-with /dev/stdout' | magick -density 200 - "$CACHE.jpg" >/dev/null 2>&1
