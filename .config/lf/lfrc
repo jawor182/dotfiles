@@ -37,7 +37,7 @@ map R rename-vim
 map M &mpvq add $fx
 map W &wallpaper set $fx
 map E extract $fx
-map i !file --mime-type -Lb $fx
+map i !xdg-mime query filetype $fx
 map o &mimeopen $fx
 map O $mimeopen --ask $fx
 
@@ -52,12 +52,12 @@ map ri :rename # rename before .
 # Commands
 
 cmd open &{{
-    case $(file --mime-type -Lb "$f") in
+    case $(xdg-mime query filetype "$f") in
         text/*|application/javascript|application/x-desktop|application/x-troff-man|application/json|application/mbox|application/x-shellscript|inode/x-empty|application/x-subrip|audio/x-mod|inode/symlink|application/x-wine-extension-ini) lf -remote "send $id \$$EDITOR \$fx" ;;
         image/x-xcf) gimp "$fx" ;;
-        image/vnd.djvu|application/pdf|application/postscript) zathura "$fx" ;; 
+        image/vnd.djvu*|application/pdf|application/postscript) zathura "$fx" ;; 
         image/*) nsxiv "$fx" ;; 
-        audio/ogg) setsid -f $TERMINAL -e mpv "$fx" ;;
+        audio/*ogg) setsid -f $TERMINAL -e mpv "$fx" ;;
         audio/*|video/x-ms-asf|video/*) setsid -f mpv "$fx" -quiet >/dev/null 2>&1 ;;
         application/*tar|application/gzip|application/zip|application/x-7z-compressed|application/x-xz) lf -remote "send $id extract \$fx" ;;
         *) for f in $fx; do setsid -f $OPENER "$f" > /dev/null 2> /dev/null & done ;;
