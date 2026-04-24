@@ -15,7 +15,7 @@ deduplicate() {
 }
 
 clearclip(){
-    wl-copy --clear
+    xclip -selection clipboard /dev/null
 }
 
 normalize_path(){
@@ -63,7 +63,7 @@ add() {
 }
 
 addclip() {
-    clipfile=$(wl-paste)
+    clipfile=$(xclip -o)
 
     if echo "$clipfile" | grep -Eq '^https?://'; then
         add add "$clipfile"
@@ -91,7 +91,7 @@ play() {
         --player-operation-mode=pseudo-gui \
         --input-ipc-server="$ipc_socket" \
         --script="$HOME/.config/mpv/scripts/mpvq-live-sync.lua" \
-        --wayland-app-id="mpvq" \
+        --x11-name="mpvq" \
         --script="/usr/lib/mpv-mpris/mpris.so" >/dev/null 2>&1 &
 }
 
