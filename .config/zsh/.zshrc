@@ -39,14 +39,12 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-function lfcd () {
-    tmp="$(mktemp -uq)"
-    trap 'rm -f $tmp >/dev/null 2>&1 && trap - HUP INT QUIT TERM PWR EXIT' HUP INT QUIT TERM PWR EXIT
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
+function yz() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
 }
 
 function yz() {
@@ -63,7 +61,7 @@ ff(){
 }
 
 snc(){
-    shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc ; xset r rate 300 60 ; [ "$XDG_SESSION_TYPE" = "x11" ] && xrdb -m $XRESOURCES 
+    shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc
 }
 
 ex(){

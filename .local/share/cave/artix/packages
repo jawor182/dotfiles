@@ -42,10 +42,10 @@ pcmanfm-qt
 # Terminal programs
 btop
 calcurse
-lf
 fzf
 neovim
 newsboat
+yazi
 # Appearance
 adw-gtk-theme
 gnome-themes-extra

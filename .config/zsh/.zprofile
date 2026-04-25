@@ -1,7 +1,7 @@
 export PATH="$PATH:/$HOME/.local/bin/"
 export PATH="$PATH:/$HOME/.local/bin/statusbar"
 export EDITOR="nvim"
-export FILES="lfub"
+export FILES="yz"
 export BROWSER="helium-browser"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
