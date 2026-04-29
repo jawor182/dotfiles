@@ -58,11 +58,12 @@ ex              
 *.wmv           
 *.m4b           
 *.flv           
-*.zip           
-*.rar           
-*.7z            
-*.tar           
-*.gz            
+*.zip           
+*.rar           
+*.7z            
+*.tar           
+*.gz            
+*.zst           
 *.z64           
 *.v64           
 *.n64           
