@@ -2,4 +2,4 @@
 Type=Application
 Name=Text editor
 Icon=nvim
-Exec=/usr/bin/foot -e nvim %u
+Exec=/usr/local/bin/st -e nvim %u
