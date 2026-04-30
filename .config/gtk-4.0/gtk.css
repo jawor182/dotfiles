@@ -1,1 +1,15 @@
-/usr/share/themes/adw-gtk3-dark/gtk-4.0/gtk.css
+window,
+.background,
+decoration {
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+popover,
+.popover,
+contents,
+menu,
+.menu {
+    border-radius: 0px;
+    box-shadow: none;
+}

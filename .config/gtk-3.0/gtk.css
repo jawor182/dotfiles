@@ -1,0 +1,6 @@
+menu,
+.menu,
+.context-menu {
+    border-radius: 0px;
+    box-shadow: none;
+}
