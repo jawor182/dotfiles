@@ -282,6 +282,25 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 vim.keymap.set({ 'n' }, '<leader>ca', vim.lsp.buf.code_action, {})
-vim.keymap.set('n', '<leader>F', function() require('mini.pick').builtin.files({tool = "fd"}) end)
-vim.keymap.set('n', '<leader>gr', function() require('mini.pick').builtin.grep_live() end)
+vim.keymap.set('n', '<leader>F', function()
+    require('mini.pick').builtin.files(
+        { tool = "fd" },
+        {
+            source = {
+                cwd = vim.fn.expand('%:p:h'),
+            },
+        }
+    )
+end)
+
+vim.keymap.set('n', '<leader>gr', function()
+    require('mini.pick').builtin.grep_live(
+        {},
+        {
+            source = {
+                cwd = vim.fn.expand('%:p:h'),
+            },
+        }
+    )
+end)
 vim.keymap.set('n', '<leader>h', function() require('mini.pick').builtin.help() end)

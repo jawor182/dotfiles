@@ -1,0 +1,116 @@
+{
+    "height": 32,
+    "spacing": 4,
+    "modules-left": [
+        "ext/workspaces",
+        "dwl/window",
+    ],
+    "modules-center": [],
+    "modules-right": [
+        // "custom/mpd",
+        "tray",
+        "clock",
+        "idle_inhibitor",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "network",
+    ],
+    "custom/mpd": {
+        "exec": "~/.local/bin/statusbar/sb-mpd",
+        "interval": 1,
+        "tooltip": false,
+        "on-click": "mpc toggle",
+        "on-click-middle": "mmsg -s -d toggle_named_scratchpad,spmusic",
+        "on-click-right": "mpc pause && mpc seek 0",
+    },
+    "dwl/tags": {
+        "format": "{}",
+    },
+    "dwl/window": {
+        // "format": "[{layout}] {title}",
+        "format": "{}",
+        "rewrite": {},
+        "separate-outputs": true,
+        "tooltip": false,
+        "icon": true,
+        "icon-size": 22,
+    },
+    "ext/workspaces": {
+        "format": "{}",
+        "on-click": "activate",
+    },
+    "tray": {
+        "icon-size": 22,
+        "spacing": 4,
+    },
+    "clock": {
+        "format": " {:%H:%M %d %b %Y}",
+        "tooltip": false,
+        "on-click": "notify-send 'This Month' \"$(cal -m | sed \"s/\\<$(date +%e | tr -d ' ')\\>/<b><span color='red'>&<\\/span><\\/b>/\")\"",
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+    },
+    "battery": {
+        "states": {
+            "good": 65,
+            "warning": 30,
+            "critical": 10,
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󱧥 {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "tooltip": false,
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "tooltip": false,
+        "scroll-step":5,
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": "{icon} ",
+        "format-muted": " ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": [
+                ""
+            ],
+        },
+        "on-click": "$TERMINAL --app-id floatingterm -e pulsemixer",
+        "on-click-middle": "wpctl set-mute @DEFAULT_SINK@ toggle",
+    },
+}
+// -*- mode: jsonc -*-
