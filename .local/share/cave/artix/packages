@@ -46,6 +46,7 @@ calcurse
 lf
 fzf
 neovim
+newsboat
 # Appearance
 adw-gtk-theme
 gnome-themes-extra
