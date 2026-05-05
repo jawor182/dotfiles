@@ -12,7 +12,9 @@ sr                      ~/.local/src/
 dn                      ~/dox/notes/
 dp                      ~/dox/pix/
 ds                      ~/dox/szkola/
-M                       ~/media/
+mV                      ~/media/vids/
+mp                      ~/media/podcasts/
+ms                      ~/media/shows/
 W                       ~/walls/
 l                       ~/dl/
 k                       ~/keepassxc/
