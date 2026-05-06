@@ -1,15 +1,4 @@
-window,
-.background,
-decoration {
-    border-radius: 0px;
-    box-shadow: none;
-}
-
-popover,
-.popover,
-contents,
-menu,
-.menu {
+* {
     border-radius: 0px;
     box-shadow: none;
 }

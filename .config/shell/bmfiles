@@ -7,10 +7,9 @@ cfc                     ~/dotfiles/.config/ncmpcpp/config
 cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfe                     ~/dotfiles/.config/mutt/muttrc
 cfl                     ~/dotfiles/.config/lf/lfrc
-cff                     ~/dotfiles/.config/foot/foot.ini
 cfm                     ~/dotfiles/.config/mango/config.conf
 cfn                     ~/dotfiles/.config/nvim/init.lua
-cfw                     ~/dotfiles/.config/waybar/config.jsonc
+cfp                     ~/dotfiles/.config/picom/picom.conf
 cfz                     ~/dotfiles/.config/zsh/.zshrc
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks
