@@ -29,5 +29,5 @@ export BEMENU_OPTS="--fn 'JetBrainsMonoNerdFont 16' -H 32 -i -p '' --hp 8 --fb '
 export BAT_THEME="gruvbox-dark"
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec mango
+        exec startx
 fi
