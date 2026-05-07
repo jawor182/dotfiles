@@ -7,7 +7,7 @@ cfc                     ~/dotfiles/.config/ncmpcpp/config
 cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfe                     ~/dotfiles/.config/mutt/muttrc
 cfl                     ~/dotfiles/.config/lf/lfrc
-cfm                     ~/dotfiles/.config/mango/config.conf
+cfm                     ~/dotfiles/.config/mpv/mpv.conf
 cfn                     ~/dotfiles/.config/nvim/init.lua
 cfp                     ~/dotfiles/.config/picom/picom.conf
 cfz                     ~/dotfiles/.config/zsh/.zshrc
