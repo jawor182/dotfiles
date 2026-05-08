@@ -7,8 +7,8 @@ cs                      ~/dotfiles/.local/bin/
 cf                      ~/dotfiles/.config/
 cl                      ~/dotfiles/.local/share/
 rp                      ~/repos/projects/
-rss                     ~/repos/suckless/
-rsd                     ~/repos/suckless/dwm/
+wss                     ~/repos/wayland-suckless/
+wsd                     ~/repos/wayland-suckless/dwl/
 rr                      ~/repos/
 sr                      ~/.local/src/
 dn                      ~/dox/notes/

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -z "$1" ]; then
-	url="$(xclip -o)"
+	url="$(wl-paste)"
 else
 	url="$1"
 fi

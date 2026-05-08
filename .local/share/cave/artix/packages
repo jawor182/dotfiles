@@ -1,15 +1,19 @@
-# X and it's utilities
-lxappearance
-maim
-xclip
-xdotool
-xlibre
-xorg-xinit
-xorg-xset
-xorg-xev
-xorg-xrandr
-xorg-xbacklight
-xwallpaper
+# Wayland and it's utilites
+awww
+bemenu
+foot
+gammastep
+grim
+nwg-look
+slurp
+swayidle
+waylock
+wayland
+wayland-protocols
+wayland-utils
+wl-clipboard
+wlroots0.19
+wlroots0.20
 # media
 calibre
 mpc
