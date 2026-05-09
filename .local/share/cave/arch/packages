@@ -97,6 +97,7 @@ man-pages
 mokutil
 msmtp
 nodejs
+notmuch
 npm
 ntfs-3g    
 os-prober
@@ -114,6 +115,7 @@ rust
 socat
 stow
 tlp
+tllist
 tree
 udisks2
 ueberzugpp
