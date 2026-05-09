@@ -1,6 +1,6 @@
 #!/bin/sh
 
-targetDir="/mnt/backup"
+targetDir="/backup"
 currentDate=$(date "+%F")
 backupFile="backup-$currentDate.tar.gz"
 outputFile="$targetDir/$backupFile"

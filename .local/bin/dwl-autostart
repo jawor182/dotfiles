@@ -4,14 +4,7 @@ playerctld &
 awww-daemon &
 dunst &
 nightlight &
-dwlb &
-someblocks -p | dwlb -status-stdin all &
 wallpaper random &
-pipewire &
-pipewire-pulse &
-wireplumber &
-mpd &
-syncthing --no-browser &
 /usr/lib/xdg-desktop-portal &
 /usr/lib/xdg-desktop-portal-wlr &
 

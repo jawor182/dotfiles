@@ -9,4 +9,4 @@ case $BLOCK_BUTTON in
 esac
 
 # printf "%s\n" " $time $date"
-printf "%s\n" "$time"
+printf " %s\n" "$time"
