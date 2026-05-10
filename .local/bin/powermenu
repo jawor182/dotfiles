@@ -4,9 +4,9 @@ option=$(printf 'Lock Screen\nPower Off\nReboot\nSuspend' | bemenu --fixed-heigh
 LOCK="waylock -fail-color 0xfb4934 -init-color 0x282828 -input-color 0xd65d0e -ignore-empty-password -fork-on-lock"
 
 case $option in
-"Power Off") loginctl poweroff ;;
-"Reboot") loginctl reboot ;;
-"Suspend") $LOCK & loginctl suspend ;;
+"Power Off") systemctl poweroff ;;
+"Reboot") systemctl reboot ;;
+"Suspend") $LOCK & systemctl suspend ;;
 "Lock Screen") $LOCK ;;
 *) ;;
 esac
