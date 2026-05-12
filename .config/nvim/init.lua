@@ -40,6 +40,7 @@ vim.pack.add({
     { src = 'https://github.com/honza/vim-snippets' },
     { src = 'https://github.com/j-hui/fidget.nvim' },
     { src = 'https://github.com/stevearc/conform.nvim' },
+    { src = 'https://github.com/folke/zen-mode.nvim' },
     {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',
         version = 'main',
@@ -48,8 +49,8 @@ vim.pack.add({
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "c","cpp","go","nix", "markdown" },
-    callback = function ()
+    pattern = { "c", "cpp", "go", "nix", "markdown" },
+    callback = function()
         vim.opt.shiftwidth = 2
         vim.opt.tabstop = 2
     end
@@ -67,13 +68,14 @@ vim.keymap.set('n', '<leader>u', require('undotree').open)
 
 
 local function treesitter_install()
-    local ensure_installed = { 'c', 'cpp', 'lua', 'php', 'javascript', 'html', 'css', 'tsx', 'typescript', 'go', 'markdown', 'python' }
+    local ensure_installed = { 'c', 'cpp', 'lua', 'php', 'javascript', 'html', 'css', 'tsx', 'typescript', 'go',
+        'markdown', 'python' }
     local alreadyInstalled = require('nvim-treesitter.config').get_installed()
     local parsersToInstall = vim.iter(ensure_installed)
-    :filter(function(parser)
-        return not vim.tbl_contains(alreadyInstalled, parser)
-    end)
-    :totable()
+        :filter(function(parser)
+            return not vim.tbl_contains(alreadyInstalled, parser)
+        end)
+        :totable()
     require('nvim-treesitter').install(parsersToInstall)
 end
 treesitter_install()
@@ -217,24 +219,24 @@ require('oil').setup({
 })
 
 require('mini.pick').setup({
-  window = {
-    config = function()
-      local height = math.floor(0.6 * vim.o.lines)
-      local width = math.floor(0.6 * vim.o.columns)
-      return {
-        anchor = 'NW',
-        height = height,
-        width = width,
-        row = math.floor((vim.o.lines - height) / 2),
-        col = math.floor((vim.o.columns - width) / 2),
-        border = 'rounded',
-      }
-    end,
-  },
+    window = {
+        config = function()
+            local height = math.floor(0.6 * vim.o.lines)
+            local width = math.floor(0.6 * vim.o.columns)
+            return {
+                anchor = 'NW',
+                height = height,
+                width = width,
+                row = math.floor((vim.o.lines - height) / 2),
+                col = math.floor((vim.o.columns - width) / 2),
+                border = 'rounded',
+            }
+        end,
+    },
 })
 
 vim.ui.select = function(items, opts, on_choice)
-  require('mini.pick').ui_select(items, opts, on_choice)
+    require('mini.pick').ui_select(items, opts, on_choice)
 end
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
 
@@ -246,6 +248,23 @@ require('nvim-highlight-colors').setup({})
 require("conform").setup({
     formatters_by_ft = {
         markdown = { "prettierd", "prettier", stop_after_first = true },
+    },
+})
+
+require("zen-mode").setup({
+    window = {
+        backdrop = 1,               -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+        width = 85,                 -- width of the Zen window
+        height = 1,                 -- height of the Zen window
+        options = {
+            signcolumn = "no",      -- disable signcolumn
+            number = false,         -- disable number column
+            relativenumber = false, -- disable relative numbers
+            cursorline = false,     -- disable cursorline
+            cursorcolumn = false,   -- disable cursor column
+            foldcolumn = "0",       -- disable fold column
+            list = false,           -- disable whitespace characters
+        },
     },
 })
 
@@ -267,10 +286,14 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-q>', '<C-w>q', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'Y', '"+y', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>R', '<cmd>w<CR><cmd>restart<CR>', { desc = 'write and restart', silent = true, noremap = true })
-vim.keymap.set('n', '<leader>cc', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlights', silent = true, noremap = true })
+vim.keymap.set('n', '<leader>R', '<cmd>w<CR><cmd>restart<CR>',
+    { desc = 'write and restart', silent = true, noremap = true })
+vim.keymap.set('n', '<leader>cc', '<cmd>nohlsearch<CR>',
+    { desc = 'Clear search highlights', silent = true, noremap = true })
+vim.keymap.set('n', '<leader>Z', '<cmd>ZenMode<CR>', { desc = 'toggle ZenMode', silent = true, noremap = true })
 vim.keymap.set('n', 'q:', '<Nop>')
-vim.keymap.set('n', '<leader>gf', function() require("conform").format({ async = true, lsp_fallback = true }) end, { desc = "Format buffer" })
+vim.keymap.set('n', '<leader>gf', function() require("conform").format({ async = true, lsp_fallback = true }) end,
+    { desc = "Format buffer" })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)

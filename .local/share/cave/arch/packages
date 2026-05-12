@@ -85,6 +85,7 @@ cmake
 dash
 djvulibre
 ffmpeg
+ffmpegthumbnailer
 fd
 go
 gvfs

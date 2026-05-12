@@ -6,7 +6,7 @@ LOCK="slock"
 case $option in
 "Power Off") systemctl poweroff ;;
 "Reboot") systemctl reboot ;;
-"Suspend") setsid -f $LOCK & systemctl suspend ;;
+"Suspend") $LOCK & systemctl suspend ;;
 "Lock Screen") $LOCK ;;
 *) ;;
 esac

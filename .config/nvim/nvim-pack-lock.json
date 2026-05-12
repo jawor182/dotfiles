@@ -92,6 +92,10 @@
     "vim-snippets": {
       "rev": "ededcf7581962ee616cadab360d5966f3307f11a",
       "src": "https://github.com/honza/vim-snippets"
+    },
+    "zen-mode.nvim": {
+      "rev": "8564ce6d29ec7554eb9df578efa882d33b3c23a7",
+      "src": "https://github.com/folke/zen-mode.nvim"
     }
   }
 }
