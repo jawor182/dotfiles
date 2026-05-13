@@ -1,23 +1,19 @@
-# X and it's utilites
-lxappearance
-maim
-xclip
-xcolor
-xdotool
-xlibre-xserver-beta
-xlibre-xserver-common-beta
-xlibre-xserver-devel-beta
-xlibre-xserver-src-beta
-xlibre-xserver-xephyr-beta
-xlibre-xserver-xnest-beta
-xlibre-xserver-xvfb-beta
-xorg-xclipboard
-xorg-xinit
-xorg-xset
-xorg-xev
-xorg-xrandr
-xorg-xbacklight
-xwallpaper
+# Wayland and it's utilites
+awww
+bemenu
+foot
+gammastep
+grim
+nwg-look
+slurp
+swayidle
+wayland
+wayland-protocols
+wayland-utils
+waylock
+wl-clipboard
+wlroots0.19
+wlroots0.20
 # media 
 calibre
 mpc
@@ -75,7 +71,6 @@ android-tools
 android-udev
 aria2
 atool
-breeze
 bat
 cargo
 cronie
