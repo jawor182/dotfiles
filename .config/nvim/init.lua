@@ -23,7 +23,9 @@ vim.pack.add({
     { src = 'https://github.com/brenoprata10/nvim-highlight-colors' },
     { src = 'https://github.com/ellisonleao/gruvbox.nvim' },
     { src = 'https://github.com/lewis6991/gitsigns.nvim' },
-    { src = 'https://github.com/nvim-mini/mini.pick' },
+    { src = 'https://github.com/nvim-telescope/telescope.nvim' },
+    { src = 'https://github.com/nvim-telescope/telescope-ui-select.nvim' },
+    { src = 'https://github.com/nvim-lua/plenary.nvim' },
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/kylechui/nvim-surround' },
@@ -218,27 +220,14 @@ require('oil').setup({
     },
 })
 
-require('mini.pick').setup({
-    window = {
-        config = function()
-            local height = math.floor(0.6 * vim.o.lines)
-            local width = math.floor(0.6 * vim.o.columns)
-            return {
-                anchor = 'NW',
-                height = height,
-                width = width,
-                row = math.floor((vim.o.lines - height) / 2),
-                col = math.floor((vim.o.columns - width) / 2),
-                border = 'rounded',
-            }
-        end,
+require('telescope').setup({
+    defaults = {
+        preview = { treesitter = true },
+        color_devicons = true,
+        file_ignore_patterns = { '4 Archive/', '^%.git/' },
     },
 })
-
-vim.ui.select = function(items, opts, on_choice)
-    require('mini.pick').ui_select(items, opts, on_choice)
-end
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
+require('telescope').load_extension('ui-select')
 
 require('luasnip').setup({ enable_autosnippets = true })
 require('luasnip.loaders.from_vscode').lazy_load()
@@ -305,25 +294,6 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 vim.keymap.set({ 'n' }, '<leader>ca', vim.lsp.buf.code_action, {})
-vim.keymap.set('n', '<leader>F', function()
-    require('mini.pick').builtin.files(
-        { tool = "fd" },
-        {
-            source = {
-                cwd = vim.fn.expand('%:p:h'),
-            },
-        }
-    )
-end)
-
-vim.keymap.set('n', '<leader>gr', function()
-    require('mini.pick').builtin.grep_live(
-        {},
-        {
-            source = {
-                cwd = vim.fn.expand('%:p:h'),
-            },
-        }
-    )
-end)
-vim.keymap.set('n', '<leader>h', function() require('mini.pick').builtin.help() end)
+vim.keymap.set('n', '<leader>F', require('telescope.builtin').find_files, {})
+vim.keymap.set('n', '<leader>gr', require('telescope.builtin').live_grep, {})
+vim.keymap.set('n', '<leader>h', require('telescope.builtin').help_tags, {})
