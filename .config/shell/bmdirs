@@ -9,7 +9,7 @@ cl                      ~/dotfiles/.local/share/
 rp                      ~/repos/projects/
 rss                     ~/repos/suckless/
 wss                     ~/repos/wayland-suckless/
-wss                     ~/repos/wayland-suckless/dwl
+wsd                     ~/repos/wayland-suckless/dwl
 rr                      ~/repos/
 sr                      ~/.local/src/
 dx                      ~/dox/
