@@ -36,11 +36,11 @@ simple-scan
 system-config-printer
 # DE utils
 dunst
-redshift
 syncthing
 # GUI
 discord
 keepassxc
+obsidian
 pcmanfm-qt
 # Terminal programs
 btop
@@ -69,10 +69,10 @@ ttf-sazanami
 # system utilities/libs/other stuff
 android-tools
 android-udev
-aria2
 atool
 bat
 cargo
+chafa
 cronie
 checkbashisms
 clang
@@ -92,6 +92,7 @@ isync
 jq
 libimobiledevice
 libmtp
+libqalculate
 lm_sensors
 lshw
 lua
@@ -110,6 +111,7 @@ pass
 pciutils
 perl-image-exiftool
 php
+pnpm
 powertop
 protobuf
 pulsemixer
@@ -121,13 +123,11 @@ qt5-wayland
 socat
 stow
 tlp
-tllist
 tree
 tree-sitter
 tree-sitter-cli
 tree-sitter-c
 udisks2
-ueberzugpp
 unzip
 usbmuxd
 usbutils
