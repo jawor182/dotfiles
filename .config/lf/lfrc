@@ -59,7 +59,7 @@ cmd open &{{
         image/*) nsxiv "$fx" ;; 
         audio/*ogg) setsid -f $TERMINAL -e mpv "$fx" ;;
         audio/*|video/x-ms-asf|video/*) setsid -f mpv "$fx" -quiet >/dev/null 2>&1 ;;
-        application/*tar|application/gzip|application/zip|application/x-7z-compressed|application/x-xz) lf -remote "send $id extract \$fx" ;;
+        application/*rar|application/*tar|application/gzip|application/zip|application/x-7z-compressed|application/x-xz) lf -remote "send $id extract \$fx" ;;
         *) for f in $fx; do setsid -f $OPENER "$f" > /dev/null 2> /dev/null & done ;;
     esac
 }}
