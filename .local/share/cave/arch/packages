@@ -13,7 +13,6 @@ wayland-utils
 waylock
 wl-clipboard
 wlroots0.19
-wlroots0.20
 # media 
 calibre
 mpc
