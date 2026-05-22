@@ -16,6 +16,7 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.mouse = 'a'
 vim.opt.conceallevel = 2
+vim.opt.winborder = "none"
 
 vim.pack.add({
     { src = 'https://github.com/windwp/nvim-autopairs' },
