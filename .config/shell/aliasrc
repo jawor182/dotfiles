@@ -8,6 +8,7 @@ np="ncmpcpp" \
 sn="sudoedit" \
 p="sudo pacman" \
 y="yay" \
+t="tmux" \
 update="sudo pacman -Syyuu && yay -Syyu" \
 update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg" \
 grep="grep --color -i" \

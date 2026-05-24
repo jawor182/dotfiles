@@ -49,6 +49,7 @@ lf
 neomutt
 neovim
 newsboat
+tmux
 # Appearance
 adw-gtk-theme
 gnome-themes-extra

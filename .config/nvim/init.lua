@@ -44,9 +44,15 @@ vim.pack.add({
     { src = 'https://github.com/j-hui/fidget.nvim' },
     { src = 'https://github.com/stevearc/conform.nvim' },
     { src = 'https://github.com/folke/zen-mode.nvim' },
+    { src = 'https://github.com/christoomey/vim-tmux-navigator' },
     {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',
         version = 'main',
+        build = ':TSUpdate',
+    },
+    {
+        src = 'https://github.com/ThePrimeagen/harpoon',
+        version = 'harpoon2',
         build = ':TSUpdate',
     }
 })
@@ -258,22 +264,25 @@ require("zen-mode").setup({
     },
 })
 
-for i = 1, 8 do
-    vim.keymap.set({ 'n', 't' }, '<Leader>' .. i, '<Cmd>tabnext ' .. i .. '<CR>')
+local harpoon = require("harpoon")
+harpoon:setup()
+
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+for i = 1, 9 do
+  vim.keymap.set("n", "<leader>" .. i, function()
+    harpoon:list():select(i)
+  end)
 end
 
 vim.keymap.set('n', '<leader>f', "<cmd>Oil --float<CR>")
-vim.keymap.set('n', '<leader>P', vim.cmd.bprev)
-vim.keymap.set('n', '<leader>N', vim.cmd.bnext)
-vim.keymap.set('n', '<leader>T', vim.cmd.tabnew)
-vim.keymap.set('n', '<leader>tn', vim.cmd.tabnext)
-vim.keymap.set('n', '<leader>tp', vim.cmd.tabprevious)
 vim.keymap.set('n', '<leader>m', vim.cmd.Mason)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
+vim.keymap.set('n' , "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>", { noremap = true, silent = true })
+vim.keymap.set('n' , "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>", { noremap = true, silent = true })
+vim.keymap.set('n' , "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>", { noremap = true, silent = true })
+vim.keymap.set('n' , "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>", { noremap = true, silent = true })
 vim.keymap.set('n', '<C-q>', '<C-w>q', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'Y', '"+y', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>R', '<cmd>w<CR><cmd>restart<CR>',
