@@ -44,6 +44,7 @@ vim.pack.add({
     { src = 'https://github.com/j-hui/fidget.nvim' },
     { src = 'https://github.com/stevearc/conform.nvim' },
     { src = 'https://github.com/folke/zen-mode.nvim' },
+    { src = 'https://github.com/epwalsh/obsidian.nvim' },
     { src = 'https://github.com/christoomey/vim-tmux-navigator' },
     {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',
@@ -244,6 +245,7 @@ require('nvim-highlight-colors').setup({})
 require("conform").setup({
     formatters_by_ft = {
         markdown = { "prettierd", "prettier", stop_after_first = true },
+        c = { "clang-format", "prettier", stop_after_first = true },
     },
 })
 
@@ -264,6 +266,49 @@ require("zen-mode").setup({
     },
 })
 
+require("obsidian").setup({
+    workspaces = {
+        {
+            name = "notes",
+            path = "~/dox/notes",
+        },
+    },
+
+    disable_frontmatter = true,
+
+    ui = {
+        enable = true,          -- set to false to disable all additional syntax features
+        update_debounce = 200,  -- update delay after a text change (in milliseconds)
+        max_file_length = 5000, -- disable UI features for files with more than this many lines
+        checkboxes = {
+            [" "] = { char = "", hl_group = "ObsidianTodo" },
+            ["x"] = { char = "", hl_group = "ObsidianDone" },
+            [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+            ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+            ["!"] = { char = "", hl_group = "ObsidianImportant" },
+        },
+        bullets = { char = "", hl_group = "ObsidianBullet" },
+        external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
+        reference_text = { hl_group = "ObsidianRefText" },
+        highlight_text = { hl_group = "ObsidianHighlightText" },
+        tags = { hl_group = "ObsidianTag" },
+        block_ids = { hl_group = "ObsidianBlockID" },
+        hl_groups = {
+            ObsidianTodo = { bold = true, fg = "#d65d0e" },
+            ObsidianDone = { bold = true, fg = "#458588" },
+            ObsidianRightArrow = { bold = true, fg = "#d65d0e" },
+            ObsidianTilde = { bold = true, fg = "#cc241d" },
+            ObsidianImportant = { bold = true, fg = "#fb4934" },
+            ObsidianBullet = { bold = true, fg = "#458588" },
+            ObsidianRefText = { underline = true, fg = "#b16286" },
+            ObsidianExtLinkIcon = { fg = "#b16286" },
+            ObsidianTag = { italic = true, fg = "#83a598" },
+            ObsidianBlockID = { italic = true, fg = "#83a598" },
+            ObsidianHighlightText = { bg = "#d79921" },
+        },
+    },
+})
+
 local harpoon = require("harpoon")
 harpoon:setup()
 
@@ -271,18 +316,18 @@ vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 for i = 1, 9 do
-  vim.keymap.set("n", "<leader>" .. i, function()
-    harpoon:list():select(i)
-  end)
+    vim.keymap.set("n", "<leader>" .. i, function()
+        harpoon:list():select(i)
+    end)
 end
 
 vim.keymap.set('n', '<leader>f', "<cmd>Oil --float<CR>")
 vim.keymap.set('n', '<leader>m', vim.cmd.Mason)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-vim.keymap.set('n' , "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>", { noremap = true, silent = true })
-vim.keymap.set('n' , "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>", { noremap = true, silent = true })
-vim.keymap.set('n' , "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>", { noremap = true, silent = true })
-vim.keymap.set('n' , "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>", { noremap = true, silent = true })
+vim.keymap.set('n', "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>", { noremap = true, silent = true })
+vim.keymap.set('n', "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>", { noremap = true, silent = true })
+vim.keymap.set('n', "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>", { noremap = true, silent = true })
+vim.keymap.set('n', "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>", { noremap = true, silent = true })
 vim.keymap.set('n', '<C-q>', '<C-w>q', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'Y', '"+y', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>R', '<cmd>w<CR><cmd>restart<CR>',
