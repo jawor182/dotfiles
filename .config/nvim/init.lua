@@ -276,6 +276,10 @@ require("obsidian").setup({
 
     disable_frontmatter = true,
 
+    follow_url_func = function(url)
+        vim.fn.jobstart({"xdg-open", url})  -- linux
+    end,
+
     ui = {
         enable = true,          -- set to false to disable all additional syntax features
         update_debounce = 200,  -- update delay after a text change (in milliseconds)
