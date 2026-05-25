@@ -287,7 +287,7 @@ require("obsidian").setup({
             ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
             ["!"] = { char = "", hl_group = "ObsidianImportant" },
         },
-        bullets = { char = "", hl_group = "ObsidianBullet" },
+        bullets = { char = "", hl_group = "ObsidianBullet" },
         external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
         reference_text = { hl_group = "ObsidianRefText" },
         highlight_text = { hl_group = "ObsidianHighlightText" },
