@@ -3,8 +3,8 @@
 vim.g.mapleader = ' '
 vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 8
+vim.opt.shiftwidth = 8
 vim.opt.expandtab = true
 vim.opt.swapfile = false
 vim.opt.smartindent = false
@@ -56,14 +56,6 @@ vim.pack.add({
         version = 'harpoon2',
         build = ':TSUpdate',
     }
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "c", "cpp", "go", "nix", "markdown" },
-    callback = function()
-        vim.opt.shiftwidth = 2
-        vim.opt.tabstop = 2
-    end
 })
 
 vim.api.nvim_create_autocmd('FileType', {
@@ -138,6 +130,18 @@ cmp.setup({
         ['<Enter>'] = cmp.mapping.confirm({ select = false }),
         ['<C-Space>'] = cmp.mapping.complete(),
     }),
+
+    window = {
+        completion = cmp.config.window.bordered({
+            border = 'single',
+            winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+        }),
+
+        documentation = cmp.config.window.bordered({
+            border = 'single',
+            winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,Search:None',
+        }),
+    },
 
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
@@ -277,7 +281,7 @@ require("obsidian").setup({
     disable_frontmatter = true,
 
     follow_url_func = function(url)
-        vim.fn.jobstart({"xdg-open", url})  -- linux
+        vim.fn.jobstart({ "xdg-open", url }) -- linux
     end,
 
     ui = {
