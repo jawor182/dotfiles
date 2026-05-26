@@ -102,5 +102,7 @@ bindkey -M visual '^[[P' vi-delete
 source $XDG_CONFIG_HOME/shell/shortcutsrc
 source $XDG_CONFIG_HOME/shell/aliasrc
 
+bindkey -s '^s' "ssnizer\n"
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
