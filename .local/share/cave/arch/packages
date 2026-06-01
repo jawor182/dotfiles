@@ -1,18 +1,23 @@
-# Wayland and it's utilites
-awww
-bemenu
-foot
-gammastep
-grim
-nwg-look
-slurp
-swayidle
-wayland
-wayland-protocols
-wayland-utils
-waylock
-wl-clipboard
-wlroots0.19
+# X and it's utilites
+lxappearance
+maim
+xclip
+xcolor
+xdotool
+xlibre-xserver-beta
+xlibre-xserver-common-beta
+xlibre-xserver-devel-beta
+xlibre-xserver-src-beta
+xlibre-xserver-xephyr-beta
+xlibre-xserver-xnest-beta
+xlibre-xserver-xvfb-beta
+xorg-xclipboard
+xorg-xinit
+xorg-xset
+xorg-xev
+xorg-xrandr
+xorg-xbacklight
+xwallpaper
 # media 
 calibre
 mpc
@@ -35,6 +40,7 @@ simple-scan
 system-config-printer
 # DE utils
 dunst
+redshift
 syncthing
 # GUI
 discord
@@ -72,7 +78,6 @@ android-udev
 atool
 bat
 cargo
-chafa
 cronie
 checkbashisms
 clang
@@ -110,6 +115,7 @@ os-prober
 pass
 pciutils
 perl-image-exiftool
+perl-file-mimeinfo
 php
 pnpm
 powertop
@@ -119,7 +125,6 @@ python
 ripgrep
 ruby
 rust
-qt5-wayland
 socat
 stow
 tlp
@@ -128,6 +133,7 @@ tree-sitter
 tree-sitter-cli
 tree-sitter-c
 udisks2
+ueberzugpp
 unzip
 unrar
 usbmuxd
@@ -139,4 +145,3 @@ zsh
 zsh-autosuggestions
 zsh-completions
 zsh-syntax-highlighting
-xorg-xwayland

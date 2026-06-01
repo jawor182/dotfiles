@@ -8,14 +8,12 @@ cf                      ~/dotfiles/.config/
 cl                      ~/dotfiles/.local/share/
 rp                      ~/repos/projects/
 rss                     ~/repos/suckless/
-wss                     ~/repos/wayland-suckless/
-wsd                     ~/repos/wayland-suckless/dwl
+rsd                     ~/repos/suckless/dwm/
 rr                      ~/repos/
 sr                      ~/.local/src/
 dx                      ~/dox/
 dn                      ~/dox/notes/
 dp                      ~/dox/pix/
-ds                      ~/dox/szkola/
 M                       ~/media/
 W                       ~/walls/
 l                       ~/dl/
