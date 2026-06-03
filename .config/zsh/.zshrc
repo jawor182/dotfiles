@@ -55,7 +55,7 @@ ff(){
 }
 
 snc(){
-    shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc
+    shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc ; xset r rate 300 60 ; xrdb -m $XRESOURCES
 }
 
 ex(){

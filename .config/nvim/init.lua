@@ -6,6 +6,8 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.textwidth = 120
+vim.opt.colorcolumn = "120"
 vim.opt.swapfile = false
 vim.opt.smartindent = false
 vim.opt.ignorecase = true
@@ -16,7 +18,7 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.mouse = 'a'
 vim.opt.conceallevel = 2
-vim.opt.winborder = "none"
+vim.opt.winborder = 'none'
 
 vim.pack.add({
     { src = 'https://github.com/windwp/nvim-autopairs' },
@@ -61,7 +63,7 @@ vim.pack.add({
 vim.api.nvim_create_autocmd('FileType', {
     callback = function()
         pcall(vim.treesitter.start)
-        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        vim.bo.indentexpr = 'v:lua.require"nvim-treesitter".indentexpr()'
     end
 })
 
@@ -154,10 +156,10 @@ cmp.setup({
     },
 
     formatting = {
-        fields = { "abbr", "kind" }, -- Removed "menu" to stop the massive signatures from blowing up the window width
+        fields = { 'abbr', 'kind' },
         format = function(entry, vim_item)
             if string.len(vim_item.abbr) > 50 then
-                vim_item.abbr = string.sub(vim_item.abbr, 1, 50 - 3) .. "…"
+                vim_item.abbr = string.sub(vim_item.abbr, 1, 50 - 3) .. '…'
             end
             return vim_item
         end,
@@ -186,20 +188,13 @@ local orig_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
     opts = opts or {}
 
-    -- 1. Match your exact nvim-cmp border style
     opts.border = 'single'
 
-    -- 2. Force your exact nvim-cmp highlight groups
     opts.winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,Search:None'
 
-    -- 3. Hard cap the dimension boundaries (Modifies max length)
     opts.max_width = 65
     opts.max_height = 12
 
-    -- 4. Strip out markdown syntax parsing if it looks messy
-    -- Changing this to "text" safely disables aggressive markdown layouts
-
-    -- Clear out unneeded wrap boundaries that expand borders unnecessarily
     opts.wrap = false
 
     return orig_open_floating_preview(contents, syntax, opts, ...)
@@ -265,6 +260,9 @@ require('oil').setup({
         timeout_ms = 1000,
         autosave_changes = true,
     },
+    view_options = {
+        show_hidden = true
+    },
     columns = {
         'icon',
     },
@@ -289,42 +287,42 @@ require('luasnip.loaders.from_vscode').lazy_load()
 
 require('nvim-highlight-colors').setup({})
 
-require("conform").setup({
+require('conform').setup({
     formatters_by_ft = {
-        markdown = { "prettierd", "prettier", stop_after_first = true },
-        c = { "clang-format", stop_after_first = true },
+        markdown = { 'prettierd', 'prettier', stop_after_first = true },
+        c = { 'clang-format', stop_after_first = true },
     },
 })
 
-require("zen-mode").setup({
+require('zen-mode').setup({
     window = {
         backdrop = 1,               -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
-        width = 85,                 -- width of the Zen window
+        width = 120,                -- width of the Zen window
         height = 1,                 -- height of the Zen window
         options = {
-            signcolumn = "no",      -- disable signcolumn
+            signcolumn = 'no',      -- disable signcolumn
             number = false,         -- disable number column
             relativenumber = false, -- disable relative numbers
             cursorline = false,     -- disable cursorline
             cursorcolumn = false,   -- disable cursor column
-            foldcolumn = "0",       -- disable fold column
+            foldcolumn = '0',       -- disable fold column
             list = false,           -- disable whitespace characters
         },
     },
 })
 
-require("obsidian").setup({
+require('obsidian').setup({
     workspaces = {
         {
-            name = "notes",
-            path = "~/dox/notes",
+            name = 'notes',
+            path = '~/dox/notes',
         },
     },
 
     disable_frontmatter = true,
 
     follow_url_func = function(url)
-        vim.fn.jobstart({ "xdg-open", url }) -- linux
+        vim.fn.jobstart({ 'xdg-open', url }) -- linux
     end,
 
     ui = {
@@ -332,53 +330,55 @@ require("obsidian").setup({
         update_debounce = 200,  -- update delay after a text change (in milliseconds)
         max_file_length = 5000, -- disable UI features for files with more than this many lines
         checkboxes = {
-            [" "] = { char = "", hl_group = "ObsidianTodo" },
-            ["x"] = { char = "", hl_group = "ObsidianDone" },
-            [">"] = { char = "", hl_group = "ObsidianRightArrow" },
-            ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
-            ["!"] = { char = "", hl_group = "ObsidianImportant" },
+            [' '] = { char = '', hl_group = 'ObsidianTodo' },
+            ['x'] = { char = '', hl_group = 'ObsidianDone' },
+            ['>'] = { char = '', hl_group = 'ObsidianRightArrow' },
+            ['~'] = { char = '󰰱', hl_group = 'ObsidianTilde' },
+            ['!'] = { char = '', hl_group = 'ObsidianImportant' },
         },
-        bullets = { char = "", hl_group = "ObsidianBullet" },
-        external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
-        reference_text = { hl_group = "ObsidianRefText" },
-        highlight_text = { hl_group = "ObsidianHighlightText" },
-        tags = { hl_group = "ObsidianTag" },
-        block_ids = { hl_group = "ObsidianBlockID" },
+        bullets = { char = '', hl_group = 'ObsidianBullet' },
+        external_link_icon = { char = '', hl_group = 'ObsidianExtLinkIcon' },
+        reference_text = { hl_group = 'ObsidianRefText' },
+        highlight_text = { hl_group = 'ObsidianHighlightText' },
+        tags = { hl_group = 'ObsidianTag' },
+        block_ids = { hl_group = 'ObsidianBlockID' },
         hl_groups = {
-            ObsidianTodo = { bold = true, fg = "#d65d0e" },
-            ObsidianDone = { bold = true, fg = "#458588" },
-            ObsidianRightArrow = { bold = true, fg = "#d65d0e" },
-            ObsidianTilde = { bold = true, fg = "#cc241d" },
-            ObsidianImportant = { bold = true, fg = "#fb4934" },
-            ObsidianBullet = { bold = true, fg = "#458588" },
-            ObsidianRefText = { underline = true, fg = "#b16286" },
-            ObsidianExtLinkIcon = { fg = "#b16286" },
-            ObsidianTag = { italic = true, fg = "#83a598" },
-            ObsidianBlockID = { italic = true, fg = "#83a598" },
-            ObsidianHighlightText = { bg = "#d79921" },
+            ObsidianTodo = { bold = true, fg = '#d65d0e' },
+            ObsidianDone = { bold = true, fg = '#458588' },
+            ObsidianRightArrow = { bold = true, fg = '#d65d0e' },
+            ObsidianTilde = { bold = true, fg = '#cc241d' },
+            ObsidianImportant = { bold = true, fg = '#fb4934' },
+            ObsidianBullet = { bold = true, fg = '#458588' },
+            ObsidianRefText = { underline = true, fg = '#b16286' },
+            ObsidianExtLinkIcon = { fg = '#b16286' },
+            ObsidianTag = { italic = true, fg = '#83a598' },
+            ObsidianBlockID = { italic = true, fg = '#83a598' },
+            ObsidianHighlightText = { bg = '#d79921' },
         },
     },
 })
 
-local harpoon = require("harpoon")
+local harpoon = require('harpoon')
 harpoon:setup()
 
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set('n', '<leader>a', function() harpoon:list():add() end)
+vim.keymap.set('n', '<leader>e', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 for i = 1, 9 do
-    vim.keymap.set("n", "<leader>" .. i, function()
+    vim.keymap.set('n', '<leader>' .. i, function()
         harpoon:list():select(i)
     end)
 end
 
-vim.keymap.set('n', '<leader>f', "<cmd>Oil --float<CR>")
+vim.keymap.set('n', '<leader>f', '<cmd>Oil --float<CR>')
 vim.keymap.set('n', '<leader>m', vim.cmd.Mason)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-vim.keymap.set('n', "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>", { noremap = true, silent = true })
-vim.keymap.set('n', "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>", { noremap = true, silent = true })
-vim.keymap.set('n', "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>", { noremap = true, silent = true })
-vim.keymap.set('n', "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>", { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>bp', '<cmd>bprev<CR>', {})
+vim.keymap.set('n', '<leader>bn', '<cmd>bnext<CR>', {})
+vim.keymap.set('n', '<C-h>', '<cmd><C-U>TmuxNavigateLeft<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-j>', '<cmd><C-U>TmuxNavigateDown<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-k>', '<cmd><C-U>TmuxNavigateUp<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-l>', '<cmd><C-U>TmuxNavigateRight<cr>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-q>', '<C-w>q', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'Y', '"+y', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>R', '<cmd>w<CR><cmd>restart<CR>',
@@ -387,8 +387,8 @@ vim.keymap.set('n', '<leader>cc', '<cmd>nohlsearch<CR>',
     { desc = 'Clear search highlights', silent = true, noremap = true })
 vim.keymap.set('n', '<leader>Z', '<cmd>ZenMode<CR>', { desc = 'toggle ZenMode', silent = true, noremap = true })
 vim.keymap.set('n', 'q:', '<Nop>')
-vim.keymap.set('n', '<leader>gf', function() require("conform").format({ async = true, lsp_fallback = true }) end,
-    { desc = "Format buffer" })
+vim.keymap.set('n', '<leader>gf', function() require('conform').format({ async = true, lsp_fallback = true }) end,
+    { desc = 'Format buffer' })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
