@@ -7,7 +7,6 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.textwidth = 120
-vim.opt.colorcolumn = "120"
 vim.opt.swapfile = false
 vim.opt.smartindent = false
 vim.opt.ignorecase = true
@@ -64,6 +63,13 @@ vim.api.nvim_create_autocmd('FileType', {
     callback = function()
         pcall(vim.treesitter.start)
         vim.bo.indentexpr = 'v:lua.require"nvim-treesitter".indentexpr()'
+    end
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = "markdown",
+    callback = function()
+        vim.opt.textwidth = 120
     end
 })
 
@@ -260,9 +266,6 @@ require('oil').setup({
         timeout_ms = 1000,
         autosave_changes = true,
     },
-    view_options = {
-        show_hidden = true
-    },
     columns = {
         'icon',
     },
@@ -297,7 +300,7 @@ require('conform').setup({
 require('zen-mode').setup({
     window = {
         backdrop = 1,               -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
-        width = 120,                -- width of the Zen window
+        width = 80,                 -- width of the Zen window
         height = 1,                 -- height of the Zen window
         options = {
             signcolumn = 'no',      -- disable signcolumn
