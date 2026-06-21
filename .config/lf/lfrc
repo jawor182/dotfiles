@@ -53,7 +53,7 @@ map ri :rename # rename before .
 
 cmd open &{{
     case $(xdg-mime query filetype "$f") in
-        text/*|application/javascript|application/x-desktop|application/x-troff-man|application/json|application/mbox|application/x-shellscript|inode/x-empty|application/x-subrip|audio/x-mod|inode/symlink|application/x-wine-extension-ini) lf -remote "send $id \$$EDITOR \$fx" ;;
+        text/*|application/xml|application/javascript|application/x-desktop|application/x-troff-man|application/json|application/mbox|application/x-shellscript|inode/x-empty|application/x-subrip|audio/x-mod|inode/symlink|application/x-wine-extension-ini) lf -remote "send $id \$$EDITOR \$fx" ;;
         image/x-xcf) gimp "$fx" ;;
         image/vnd.djvu*|application/pdf|application/postscript) zathura "$fx" ;; 
         image/*) nsxiv "$fx" ;; 
