@@ -8,6 +8,8 @@ cf                      ~/dotfiles/.config/
 cl                      ~/dotfiles/.local/share/
 rp                      ~/repos/projects/
 rr                      ~/repos/
+wss                     ~/repos/wayland-suckless/
+wsd                     ~/repos/wayland-suckless/dwl/
 sr                      ~/.local/src/
 dx                      ~/dox/
 dn                      ~/dox/notes/
