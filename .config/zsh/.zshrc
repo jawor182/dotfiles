@@ -58,6 +58,10 @@ snc(){
     shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc
 }
 
+ex(){
+    man -k . | fzf -e | cut -d' '  -f1 | xargs -r man
+}
+
 autoload -Uz add-zsh-hook
 
 function osc7-pwd() {
