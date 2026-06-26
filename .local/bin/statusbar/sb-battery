@@ -1,18 +1,9 @@
 #!/bin/sh
 
-# Prints all batteries, their percentage remaining and an emoji corresponding
-# to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
-
+# Handle the click's
 case $BLOCK_BUTTON in
-    1) notify-send "Hello" ;;
-    2) notify-send "world" ;;
-    3) notify-send "🔋 Battery module" "🔋: discharging
-🛑: not charging
-♻: stagnant charge
-🔌: charging
-⚡: charged
-❗: battery very low!
-- Scroll to change adjust xbacklight." ;;
+    1) notify-send "$(acpi -b  | grep -i "Discharging" | cut -d' ' -f1-2,5-6)" ;;
+    2) notify-send "Screen brightness: $(brightnessctl | grep '%' | grep -E "[0-100]%" | cut -d ' ' -f 4  | cut -d '(' -f2 | cut -d')' -f1)" ;;
     4) brightnessctl set +10%;;
     5) brightnessctl set 10%-;;
     6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
@@ -24,16 +15,15 @@ for battery in /sys/class/power_supply/BAT?*; do
 	[ -n "${capacity+x}" ] && printf " "
 	# Sets up the status and capacity
 	case "$(cat "$battery/status" 2>&1)" in
-		"Full") status="⚡" ;;
-		"Discharging") status="🔋" ;;
-		"Charging") status="🔌" ;;
-		"Not charging") status="🛑" ;;
-		"Unknown") status="♻️" ;;
+		"Full") status="󰁹 " ;;
+		"Discharging") status="󱧥 " ;;
+		"Charging") status="󰂄 " ;;
+		"Not charging") status="󱉝 " ;;
+		"Unknown") status="󰂑 " ;;
 		*) exit 1 ;;
 	esac
 	capacity="$(cat "$battery/capacity" 2>&1)"
-	# Will make a warn variable if discharging and low
-	[ "$status" = "🔋" ] && [ "$capacity" -le 25 ] && warn="❗"
-	# Prints the info
-	printf "%s%s%d%%" "$status" "$warn" "$capacity"; unset warn
+    # [ "$status" = "󱧥 " ] && [ "$capacity" -le 25 ] &&  status="󰂃 "
+    [ "$capacity" -le 25 ] &&  status="󰂃 "
+	printf "%s%d%" "$status" "$capacity"
 done && printf "\\n"

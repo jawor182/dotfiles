@@ -9,6 +9,4 @@ dunst &
 playerctld &
 redshift &
 
-dbus-update-activation-environment --all
-dbus-launch ssh-agent
-exec dwm
+dbus-launch dwm
