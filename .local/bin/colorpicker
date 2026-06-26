@@ -1,6 +1,6 @@
 #!/bin/sh
 
-color=$(grim -g "$(slurp -b 00000000 -p)" -t ppm - | magick - -format '#%[hex:p{0,0}]\n' info:-)
-echo "$color" | wl-copy
+color=$(xcolor)
+echo "$color" | xclip -selection clipboard
 
 notify-send "Picked $color"

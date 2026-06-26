@@ -6,12 +6,11 @@ cfb                     ~/dotfiles/.config/newsboat/config
 cfc                     ~/dotfiles/.config/ncmpcpp/config
 cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfe                     ~/dotfiles/.config/mutt/muttrc
-cff                     ~/dotfiles/.config/foot/foot.ini
 cfl                     ~/dotfiles/.config/lf/lfrc
-cfm                     ~/dotfiles/.config/mango/config.conf
+cfm                     ~/dotfiles/.config/mpv/mpv.conf
 cfn                     ~/dotfiles/.config/nvim/init.lua
 cft                     ~/dotfiles/.config/tmux/tmux.conf
-cfw                     ~/dotfiles/.config/waybar/config.jsonc
+cfp                     ~/dotfiles/.config/picom/picom.conf
 cfz                     ~/dotfiles/.config/zsh/.zshrc
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks
