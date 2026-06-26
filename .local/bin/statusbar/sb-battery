@@ -25,5 +25,5 @@ for battery in /sys/class/power_supply/BAT?*; do
 	capacity="$(cat "$battery/capacity" 2>&1)"
     # [ "$status" = "󱧥 " ] && [ "$capacity" -le 25 ] &&  status="󰂃 "
     [ "$capacity" -le 25 ] &&  status="󰂃 "
-	printf "%s%d%" "$status" "$capacity"
+	printf "%s%d%%" "$status" "$capacity"
 done && printf "\\n"
