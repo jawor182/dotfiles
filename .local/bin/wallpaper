@@ -4,7 +4,7 @@ randomWall=$(find "$HOME/walls" -type f -iname "*.png" -print0 | shuf -n 1 -z)
 
 case "$1" in
     "random")
-        xwallpaper --stretch "$randomWall"
+        awww img --transition-duration=0.5 --transition-fps=165 --transition-step=90 --transition-type=grow --resize=stretch "$randomWall"
         ;;
     "set")
         target="$2"
@@ -15,7 +15,7 @@ case "$1" in
             wall="$target"
         fi
 
-        xwallpaper --stretch "$wall"
+        awww img --transition-duration=0.5 --transition-fps=165 --transition-step=90 --transition-type=grow --resize=stretch "$wall"
         ;;
     "open")
         find "$HOME/walls" -type f -iname '*.png' | shuf | nsxiv -t -
