@@ -4,13 +4,9 @@ maim
 xclip
 xcolor
 xdotool
-xlibre-xserver-beta
-xlibre-xserver-common-beta
-xlibre-xserver-devel-beta
-xlibre-xserver-src-beta
-xlibre-xserver-xephyr-beta
-xlibre-xserver-xnest-beta
-xlibre-xserver-xvfb-beta
+xlibre
+xlibre-drivers
+xlibre-meta
 xorg-xbacklight
 xorg-xclipboard
 xorg-xev
@@ -117,6 +113,7 @@ pciutils
 perl-file-mimeinfo
 perl-image-exiftool
 php
+picom
 pnpm
 powertop
 protobuf
