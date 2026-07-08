@@ -1,6 +1,6 @@
 #!/bin/sh
 
-option=$(printf 'Lock Screen\nPower Off\nReboot\nSuspend' | bemenu --fixed-height -W 0.3 -c -i -l 4 -p "What do you want to do? ")
+option=$(printf 'Lock Screen\nPower Off\nReboot\nSuspend' | rofi -dmenu -i -l 4 -p "Select an action")
 LOCK="waylock -fail-color 0xfb4934 -init-color 0x282828 -input-color 0xd65d0e -ignore-empty-password -fork-on-lock"
 
 case $option in

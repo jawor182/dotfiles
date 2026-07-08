@@ -5,7 +5,6 @@ awww-daemon &
 foot -s &
 dunst &
 playerctld &
-wallpaper random &
 nightlight &
 /usr/lib/xdg-desktop-portal &
 /usr/lib/xdg-desktop-portal-wlr &
