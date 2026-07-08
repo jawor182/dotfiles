@@ -1,0 +1,127 @@
+{
+    "height": 32,
+    "spacing": 4,
+    "modules-left": [
+        "mango/workspaces",
+        "mango/layout",
+        "mango/window",
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "tray",
+        "clock",
+        "idle_inhibitor",
+        "pulseaudio",
+        // "backlight",
+        // "battery",
+        "network",
+    ],
+    "mango/workspaces": {
+        "format": "{icon}",
+        "hide-empty": true,
+        "on-click": "activate",
+        "on-click-right": "toggle",
+        "overview-label": "OVERVIEW"
+    },
+    "mango/window": {
+        "format": "{}",
+        "icon":true,
+        "icon-size":22,
+    },
+    "mango/layout": {
+        "format": "[{symbol}]",
+        "format-T": "[]=",
+    },
+    "tray": {
+        "icon-size": 22,
+        "spacing": 4,
+    },
+    "clock": {
+        "format": " {:%H:%M %d %b %Y}",
+        "format-alt": "󰃰 {:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"             : "month",
+            "weeks-pos"        : "right",
+            "first-day-of-week": 1,
+            "on-scroll"        : 1,
+            "on-click-right"   : "mode",
+            "format": {
+                "months":     "<span color='#ebdbb2'><b>{}</b></span>",
+                "days":       "<span color='#d5c4a1'><b>{}</b></span>",
+                "weeks":      "<span color='#b8bb26'><b>W{}</b></span>",
+                "weekdays":   "<span color='#fabd2f'><b>{}</b></span>",
+                "today":      "<span color='#fb4934'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+    },
+    "battery": {
+        "states": {
+            "good": 65,
+            "warning": 30,
+            "critical": 10,
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󱧥 {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "tooltip": false,
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "tooltip": false,
+        "scroll-step":5,
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": "{icon} ",
+        "format-muted": " ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": [
+                ""
+            ],
+        },
+        "on-click": "$TERMINAL --app-id floatingterm -e pulsemixer",
+        "on-click-middle": "wpctl set-mute @DEFAULT_SINK@ toggle",
+    },
+}
+// -*- mode: jsonc -*-

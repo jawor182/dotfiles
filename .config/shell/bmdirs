@@ -7,14 +7,13 @@ cs                      ~/dotfiles/.local/bin/
 cf                      ~/dotfiles/.config/
 cl                      ~/dotfiles/.local/share/
 rp                      ~/repos/projects/
-rss                     ~/repos/suckless/
-rsd                     ~/repos/suckless/dwm/
 rr                      ~/repos/
 sr                      ~/.local/src/
 dx                      ~/dox/
 dn                      ~/dox/notes/
 dp                      ~/dox/pix/
 M                       ~/media/
+V                       ~/media/vids
 W                       ~/walls/
 l                       ~/dl/
 k                       ~/keepassxc/

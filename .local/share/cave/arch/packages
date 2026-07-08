@@ -1,19 +1,21 @@
-# X and it's utilites
-lxappearance
-maim
-xclip
-xcolor
-xdotool
-xlibre
-xlibre-drivers
-xlibre-meta
-xorg-xbacklight
-xorg-xclipboard
-xorg-xev
-xorg-xinit
-xorg-xrandr
-xorg-xset
-xwallpaper
+# Wayland and it's utilites
+awww
+foot
+grim
+rofi
+slurp
+swayidle
+waybar
+wayland
+wayland-protocols
+wayland-utils
+waylock
+wl-clipboard
+wlr-randr
+wlroots0.19
+wlroots0.20
+xorg-xwayland
+xdg-desktop-portal-wlr
 # media 
 calibre
 mpc
@@ -36,7 +38,7 @@ simple-scan
 system-config-printer
 # DE utils
 dunst
-redshift
+gammastep
 syncthing
 # GUI
 discord
@@ -61,7 +63,7 @@ noto-fonts-emoji
 papirus-icon-theme
 ttf-dejavu 
 ttf-font-awesome 
-ttf-jetbrains-mono-nerd 
+ttf-jetbrains-mono-nerd
 ttf-jigmo
 ttf-liberation 
 ttf-nerd-fonts-symbols 
@@ -74,6 +76,7 @@ android-udev
 atool
 bat
 cargo
+chafa
 checkbashisms
 clang
 cmake
@@ -113,12 +116,12 @@ pciutils
 perl-file-mimeinfo
 perl-image-exiftool
 php
-picom
 pnpm
 powertop
 protobuf
 pulsemixer
 python
+qt5-wayland
 ripgrep
 ruby
 rust
@@ -130,7 +133,6 @@ tree-sitter
 tree-sitter-c
 tree-sitter-cli
 udisks2
-ueberzugpp
 unrar
 unzip
 usbmuxd

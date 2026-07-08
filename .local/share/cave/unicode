@@ -42,16 +42,21 @@
 😑 expressionless face
 😶 face without mouth
 🫥 dotted line face
+😶‍🌫️ face in clouds
 😏 smirking face
 😒 unamused face
 🙄 face with rolling eyes
 😬 grimacing face
 🤥 lying face
+🫨 shaking face
+🙂‍↔️ head shaking horizontally
+🙂‍↕️ head shaking vertically
 😌 relieved face
 😔 pensive face
 😪 sleepy face
 🤤 drooling face
 😴 sleeping face
+🫩 face with bags under eyes
 😷 face with medical mask
 🤒 face with thermometer
 🤕 face with head-bandage
@@ -62,6 +67,7 @@
 🥶 cold face
 🥴 woozy face
 😵 face with crossed-out eyes
+😵‍💫 face with spiral eyes
 🤯 exploding head
 🤠 cowboy hat face
 🥳 partying face
@@ -78,6 +84,7 @@
 😯 hushed face
 😲 astonished face
 😳 flushed face
+🫪 distorted face
 🥺 pleading face
 🥹 face holding back tears
 😦 frowning face with open mouth
@@ -96,8 +103,8 @@
 😫 tired face
 🥱 yawning face
 😤 face with steam from nose
-😡 pouting face
 😠 angry face
+😡 enraged face
 🤬 face with symbols on mouth
 😈 smiling face with horns
 👿 angry face with horns
@@ -135,6 +142,8 @@
 💟 heart decoration
 ❣️ heart exclamation
 💔 broken heart
+❤️‍🔥 heart on fire
+❤️‍🩹 mending heart
 ❤️ red heart
 🧡 orange heart
 💛 yellow heart
@@ -146,12 +155,14 @@
 🤍 white heart
 💯 hundred points
 💢 anger symbol
+🫯 fight cloud
 💥 collision
 💫 dizzy
 💦 sweat droplets
 💨 dashing away
 🕳️ hole
 💣 bomb
+👁️‍🗨️ eye in speech bubble
 💬 speech balloon
 🗨️ left speech bubble
 🗯️ right anger bubble
@@ -166,6 +177,8 @@
 🫲 leftwards hand
 🫳 palm down hand
 🫴 palm up hand
+🫷 leftwards pushing hand
+🫸 rightwards pushing ha
 👌 OK hand
 🤌 pinched fingers
 🤏 pinching hand
@@ -224,36 +237,129 @@
 👱 person: blond hair
 👨 man
 🧔 person: beard
+🧔‍♂️ man: beard
+🧔‍♀️ woman: beard
+👨‍🦰 man: red hair
+👨‍🦱 man: curly hair
+👨‍🦳 man: white hair
+👨‍🦲 man: bald
 👩 woman
+👩‍🦰 woman: red hair
+🧑‍🦰 person: red hair
+👩‍🦱 woman: curly hair
+🧑‍🦱 person: curly hair
+👩‍🦳 woman: white hair
+🧑‍🦳 person: white hair
+👩‍🦲 woman: bald
+🧑‍🦲 person: bald
+👱‍♀️ woman: blond hair
+👱‍♂️ man: blond hair
 🧓 older person
 👴 old man
 👵 old woman
 🙍 person frowning
+🙍‍♂️ man frowning
+🙍‍♀️ woman frowning
 🙎 person pouting
 🙅 person gesturing NO
+🙅‍♂️ man gesturing NO
+🙅‍♀️ woman gesturing NO
 🙆 person gesturing OK
+🙆‍♂️ man gesturing OK
+🙆‍♀️ woman gesturing OK
 💁 person tipping hand
+🙆‍♂️ man gesturing OK
 🙋 person raising hand
+ man raising hand
+🙋‍♀️ woman raising hand
 🧏 deaf person
+🧏‍♂️ deaf mandeaf man
+🧏‍♀️ deaf woman
 🙇 person bowing
+🙇‍♂️ man bowing
+🙇‍♀️ woman bowing
 🤦 person facepalming
+🤦‍♂️ man facepalming
+🤦‍♀️ woman facepalming
 🤷 person shrugging
+🤷‍♂️ man shrugging
+🤷‍♀️ woman shrugging
+🧑‍⚕️ health worker
+👨‍⚕️ man health worker
+👩‍⚕️ woman health worker
+🧑‍🎓 student
+👨‍🎓 man student
+👩‍🎓 woman student
+🧑‍🏫 teacher
+👨‍🏫 man teacher
+👩‍🏫 woman teacher
+🧑‍⚖️ judge
+👨‍⚖️ man judge
+👩‍⚖️ woman judge
+🧑‍🌾 farmer
+👨‍🌾 man farmer
+👩‍🌾 woman farmer
+🧑‍🍳 cook
+👨‍🍳 man cook
+👩‍🍳 woman cook
+🧑‍🔧 mechanic
+👨‍🔧 man mechanic
+👩‍🔧 woman mechanic
+🧑‍🏭 factory worker
+👨‍🏭 man factory worker
+👩‍🏭 woman factory worker
+🧑‍💼 office worker
+👨‍💼 man office worker
+👩‍💼 woman office worker
+🧑‍🔬 scientist
+👨‍🔬 man scientist
+👩‍🔬 woman scientist
+🧑‍💻 technologist
+👨‍💻 man technologist
+👩‍💻 woman technologist
+🧑‍🎤 singer
+👨‍🎤 man singer
+👩‍🎤 woman singer
+🧑‍🎨 artist
+👨‍🎨 man artist
+👩‍🎨 woman artist
+🧑‍✈️ pilot
+👨‍✈️ man pilot
+👩‍✈️ woman pilot
+🧑‍🚀 astronaut
+👨‍🚀 man astronaut
+👩‍🚀 woman astronaut
+🧑‍🚒 firefighter
+👨‍🚒 man firefighter
+👩‍🚒 woman firefighter
 👮 police officer
+👮‍♂️ man police officer
+👮‍♀️ woman police offi
 🕵️ detective
+🕵️‍♂️ man detective
+🕵️‍♀️ woman detective
 💂 guard
+💂‍♂️ man guard
+💂‍♀️ woman guard
 🥷 ninja
 👷 construction worker
+👷‍♂️ man construction worker
+👷‍♀️ woman construction worker
 🫅 person with crown
 🤴 prince
 👸 princess
 👳 person wearing turban
+👳‍♂️ man wearing turban
+👳‍♀️ woman wearing turban
 👲 person with skullcap
 🧕 woman with headscarf
 🤵 person in tuxedo
+🤵‍♂️ man in tuxedo
+🤵‍♀️ woman in tuxedo
 👰 person with veil
+👰‍♂️ man with veil
+👰‍♀️ woman with veil
 🤰 pregnant woman
-🫃 pregnant man
-🫄 pregnant person
 🤱 breast-feeding
 👼 baby angel
 🎅 Santa Claus
@@ -263,7 +369,7 @@
 🧙 mage
 🧚 fairy
 🧛 vampire
-🧜 merperson
+🧜‍♀️ mermaid
 🧝 elf
 🧞 genie
 🧟 zombie
@@ -271,6 +377,11 @@
 💆 person getting massage
 💇 person getting haircut
 🚶 person walking
+🚶‍♂️ man walking
+🚶‍♀️ woman walking
+🚶‍➡️ person walking facing right
+🚶‍♀️‍➡️ woman walking facing right
+🚶‍♂️‍➡️ man walking facing right
 🧍 person standing
 🧎 person kneeling
 🏃 person running
@@ -318,17 +429,21 @@
 🐶 dog face
 🐕 dog
 🦮 guide dog
+🐕‍🦺 service dog
 🐩 poodle
 🐺 wolf
 🦊 fox
 🦝 raccoon
 🐱 cat face
 🐈 cat
+🐈‍⬛ black cat
 🦁 lion
 🐯 tiger face
 🐅 tiger
 🐆 leopard
 🐴 horse face
+🫎 moose
+🫏 donkey
 🐎 horse
 🦄 unicorn
 🦓 zebra
@@ -364,6 +479,7 @@
 🦔 hedgehog
 🦇 bat
 🐻 bear
+🐻‍❄️ polar bear
 🐨 koala
 🐼 panda
 🦥 sloth
@@ -390,6 +506,10 @@
 🦩 flamingo
 🦚 peacock
 🦜 parrot
+🪽 wing
+🐦‍⬛ black bird
+🪿 goose
+🐦‍🔥 phoenix
 🐸 frog
 🐊 crocodile
 🐢 turtle
@@ -402,6 +522,7 @@
 🐳 spouting whale
 🐋 whale
 🐬 dolphin
+🫍 orca
 🦭 seal
 🐟 fish
 🐠 tropical fish
@@ -410,6 +531,12 @@
 🐙 octopus
 🐚 spiral shell
 🪸 coral
+🪼 jellyfish
+🦀 crab
+🦞 lobster
+🦐 shrimp
+🦑 squid
+🦪 oyster
 🐌 snail
 🦋 butterfly
 🐛 bug
@@ -437,6 +564,7 @@
 🌻 sunflower
 🌼 blossom
 🌷 tulip
+🪻 hyacinth
 🌱 seedling
 🪴 potted plant
 🌲 evergreen tree
@@ -452,11 +580,14 @@
 🍃 leaf fluttering in wind
 🪹 empty nest
 🪺 nest with eggs
+🍄 mushroom
+🪾 leafless tree
 🍇 grapes
 🍈 melon
 🍉 watermelon
 🍊 tangerine
 🍋 lemon
+🍋‍🟩 lime
 🍌 banana
 🍍 pineapple
 🥭 mango
@@ -487,6 +618,10 @@
 🥜 peanuts
 🫘 beans
 🌰 chestnut
+🫚 ginger root
+🫛 pea pod
+🍄‍🟫 brown mushroom
+🫜 root vegetable
 🍞 bread
 🥐 croissant
 🥖 baguette bread
