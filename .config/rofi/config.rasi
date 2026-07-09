@@ -2,6 +2,10 @@ configuration {
     font: "JetBrainsMonoNerdFont 14";
     icon-theme: "Papirus Dark";
     disable-history: true;
+    kb-row-select: "Tab";
+    kb-element-next: "";
+    kb-row-up: "Control+p,Alt+k";
+    kb-row-down: "Control+n,Alt+j";
 }
 
 * {

@@ -1,12 +1,18 @@
 #!/bin/sh
 
-option=$(printf 'Lock Screen\nPower Off\nReboot\nSuspend' | rofi -dmenu -i -l 4 -p "Select an action")
+lock="󰌾 Lock Screen"
+power="󰐥 Power Off"
+reboot="󰑓 Reboot"
+suspend="󰽥 Suspend"
+
+option=$(printf "$lock\n$power\n$reboot\n$suspend" | rofi -dmenu -i -l 4 -p "Select an action" -theme themes/powermenu)
+
 LOCK="waylock -fail-color 0xfb4934 -init-color 0x282828 -input-color 0xd65d0e -ignore-empty-password -fork-on-lock"
 
 case $option in
-"Power Off") systemctl poweroff ;;
-"Reboot") systemctl reboot ;;
-"Suspend") $LOCK & systemctl suspend ;;
-"Lock Screen") $LOCK ;;
+"$power") systemctl poweroff ;;
+"$reboot") systemctl reboot ;;
+"$suspend") $LOCK & systemctl suspend ;;
+"$lock") $LOCK ;;
 *) ;;
 esac
