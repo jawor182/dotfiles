@@ -14,7 +14,7 @@ if [ $? -ne 0 ] || [ ! -f "$TEMP_FILE" ]; then
     exit 1
 fi
 
-OPTION=$(printf 'Copy to Clipboard\nSave\nOpen\nCancel' | bemenu --fixed-height -W 0.3 -c -i -l 4 -p "What do you want to do?")
+OPTION=$(printf 'Copy to Clipboard\nSave\nOpen\nCancel' | rofi -dmenu -l 4 -p "Select option")
 
 if [ -z "$OPTION" ]; then
     notify-send "Screenshot Aborted" "Action selection cancelled."
