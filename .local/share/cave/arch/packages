@@ -5,6 +5,7 @@ grim
 rofi
 slurp
 swayidle
+waybar
 wayland
 wayland-protocols
 wayland-utils

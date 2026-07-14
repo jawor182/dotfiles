@@ -56,7 +56,7 @@ window {
     background-color: @background;
     border:           2;
     padding:          2;
-    border-radius:    0px;
+    border-radius:    9px;
     width:            40%;
 }
 

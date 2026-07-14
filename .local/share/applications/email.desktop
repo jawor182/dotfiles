@@ -1,6 +1,4 @@
 [Desktop Entry]
 Type=Application
-Name=mutt 
-GenericName=terminal email client
+Name=Mail
 Exec=/usr/bin/foot -e neomutt %u
-Icon=mutt

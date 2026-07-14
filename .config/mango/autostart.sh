@@ -1,12 +1,13 @@
 #!/bin/sh
 
-playerctld & 
+waybar &
 awww-daemon &
+foot -s &
 dunst &
+playerctld &
 nightlight &
 /usr/lib/xdg-desktop-portal &
 /usr/lib/xdg-desktop-portal-wlr &
-shortcuts
 
 swayidle -w \
     timeout 600 "wlr-dpms off" \
