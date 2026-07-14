@@ -1,6 +1,6 @@
 #!/bin/sh
 
-date=$(date '+%d %b %Y')
+date=$(date '+%A, %d %b')
 time=$(date '+%H:%M')
 
 case $BLOCK_BUTTON in 
@@ -8,4 +8,4 @@ case $BLOCK_BUTTON in
     6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-printf " %s\n" "$time"
+printf " %s%s\n" "$date $time"
