@@ -35,6 +35,7 @@ bind index,pager g noop
 bind index \Cf noop
 bind index,pager M noop
 bind index,pager C noop
+bind index,pager \Cb noop
 
 # General rebindings
 bind index gg first-entry

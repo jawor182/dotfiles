@@ -84,6 +84,7 @@ ex              
 *.java	        
 *.bak           󰁯
 *.json          
+*.jsonc         
 *.webmanifest   
 *.js            
 *.mjs           

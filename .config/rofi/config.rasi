@@ -6,6 +6,7 @@ configuration {
     kb-element-next: "";
     kb-row-up: "Control+p,Alt+k";
     kb-row-down: "Control+n,Alt+j";
+    kb-primary-paste:"Alt+v,Control+V,Shift+Insert";
 }
 
 * {
