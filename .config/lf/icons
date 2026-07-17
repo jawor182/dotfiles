@@ -86,8 +86,8 @@ ex              
 *.json          
 *.jsonc         
 *.webmanifest   
-*.js            
-*.mjs           
+*.js            󰌞
+*.mjs           󰌞
 *.jsx           
 *.rb            
 *.gemspec       
@@ -155,7 +155,7 @@ ex              
 *.ai            
 *.psd           
 *.psb           
-*.ts            
+*.ts            󰛦
 *.tsx           
 *.jl            
 *.pp            
@@ -214,3 +214,4 @@ ex              
 *.dwm                   
 *.sway                  
 *.tinywl                
+*tmux.conf              
