@@ -17,7 +17,6 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.mouse = 'a'
 vim.opt.conceallevel = 2
-vim.opt.winborder = 'none'
 
 vim.pack.add({
     { src = 'https://github.com/windwp/nvim-autopairs' },
@@ -42,7 +41,6 @@ vim.pack.add({
     { src = 'https://github.com/saadparwaiz1/cmp_luasnip' },
     { src = 'https://github.com/rafamadriz/friendly-snippets' },
     { src = 'https://github.com/honza/vim-snippets' },
-    { src = 'https://github.com/j-hui/fidget.nvim' },
     { src = 'https://github.com/stevearc/conform.nvim' },
     { src = 'https://github.com/folke/zen-mode.nvim' },
     { src = 'https://github.com/epwalsh/obsidian.nvim' },
@@ -65,16 +63,15 @@ vim.api.nvim_create_autocmd('FileType', {
     end
 })
 
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = "markdown",
-    callback = function()
-        vim.opt.textwidth = 120
-    end
+vim.diagnostic.config({
+    virtual_text ={
+        underline = true,
+        signs = true
+    }
 })
 
 vim.cmd('packadd nvim.undotree')
 vim.keymap.set('n', '<leader>u', require('undotree').open)
-
 
 local function treesitter_install()
     local ensure_installed = { 'c', 'cpp', 'lua', 'php', 'javascript', 'html', 'css', 'tsx', 'typescript', 'go',
@@ -142,21 +139,12 @@ cmp.setup({
 
     window = {
         completion = cmp.config.window.bordered({
-            border = 'single',
-            winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
-            -- Cap the menu width tightly
-            max_width = 50,
+            border = 'double',
+            winhighlight = 'Normal:None,FloatBorder:None,CursorLine:PmenuSel,Search:None',
         }),
-
         documentation = cmp.config.window.bordered({
-            border = 'single',
-            winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,Search:None',
-            -- This setting forces the doc window below or above the list
-            -- instead of shoving it to the far left when space is tight
-            col_offset = 0,
-            side_padding = 0,
-            max_width = 50,
-            max_height = 10,
+            border = 'double',
+            winhighlight = 'Normal:None,FloatBorder:None,Search:None',
         }),
     },
 
@@ -193,12 +181,10 @@ local orig_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
     opts = opts or {}
 
-    opts.border = 'single'
+    opts.border = 'double'
 
-    opts.winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,Search:None'
-
-    opts.max_width = 65
-    opts.max_height = 12
+    opts.max_width = 60
+    opts.max_height = 30
 
     opts.wrap = false
 
@@ -396,7 +382,7 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
 vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+vim.keymap.set('n', 'grr', vim.lsp.buf.references, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
