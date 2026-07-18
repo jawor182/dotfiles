@@ -21,6 +21,7 @@ macro d set browser "dlvid" ; open-in-browser ; set browser linkhandler
 macro p set browser "dlpod" ; open-in-browser ; set browser linkhandler
 macro m set browser "mpvq add" ; open-in-browser ; set browser linkhandler
 macro w set browser "w3m -o auto_image=FALSE" ; open-in-browser ; set browser linkhandler
+macro y set browser "wl-copy" ; open-in-browser ; set browsr linkhandler
 
 color background          color223   default
 color listnormal          color223   default
