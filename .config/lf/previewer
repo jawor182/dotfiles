@@ -28,7 +28,7 @@ image/vnd.djvu*)
     ;;
 image/*) image "$1" "$2" "$3" ;;
 application/x-troff-man|text/troff) man ./ "$1" | col -b ;;
-text/*|*/xml|application/javascript|application/typescript|application/x-desktop|application/json|application/x-ndjson|application/mbox|audio/x-mod|application/x-shellscript|inode/symlink|application/vnd.ms-publisher|application/pgp-signature|application/x-trash|application/x-wine-extension-ini)
+text/*|*/xml|application/javascript|application/toml|application/typescript|application/x-desktop|application/json|application/x-ndjson|application/mbox|audio/x-mod|application/x-shellscript|inode/symlink|application/vnd.ms-publisher|application/pgp-signature|application/x-trash|application/x-wine-extension-ini)
     bat --color=always -p --theme gruvbox-dark "$1" ;;
 audio/*ogg) mediainfo "$1" ;;
 audio/mpeg)
