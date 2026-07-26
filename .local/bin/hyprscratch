@@ -1,0 +1,32 @@
+#!/bin/sh
+
+windows_in() {
+    hyprctl clients -j |
+        jq ".[] | select(.workspace.name==\"special:$1\")"
+}
+
+toggle_scratchpad() {
+    ws="$1"
+    cmd="$2"
+    if [ -z "$(windows_in "$ws")" ]; then
+        # hyprctl dispatch "hl.dsp.exec_cmd($cmd,{workspace=special:$ws})"
+        hyprctl dispatch "hl.dsp.exec_cmd(\"$cmd\", {workspace=\"special:$ws\"})"
+    else
+        hyprctl dispatch "hl.dsp.workspace.toggle_special(\"$ws\")"
+    fi
+}
+term="foot"
+fterm="foot --app-id floatingterm"
+
+case "$1" in
+terminal)
+    toggle_scratchpad "terminal" "$fterm" ;;
+music)
+    toggle_scratchpad "music" "$fterm -e ncmpcpp" ;;
+calc)
+    toggle_scratchpad "calc" "$fterm -e calcurse" ;;
+qalc)
+    toggle_scratchpad "qalc" "$fterm -e qalc" ;;
+notes)
+    toggle_scratchpad "notes" "$term -e sh -c 'cd $HOME/dox/notes && $EDITOR'" ;;
+esac
