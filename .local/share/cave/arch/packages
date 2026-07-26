@@ -18,10 +18,9 @@ hyprwayland-scanner
 hyprwire
 rofi
 slurp
-wayland
+waybar
 wayland-protocols
 wayland-utils
-waylock
 wl-clipboard
 xdg-desktop-portal-hyprland
 xorg-xwayland
