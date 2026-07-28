@@ -18,6 +18,7 @@ selectbookmark_browser() {
 
 addbookmark(){
     bookmark=$(wl-paste)
+    [ -z $bookmark ] && exit 1
     if sed 's/ *#.*//' "$bmfile" | grep -x "$bookmark"; then
         notify-send "Bookmark is already in file"
         exit 1

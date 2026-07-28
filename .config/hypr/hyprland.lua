@@ -28,7 +28,8 @@ hl.monitor({
 ---------------------
 
 local terminal     = "footclient"
-local menu         = "rofi -show drun -show-icons"
+local dmenu        = "rofi -show drun -show-icons"
+local rmenu        = "rofi -show run"
 local fileManager  = terminal .. " -T files -e lf"
 local email        = terminal .. " -T email -e neomutt"
 local news         = terminal .. " -T news -e newsboat"
@@ -232,7 +233,8 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("killall -SIGUSR2 waybar"))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(dmenu))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(rmenu))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(email))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(notes))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(news))
