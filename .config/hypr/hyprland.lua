@@ -30,10 +30,10 @@ hl.monitor({
 local terminal     = "footclient"
 local dmenu        = "rofi -show drun -show-icons"
 local rmenu        = "rofi -show run"
-local fileManager  = terminal .. " -T files -e lf"
+local fileManager  = terminal .. " -T files -e yazi"
 local email        = terminal .. " -T email -e neomutt"
 local news         = terminal .. " -T news -e newsboat"
-local notes        = terminal .. " -e sh -c \"cd $HOME/dox/notes && $EDITOR\""
+local notes        = "obsidian"
 local browser      = "helium-browser"
 local passwords    = "keepassxc"
 local lockscreen   = "hyprlock"
@@ -255,12 +255,12 @@ hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprpicker"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("wallpaper open"))
 hl.bind(mainMod .. " + CONTROL + W", hl.dsp.exec_cmd("wallpaper random"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("screenshot"))
-hl.bind("Print",                   hl.dsp.exec_cmd("grim -o $(hyprctl monitors -j | jq -r '.[] | select (.focused?) | .name') \"$HOME/dox/pix/screenshots/$(date '+%Y-%m-%d-%H-%M-%S').png\""))
+hl.bind("Print",                   hl.dsp.exec_cmd("grim -o $(hyprctl monitors -j | jq -r '.[] | select (.focused?) | .name') \"$HOME/dox/pix/screenshots/$(date '+%Y-%m-%d-%H-%M-%S').png\" && notify-send 'screenshot taken'"))
 hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd("mpvq addclip"))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("mpvq play"))
-hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("rofibookmarks select"))
-hl.bind(mainMod .. " + F2", hl.dsp.exec_cmd("rofibookmarks select_browser"))
-hl.bind(mainMod .. " + F3", hl.dsp.exec_cmd("rofibookmarks add"))
+hl.bind(mainMod .. " + Grave", hl.dsp.exec_cmd("rofibookmarks select"))
+hl.bind(mainMod .. " + SHIFT + Grave", hl.dsp.exec_cmd("rofibookmarks select_browser"))
+hl.bind(mainMod .. " + ALT + B", hl.dsp.exec_cmd("rofibookmarks add"))
 hl.bind(mainMod .. " + SHIFT + U", hl.dsp.exec_cmd("rofiunicode"))
 
 -- Layout binds
@@ -392,8 +392,23 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    match = { class = "orca-slicer" },
+    workspace = "4",
+})
+
+hl.window_rule({
     match = { title = "news" },
     workspace = "5",
+})
+
+hl.window_rule({
+    match = { class = "md.Obsidian" },
+    workspace = "6",
+})
+
+hl.window_rule({
+    match = { class = "org.freecad.FreeCAD" },
+    workspace = "7",
 })
 
 hl.window_rule({

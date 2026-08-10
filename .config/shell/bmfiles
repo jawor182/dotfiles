@@ -8,13 +8,14 @@ cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfe                     ~/dotfiles/.config/mutt/muttrc
 cff                     ~/dotfiles/.config/foot/foot.ini
 cfh                     ~/dotfiles/.config/hypr/hyprland.lua
-cfl                     ~/dotfiles/.config/lf/lfrc
 cfm                     ~/dotfiles/.config/mpv/mpv.conf
 cfn                     ~/dotfiles/.config/nvim/init.lua
 cfr                     ~/dotfiles/.config/rofi/config.rasi
 cft                     ~/dotfiles/.config/tmux/tmux.conf
-cft                     ~/dotfiles/.config/waybar/config.jsonc
+cfw                     ~/dotfiles/.config/waybar/config.jsonc
+cfy                     ~/dotfiles/.config/yazi/yazi.toml
 cfz                     ~/dotfiles/.config/zsh/.zshrc
+czp                     ~/dotfiles/.config/zsh/.zprofile
 cfv                     ~/.local/share/mpvq/playlist.m3u                          
 ckb                     ~/keepassxc/bookmarks
 cke                     ~/keepassxc/accounts.conf

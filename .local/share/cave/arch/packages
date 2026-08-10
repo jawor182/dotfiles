@@ -57,11 +57,11 @@ pcmanfm-qt
 btop
 calcurse
 fzf
-lf
 neomutt
 neovim
 newsboat
 tmux
+yazi
 # Appearance
 adw-gtk-theme
 gnome-themes-extra
@@ -79,6 +79,7 @@ ttf-nerd-fonts-symbols-common
 ttf-roboto
 ttf-sazanami 
 # system utilities/libs/other stuff
+7zip
 android-tools
 android-udev
 atool
@@ -130,6 +131,7 @@ protobuf
 pulsemixer
 python
 qt5-wayland
+resvg
 ripgrep
 ruby
 rust

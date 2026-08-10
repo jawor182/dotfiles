@@ -2,7 +2,7 @@
     "height": 32,
     "spacing": 4,
     "modules-left": [
-        "ext/workspaces",
+        "hyprland/workspaces",
         "hyprland/window"
     ],
     "modules-center": [],
@@ -15,10 +15,9 @@
         // "battery",
         "network"
     ],
-    "ext/workspaces": {
+    "hyprland/workspaces": {
         "format": "{icon}",
         "hide-empty": true,
-        "on-click": "activate",
         "format-icons":{
             "11":1,
             "12":2,
@@ -37,10 +36,6 @@
         "icon":true,
         "icon-size":22,
         "separate-outputs":true
-    },
-    "mango/layout": {
-        "format": "[{symbol}]",
-        "format-T": "[]="
     },
     "tray": {
         "icon-size": 22,
