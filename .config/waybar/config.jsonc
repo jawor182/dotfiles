@@ -18,6 +18,7 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "hide-empty": true,
+        "disable-scroll": true,
         "format-icons":{
             "11":1,
             "12":2,

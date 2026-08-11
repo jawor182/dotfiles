@@ -129,23 +129,23 @@ hl.curve("linear",          { type = "bezier", points = { { 0, 0 }, { 1, 1 } } }
 hl.curve("almostLinear",    { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1.0 } } })
 hl.curve("quick",           { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
 
-hl.animation({ leaf = "global",             enabled = true, speed = 3, bezier = "default" })
-hl.animation({ leaf = "border",             enabled = true, speed = 5, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows",            enabled = true, speed = 3, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windowsIn",          enabled = true, speed = 2, bezier = "quick"})
-hl.animation({ leaf = "windowsOut",         enabled = true, speed = 2, bezier = "quick"})
-hl.animation({ leaf = "fadeIn",             enabled = true, speed = 1.2, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeOut",            enabled = true, speed = 1.2, bezier = "almostLinear" })
-hl.animation({ leaf = "fade",               enabled = true, speed = 1, bezier = "quick" })
-hl.animation({ leaf = "layers",             enabled = true, speed = 1, bezier = "quick" })
-hl.animation({ leaf = "layersIn",           enabled = true, speed = 1.5, bezier = "quick" })
-hl.animation({ leaf = "layersOut",          enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
-hl.animation({ leaf = "fadeLayersIn",       enabled = true, speed = 1.5, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeLayersOut",      enabled = true, speed = 1.5, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces",         enabled = true, speed = 1.5, bezier = "almostLinear", style = "slide" })
-hl.animation({ leaf = "workspacesIn",       enabled = true, speed = 1.5, bezier = "almostLinear", style = "slide" })
-hl.animation({ leaf = "workspacesOut",      enabled = true, speed = 1.5, bezier = "almostLinear", style = "slide" })
-hl.animation({ leaf = "specialWorkspace",   enabled = true, speed = 1, bezier = "quick", style = "fade" })
+hl.animation({ leaf = "global",             enabled = true, speed = 3,      bezier = "default" })
+hl.animation({ leaf = "border",             enabled = true, speed = 5,      bezier = "easeOutQuint" })
+hl.animation({ leaf = "windows",            enabled = true, speed = 3,      bezier = "easeOutQuint" })
+hl.animation({ leaf = "windowsIn",          enabled = true, speed = 2,      bezier = "quick" })
+hl.animation({ leaf = "windowsOut",         enabled = true, speed = 2,      bezier = "quick" })
+hl.animation({ leaf = "fadeIn",             enabled = true, speed = 1.2,    bezier = "almostLinear" })
+hl.animation({ leaf = "fadeOut",            enabled = true, speed = 1.2,    bezier = "almostLinear" })
+hl.animation({ leaf = "fade",               enabled = true, speed = 1,      bezier = "quick" })
+hl.animation({ leaf = "layers",             enabled = true, speed = 1,      bezier = "quick" })
+hl.animation({ leaf = "layersIn",           enabled = true, speed = 1.5,    bezier = "quick" })
+hl.animation({ leaf = "layersOut",          enabled = true, speed = 1.5,    bezier = "linear",          style = "fade" })
+hl.animation({ leaf = "fadeLayersIn",       enabled = true, speed = 1.5,    bezier = "almostLinear" })
+hl.animation({ leaf = "fadeLayersOut",      enabled = true, speed = 1.5,    bezier = "almostLinear" })
+hl.animation({ leaf = "workspaces",         enabled = true, speed = 1.5,    bezier = "almostLinear",    style = "fade" })
+hl.animation({ leaf = "workspacesIn",       enabled = true, speed = 1.5,    bezier = "almostLinear",    style = "fade" })
+hl.animation({ leaf = "workspacesOut",      enabled = true, speed = 1.5,    bezier = "almostLinear",    style = "fade" })
+hl.animation({ leaf = "specialWorkspace",   enabled = true, speed = 1,      bezier = "quick",           style = "fade" })
 
 hl.config({
     master = {
@@ -227,7 +227,8 @@ hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exit())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle"}))
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd(lockscreen))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("killall -SIGUSR2 waybar"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("killall -SIGUSR2 waybar"))
 
 -- Program binds
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
@@ -402,7 +403,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "md.Obsidian" },
+    match = { class = "md.obsidian.Obsidian" },
     workspace = "6",
 })
 
@@ -446,3 +447,7 @@ hl.window_rule({
     match = { class = "footclient"},
     size = {"(monitor_w*0.6)", "(monitor_h*0.7)"},
 })
+
+hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = 0, gaps_in = 0 })
+hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 0 })
+hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 })
