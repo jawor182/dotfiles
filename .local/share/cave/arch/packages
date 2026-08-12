@@ -30,8 +30,8 @@ mpc
 mpd
 mpv
 mpv-mpris
-ncmpcpp
 playerctl
+rmpc
 zathura
 zathura-djvu
 zathura-pdf-mupdf

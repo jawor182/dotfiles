@@ -42,8 +42,6 @@ vim.pack.add({
     { src = 'https://github.com/rafamadriz/friendly-snippets' },
     { src = 'https://github.com/honza/vim-snippets' },
     { src = 'https://github.com/stevearc/conform.nvim' },
-    { src = 'https://github.com/folke/zen-mode.nvim' },
-    { src = 'https://github.com/epwalsh/obsidian.nvim' },
     { src = 'https://github.com/christoomey/vim-tmux-navigator' },
     {
         src = 'https://github.com/nvim-treesitter/nvim-treesitter',
@@ -284,69 +282,6 @@ require('conform').setup({
     },
 })
 
-require('zen-mode').setup({
-    window = {
-        backdrop = 1,               -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
-        width = 80,                 -- width of the Zen window
-        height = 1,                 -- height of the Zen window
-        options = {
-            signcolumn = 'no',      -- disable signcolumn
-            number = false,         -- disable number column
-            relativenumber = false, -- disable relative numbers
-            cursorline = false,     -- disable cursorline
-            cursorcolumn = false,   -- disable cursor column
-            foldcolumn = '0',       -- disable fold column
-            list = false,           -- disable whitespace characters
-        },
-    },
-})
-
-require('obsidian').setup({
-    workspaces = {
-        {
-            name = 'notes',
-            path = '~/dox/notes',
-        },
-    },
-
-    disable_frontmatter = true,
-
-    follow_url_func = function(url)
-        vim.fn.jobstart({ 'xdg-open', url })
-    end,
-
-    ui = {
-        enable = true,          -- set to false to disable all additional syntax features
-        update_debounce = 200,  -- update delay after a text change (in milliseconds)
-        max_file_length = 5000, -- disable UI features for files with more than this many lines
-        checkboxes = {
-            [' '] = { char = '󰝣', hl_group = 'ObsidianTodo' },          -- blank
-            ['x'] = { char = '', hl_group = 'ObsidianDone' },          -- done
-            ['~'] = { char = '', hl_group = 'ObsidianFailed' },        -- failed
-            ['>'] = { char = '', hl_group = 'ObsidianAbandoned' },     -- abandoned/not planned
-        },
-        bullets = { char = '', hl_group = 'ObsidianBullet' },
-        external_link_icon = { char = '', hl_group = 'ObsidianExtLinkIcon' },
-        reference_text = { hl_group = 'ObsidianRefText' },
-        highlight_text = { hl_group = 'ObsidianHighlightText' },
-        tags = { hl_group = 'ObsidianTag' },
-        block_ids = { hl_group = 'ObsidianBlockID' },
-        hl_groups = {
-            ObsidianTodo = { bold = true, fg = '#d65d0e' },
-            ObsidianDone = { bold = true, fg = '#458588' },
-            ObsidianFailed = { bold = true, fg = '#cc241d' },
-            ObsidianAbandoned = { bold = true, fg = '#d79921' },
-            ObsidianImportant = { bold = true, fg = '#fb4934' },
-            ObsidianBullet = { bold = true, fg = '#458588' },
-            ObsidianRefText = { underline = true, fg = '#b16286' },
-            ObsidianExtLinkIcon = { fg = '#b16286' },
-            ObsidianTag = { italic = true, fg = '#83a598' },
-            ObsidianBlockID = { italic = true, fg = '#83a598' },
-            ObsidianHighlightText = { bg = '#d79921' },
-        },
-    },
-})
-
 local harpoon = require('harpoon')
 harpoon:setup()
 
@@ -374,7 +309,6 @@ vim.keymap.set('n', '<leader>R', '<cmd>w<CR><cmd>restart<CR>',
     { desc = 'write and restart', silent = true, noremap = true })
 vim.keymap.set('n', '<leader>cc', '<cmd>nohlsearch<CR>',
     { desc = 'Clear search highlights', silent = true, noremap = true })
-vim.keymap.set('n', '<leader>Z', '<cmd>ZenMode<CR>', { desc = 'toggle ZenMode', silent = true, noremap = true })
 vim.keymap.set('n', 'q:', '<Nop>')
 vim.keymap.set('n', '<leader>gf', function() require('conform').format({ async = true, lsp_fallback = true }) end,
     { desc = 'Format buffer' })

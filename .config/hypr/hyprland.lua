@@ -248,7 +248,6 @@ hl.bind(mainMod ..  " + M", hl.dsp.exec_cmd("hyprscratch music"))
 hl.bind(mainMod ..  " + S", hl.dsp.exec_cmd("hyprscratch terminal"))
 hl.bind(mainMod ..  " + CONTROL + Q", hl.dsp.exec_cmd("hyprscratch qalc"))
 hl.bind(mainMod ..  " + CONTROL + C", hl.dsp.exec_cmd("hyprscratch calc"))
-hl.bind(mainMod ..  " + CONTROL + N", hl.dsp.exec_cmd("hyprscratch notes"))
 
 -- Script binds
 hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.exec_cmd("powermenu"))
@@ -342,7 +341,6 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"),     { locked = t
 
 -- mpd control
 hl.bind(mainMod .. " + ALT + p",        hl.dsp.exec_cmd("mpc toggle"),                  { locked = true })
-hl.bind(mainMod .. " + ALT + 0",        hl.dsp.exec_cmd("mpc seek 0"),                  { locked = true })
 hl.bind(mainMod .. " + ALT + s",        hl.dsp.exec_cmd("mpc pause && mpc seek 0"),     { locked = true })
 hl.bind(mainMod .. " + ALT + Comma",    hl.dsp.exec_cmd("mpc prev"),                    { locked = true })
 hl.bind(mainMod .. " + ALT + Period",   hl.dsp.exec_cmd("mpc next"),                    { locked = true })
@@ -449,5 +447,5 @@ hl.window_rule({
 })
 
 hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = 0, gaps_in = 0 })
-hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 0 })
-hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 })
+hl.window_rule({ match = { float = false, workspace = "w[tv1]s[false]" }, border_size = 0 })
+hl.window_rule({ match = { float = false, workspace = "w[tv1]s[false]" }, rounding = 0 })

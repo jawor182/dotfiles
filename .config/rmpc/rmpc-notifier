@@ -1,0 +1,25 @@
+#!/bin/sh
+
+TMP_DIR="/tmp/rmpc"
+mkdir -p "$TMP_DIR" || exit 1
+
+ALBUM_ART_PATH="$TMP_DIR/notification_cover"
+DEFAULT_ALBUM_ART_PATH="$TMP_DIR/default_album_art.jpg"
+
+if ! rmpc albumart --output "$ALBUM_ART_PATH"; then
+    ALBUM_ART_PATH="${DEFAULT_ALBUM_ART_PATH}"
+fi
+
+SONG_INFO=$(rmpc song)
+
+ARTIST=$(echo "$SONG_INFO" | sed -n 's/.*"artist":"\([^"]*\)".*/\1/p')
+TITLE=$(echo "$SONG_INFO" | sed -n 's/.*"title":"\([^"]*\)".*/\1/p')
+
+if [ -z "$ARTIST" ]; then
+    ARTIST="Unknown Artist"
+fi
+if [ -z "$TITLE" ]; then
+    TITLE="Unknown Title"
+fi
+
+notify-send -i "${ALBUM_ART_PATH}" "Now Playing" "$ARTIST - $TITLE"

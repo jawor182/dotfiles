@@ -82,10 +82,6 @@
       "rev": "0ca28b61a04fe7426cefbdd52c2647ef0e335b5f",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
-    "obsidian.nvim": {
-      "rev": "726b60c89f4bafef267a714ea1faa1335bdd414a",
-      "src": "https://github.com/epwalsh/obsidian.nvim"
-    },
     "oil.nvim": {
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"
@@ -109,10 +105,6 @@
     "vim-tmux-navigator": {
       "rev": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432",
       "src": "https://github.com/christoomey/vim-tmux-navigator"
-    },
-    "zen-mode.nvim": {
-      "rev": "8564ce6d29ec7554eb9df578efa882d33b3c23a7",
-      "src": "https://github.com/folke/zen-mode.nvim"
     }
   }
 }

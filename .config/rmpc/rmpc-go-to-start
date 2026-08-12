@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rmpc seek 0
+

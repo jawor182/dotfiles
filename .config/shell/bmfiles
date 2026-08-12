@@ -3,7 +3,7 @@
 # shortcut              path
 
 cfb                     ~/dotfiles/.config/newsboat/config
-cfc                     ~/dotfiles/.config/ncmpcpp/config
+cfc                     ~/dotfiles/.config/rmpc/config.ron
 cfd                     ~/dotfiles/.config/dunst/dunstrc
 cfe                     ~/dotfiles/.config/mutt/muttrc
 cff                     ~/dotfiles/.config/foot/foot.ini
