@@ -340,12 +340,13 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"),   { locked = t
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"),     { locked = true })
 
 -- mpd control
-hl.bind(mainMod .. " + ALT + p",        hl.dsp.exec_cmd("mpc toggle"),                  { locked = true })
-hl.bind(mainMod .. " + ALT + s",        hl.dsp.exec_cmd("mpc pause && mpc seek 0"),     { locked = true })
-hl.bind(mainMod .. " + ALT + Comma",    hl.dsp.exec_cmd("mpc prev"),                    { locked = true })
-hl.bind(mainMod .. " + ALT + Period",   hl.dsp.exec_cmd("mpc next"),                    { locked = true })
-hl.bind(mainMod .. " + ALT + Minus",    hl.dsp.exec_cmd("mpc volume -5"),               { locked = true })
-hl.bind(mainMod .. " + ALT + Equal",    hl.dsp.exec_cmd("mpc volume +5"),               { locked = true })
+hl.bind(mainMod .. " + ALT + p",        hl.dsp.exec_cmd("mpc toggle"),                                  { locked = true })
+hl.bind(mainMod .. " + ALT + s",        hl.dsp.exec_cmd("mpc pause && mpc seek 0"),                     { locked = true })
+hl.bind(mainMod .. " + ALT + n",        hl.dsp.exec_cmd("$HOME/dotfiles/.config/rmpc/rmpc-notifier"),   { locked = true })
+hl.bind(mainMod .. " + ALT + Comma",    hl.dsp.exec_cmd("mpc prev"),                                    { locked = true })
+hl.bind(mainMod .. " + ALT + Period",   hl.dsp.exec_cmd("mpc next"),                                    { locked = true })
+hl.bind(mainMod .. " + ALT + Minus",    hl.dsp.exec_cmd("mpc volume -5"),                               { locked = true })
+hl.bind(mainMod .. " + ALT + Equal",    hl.dsp.exec_cmd("mpc volume +5"),                               { locked = true })
 
 
 --------------------------------
