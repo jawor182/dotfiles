@@ -31,7 +31,7 @@ local terminal     = "footclient"
 local dmenu        = "rofi -show drun -show-icons"
 local rmenu        = "rofi -show run"
 local fileManager  = terminal .. " -T files -e yazi"
-local email        = terminal .. " -T email -e neomutt"
+local email        = "betterbird"
 local news         = terminal .. " -T news -e newsboat"
 local notes        = "obsidian"
 local browser      = "helium-browser"
@@ -318,8 +318,8 @@ for i = 1, 10 do
 end
 
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "m+1" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "m-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -382,7 +382,7 @@ hl.window_rule({
 -- Window rules
 
 hl.window_rule({
-    match = { title = "email" },
+    match = { class = "eu.betterbird.Betterbird" },
     workspace = "3",
 })
 
