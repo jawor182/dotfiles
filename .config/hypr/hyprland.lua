@@ -33,7 +33,7 @@ local rmenu        = "rofi -show run"
 local fileManager  = terminal .. " -T files -e yazi"
 local email        = "betterbird"
 local news         = terminal .. " -T news -e newsboat"
-local notes        = "obsidian"
+local notes        = terminal .. " -T notes -e sh -c \"cd $HOME/dox/notes && $EDITOR\""
 local browser      = "helium-browser"
 local passwords    = "keepassxc"
 local lockscreen   = "hyprlock"
@@ -402,7 +402,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "md.obsidian.Obsidian" },
+    match = { title = "notes" },
     workspace = "6",
 })
 

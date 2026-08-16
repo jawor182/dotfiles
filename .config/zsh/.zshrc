@@ -56,6 +56,10 @@ snc(){
     shortcuts ; source $XDG_CONFIG_HOME/zsh/.zshrc
 }
 
+ms(){
+    man -k . | fzf -e | cut -d ' ' -f 1,2 | sed -e 's/(//' -e 's/)//' | awk '{print $2,$1}' | xargs man
+}
+
 autoload -Uz add-zsh-hook
 
 function osc7-pwd() {
