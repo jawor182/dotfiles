@@ -37,6 +37,7 @@
             "1":       SwitchToTab("Playing"),
             "2":       SwitchToTab("Dir"),
             "3":       SwitchToTab("Find"),
+            "4":       SwitchToTab("Playlists"),
             "q":       Quit,
             ">":       NextTrack,
             "<":       PreviousTrack,
@@ -117,19 +118,23 @@
     ),
     tabs: [
         (
-            name: "Playing",
-            pane: Split(
-                direction: Horizontal,
-                panes: [(size: "70%", pane: Pane(Queue)), (size: "30%", pane: Pane(AlbumArt))],
-            ),
-        ),
-       (
-            name: "Dir",
-            pane: Pane(Directories),
+         name: "Playing",
+         pane: Split(
+             direction: Horizontal,
+             panes: [(size: "70%", pane: Pane(Queue)), (size: "30%", pane: Pane(AlbumArt))],
+             ),
         ),
         (
-            name: "Find",
-            pane: Pane(Search),
+         name: "Dir",
+         pane: Pane(Directories),
+        ),
+        (
+         name: "Find",
+         pane: Pane(Search),
+        ),
+        (
+         name: "Playlists",
+         pane: Pane(Playlists),
         ),
     ],
 )

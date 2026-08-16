@@ -197,11 +197,6 @@
                 borders: "ALL"
             ),
             (
-                pane: Pane(Tabs),
-                size: "3",
-                borders: "ALL"
-            ),
-            (
                 pane: Pane(TabContent),
                 size: "100%",
                 borders: "ALL"

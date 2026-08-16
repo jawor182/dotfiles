@@ -446,7 +446,3 @@ hl.window_rule({
     match = { class = "footclient"},
     size = {"(monitor_w*0.6)", "(monitor_h*0.7)"},
 })
-
-hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = 0, gaps_in = 0 })
-hl.window_rule({ match = { float = false, workspace = "w[tv1]s[false]" }, border_size = 0 })
-hl.window_rule({ match = { float = false, workspace = "w[tv1]s[false]" }, rounding = 0 })
