@@ -393,7 +393,7 @@ hl.window_rule({
 
 hl.window_rule({
     match = { class = "orca-slicer" },
-    workspace = "4",
+    workspace = "4 silent",
 })
 
 hl.window_rule({
