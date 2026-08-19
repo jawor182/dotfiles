@@ -14,7 +14,11 @@ if [ $? -ne 0 ] || [ ! -f "$TEMP_FILE" ]; then
     exit 1
 fi
 
-OPTION=$(printf 'Copy to Clipboard\nSave\nOpen\nCancel' | rofi -theme screenshot -dmenu -l 4 -i -p "Select option")
+copy=" Copy"
+save=" Save"
+open=" Open"
+cancel=" Cancel"
+OPTION=$(printf "$copy\n$save\n$open\n$cancel" | rofi -theme menu -dmenu -l 4 -i -p "Select option")
 
 if [ -z "$OPTION" ]; then
     notify-send "Screenshot Aborted" "Action selection cancelled."
@@ -23,7 +27,7 @@ if [ -z "$OPTION" ]; then
 fi
 
 case "$OPTION" in
-"Save")
+"$save")
     mv "$TEMP_FILE" "$SAVE_DIR/$IMG_NAME"
     if [ $? -eq 0 ]; then
         notify-send "Screenshot Saved" "Selected area saved to: $SAVE_DIR/$IMG_NAME"
@@ -31,16 +35,16 @@ case "$OPTION" in
         notify-send "Screenshot Error" "Failed to move screenshot to $SAVE_DIR/$IMG_NAME."
     fi
     ;;
-"Copy to Clipboard")
+"$copy")
     wl-copy <"$TEMP_FILE"
     notify-send "Copied to Clipboard"
     rm -f "$TEMP_FILE"
     ;;
-"Open")
+"$open")
     xdg-open "$TEMP_FILE" >/dev/null 2>&1 & # Run in background
     notify-send "Screenshot Opened" "Selected area opened in default viewer."
     ;;
-"Cancel")
+"$cancel")
     notify-send "Screenshot Cancelled" "No action performed."
     rm -f "$TEMP_FILE"
     ;;
@@ -50,6 +54,6 @@ case "$OPTION" in
     ;;
 esac
 
-if [ -f "$TEMP_FILE" ] && [ "$OPTION" != "Open" ]; then
+if [ -f "$TEMP_FILE" ] && [ "$OPTION" != "$open" ]; then
     rm -f "$TEMP_FILE"
 fi
