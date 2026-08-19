@@ -1,3 +1,7 @@
+--- Plugins
+package.path = package.path .. ";./?.lua;./?/init.lua"
+local smw = require("plugins.split-monitor-workspaces")
+
 ------------------
 ---- MONITORS ----
 ------------------
@@ -30,14 +34,14 @@ hl.monitor({
 local terminal     = "footclient"
 local dmenu        = "rofi -show drun -show-icons"
 local rmenu        = "rofi -show run"
-local fileManager  = terminal .. " -T files -e yazi"
+local fileManager  = terminal .. " -T files -e lf"
 local email        = "betterbird"
 local news         = terminal .. " -T news -e newsboat"
-local notes        = terminal .. " -T notes -e sh -c \"cd $HOME/dox/notes && $EDITOR\""
+local notes        = "obsidian"
 local browser      = "helium-browser"
 local passwords    = "keepassxc"
 local lockscreen   = "hyprlock"
-local communicator = "ELECTRON_OZONE_PLATFORM_HINT= /usr/bin/discord"
+local communicator = "discord --ozone-platform=x11"
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("playerctld")
@@ -166,17 +170,29 @@ hl.config({
 hl.config({
     misc = {
         force_default_wallpaper    = 0,
-        disable_hyprland_logo      = false,
+        disable_hyprland_logo      = true,
         font_family                = "JetBrainsMonoNerdFont",
         vrr                        = 0,
         enable_swallow             = false,
         swallow_regex              = "^(foot|footclient|floatingterm|terminal|files)$",
         swallow_exception_regex    = ".*(wev|xev|gs|glxgears)",
-        mouse_move_enables_dpms    = true,
-        key_press_enables_dpms     = true,
+        mouse_move_enables_dpms    = false,
+        key_press_enables_dpms     = false,
         initial_workspace_tracking = 0,
         allow_session_lock_restore = true,
     },
+})
+
+smw.setup({
+    workspace_count = 9,
+
+    monitor_priority = {
+        "DP-1",
+        "HDMI-A-1",
+        "eDP-1",
+    },
+
+    keep_focused = true,
 })
 
 ---------------
@@ -296,25 +312,13 @@ end)
 hl.bind("SUPER + F11", hl.dsp.submap("passthru"))
 
 
--- Switch workspaces with mainMod + [0-9]
--- Move active window to a workspace with mainMod + SHIFT + [0-9]
-
-for i = 1, 10 do
-    hl.workspace_rule({ workspace = tostring(i), monitor = "eDP-1" })
-end
-
-for i = 1, 10 do
-    hl.workspace_rule({ workspace = tostring(i), monitor = "DP-1" })
-end
-
-for i = 11, 20 do
-    hl.workspace_rule({ workspace = tostring(i), monitor = "HDMI-A-1" })
-end
-
-for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key, hl.dsp.exec_cmd("hyprworkspace " .. key))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.exec_cmd("hyprmovetoworkspace " .. key))
+for i = 1, smw.get_amount_of_workspaces() do
+    local n = tostring(i)
+    if n == "10" then n = "0" end -- Optional if you configured 10 workspaces: bind workspace 10 to SUPER + 0
+    -- Switch to the Nth workspace on the currently focused monitor.
+    hl.bind(mainMod .. " +" .. n, smw.workspace(n))
+    -- Move the active window to the Nth workspace on the currently focused monitor silently (no focus change).
+    hl.bind(mainMod .. " + SHIFT +" .. n, smw.move_to_workspace(n))
 end
 
 -- Scroll through existing workspaces with mainMod + scroll
@@ -402,7 +406,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { title = "notes" },
+    match = { class = "md.obsidian.Obsidian" },
     workspace = "6",
 })
 
@@ -423,12 +427,12 @@ hl.window_rule({
 
 hl.window_rule({
     match = { class = "steam" },
-    workspace = "13 silent",
+    workspace = "12 silent",
 })
 
 hl.window_rule({
     match = { class = "discord" },
-    workspace = "14 silent",
+    workspace = "13 silent",
 })
 
 hl.window_rule({
