@@ -176,8 +176,8 @@ hl.config({
         enable_swallow             = false,
         swallow_regex              = "^(foot|footclient|floatingterm|terminal|files)$",
         swallow_exception_regex    = ".*(wev|xev|gs|glxgears)",
-        mouse_move_enables_dpms    = false,
-        key_press_enables_dpms     = false,
+        mouse_move_enables_dpms    = true,
+        key_press_enables_dpms     = true,
         initial_workspace_tracking = 0,
         allow_session_lock_restore = true,
     },
@@ -283,8 +283,8 @@ hl.bind(mainMod .. " + SHIFT + U", hl.dsp.exec_cmd("rofiunicode"))
 hl.bind(mainMod .. " + H", hl.dsp.layout("mfact -0.05"))
 hl.bind(mainMod .. " + L", hl.dsp.layout("mfact +0.05"))
 
-hl.bind(mainMod .. " + J", hl.dsp.window.cycle_next(), {repeating=true})
-hl.bind(mainMod .. " + K", hl.dsp.window.cycle_next({next=false}, {repeating=true}))
+hl.bind(mainMod .. " + K", hl.dsp.window.cycle_next(), {repeating=true})
+hl.bind(mainMod .. " + J", hl.dsp.window.cycle_next({next=false}, {repeating=true}))
 
 hl.bind(mainMod .. " + SHIFT +  J", hl.dsp.layout("swapnext"))
 hl.bind(mainMod .. " + SHIFT +  K", hl.dsp.layout("swapprev"))

@@ -12,7 +12,7 @@ LOCK="hyprlock"
 case $option in
 "$power") systemctl poweroff ;;
 "$reboot") systemctl reboot ;;
-"$suspend") $LOCK & systemctl suspend ;;
+"$suspend") systemctl suspend ;;
 "$lock") $LOCK ;;
 *) ;;
 esac
