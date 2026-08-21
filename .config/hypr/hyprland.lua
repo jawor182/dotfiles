@@ -35,7 +35,7 @@ local terminal     = "footclient"
 local dmenu        = "rofi -show drun -show-icons"
 local rmenu        = "rofi -show run"
 local fileManager  = terminal .. " -T files -e lf"
-local email        = "betterbird"
+local email        = terminal .. " -T email -e neomutt"
 local news         = terminal .. " -T news -e newsboat"
 local notes        = "obsidian"
 local browser      = "helium-browser"
@@ -267,7 +267,7 @@ hl.bind(mainMod ..  " + CONTROL + C", hl.dsp.exec_cmd("hyprscratch calc"))
 
 -- Script binds
 hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.exec_cmd("powermenu"))
-hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprpicker"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("hyprpicker -an"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("wallpaper open"))
 hl.bind(mainMod .. " + CONTROL + W", hl.dsp.exec_cmd("wallpaper random"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("screenshot"))
@@ -386,7 +386,7 @@ hl.window_rule({
 -- Window rules
 
 hl.window_rule({
-    match = { class = "eu.betterbird.Betterbird" },
+    match = { title = "email" },
     workspace = "3",
 })
 
