@@ -2,7 +2,7 @@
 
 playerctld & 
 awww-daemon &
-mako &
+dunst &
 nightlight &
 /usr/lib/xdg-desktop-portal &
 /usr/lib/xdg-desktop-portal-wlr &
