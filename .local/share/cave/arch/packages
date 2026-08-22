@@ -2,28 +2,18 @@
 awww
 foot
 grim
-hyprcursor
-hyprgraphics
-hypridle
-hyprland
-hyprland-guiutils
-hyprland-qt-support
-hyprlang
-hyprlock
-hyprpicker
-hyprpolkitagent
-hyprtoolkit
-hyprutils
-hyprwayland-scanner
-hyprwire
 rofi
 slurp
-waybar
+swayidle
+wayland
 wayland-protocols
 wayland-utils
+waylock
 wl-clipboard
-xdg-desktop-portal-hyprland
+wlr-randr
+wlroots0.20
 xorg-xwayland
+xdg-desktop-portal-wlr
 # media 
 calibre
 mpc
@@ -45,23 +35,23 @@ sane
 simple-scan
 system-config-printer
 # DE utils
-dunst
 gammastep
+mako
 syncthing
 # GUI
 discord
 keepassxc
-librewolf
+obsidian
 pcmanfm-qt
 # Terminal programs
 btop
 calcurse
 fzf
+lf
 neomutt
 neovim
 newsboat
 tmux
-yazi
 # Appearance
 adw-gtk-theme
 gnome-themes-extra

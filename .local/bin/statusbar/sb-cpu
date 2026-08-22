@@ -1,0 +1,17 @@
+#!/bin/sh
+
+host=$(cat /etc/hostname)
+usage=$(top -b -n 1 | grep "Cpu(s)" | awk '{printf  $2}' | xargs printf "%.1f%%\n")
+
+if [ "$host" = "desktop" ]; then
+    temp=$(sensors | awk '/^Tctl:/ {print $2}' | sed 's/+//')
+else
+    temp=$(sensors | awk '/^CPU:/ {print $2}' | sed 's/+//')
+fi
+
+case $BLOCK_BUTTON in
+    1) notify-send "Temperature of cpu:" "$temp" ;;
+    6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+printf "%s\n" " $usage"

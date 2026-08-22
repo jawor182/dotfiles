@@ -28,5 +28,5 @@ export FZF_DEFAULT_OPTS="--layout=reverse"
 export BAT_THEME="gruvbox-dark"
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec start-hyprland
+        exec dwl-start-session
 fi

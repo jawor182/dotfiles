@@ -1,0 +1,33 @@
+#!/bin/sh
+
+status=$(mpc status "%state%")
+info=$(mpc current --format "[%artist% - %title%]")
+time=$(mpc status "[%currenttime%/%totaltime%]")
+
+case "$status" in
+    "playing")
+        statusIcon="" ;;
+    "paused")
+        statusIcon="" ;;
+    *)
+        statusIcon=""
+        info="empty" 
+        time="";;
+esac
+
+case $BLOCK_BUTTON in
+    1) mpc toggle ;;
+    2) mpc next ;;
+    3) xdotool key super+m ;;
+    6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+    8) mpc pause && mpc seek 0 ;;
+esac
+
+if [ "$time" = "" ]; then
+    output="$info"
+else
+    output="$info $time"
+fi
+
+# printf " %s %s\n" "$statusIcon" "$output"
+printf "%s\n" "$output"
