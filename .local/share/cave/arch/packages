@@ -2,6 +2,7 @@
 awww
 foot
 grim
+hyprpicker
 rofi
 slurp
 swayidle
@@ -12,8 +13,8 @@ waylock
 wl-clipboard
 wlr-randr
 wlroots0.20
-xorg-xwayland
 xdg-desktop-portal-wlr
+xorg-xwayland
 # media 
 calibre
 mpc
@@ -35,8 +36,8 @@ sane
 simple-scan
 system-config-printer
 # DE utils
+dunst
 gammastep
-mako
 syncthing
 # GUI
 discord
