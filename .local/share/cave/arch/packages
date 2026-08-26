@@ -51,7 +51,6 @@ fzf
 lf
 neomutt
 neovim
-newsboat
 tmux
 # Appearance
 adw-gtk-theme
@@ -75,7 +74,6 @@ android-tools
 android-udev
 atool
 bat
-cargo
 chafa
 checkbashisms
 clang
@@ -100,7 +98,6 @@ libqalculate
 lm_sensors
 lshw
 lua
-luarocks
 make
 man-db
 man-pages
@@ -116,9 +113,7 @@ pciutils
 perl-file-mimeinfo
 perl-image-exiftool
 php
-pnpm
 powertop
-protobuf
 pulsemixer
 python
 qt5-wayland
@@ -129,7 +124,6 @@ rust
 socat
 stow
 tlp
-tree
 tree-sitter
 tree-sitter-c
 tree-sitter-cli
