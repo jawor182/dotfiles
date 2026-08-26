@@ -7,12 +7,12 @@ suspend="󰽥 Suspend"
 
 option=$(printf "$lock\n$power\n$reboot\n$suspend" | rofi -dmenu -i -l 4 -p "Select an action" -theme themes/menu)
 
-LOCK="hyprlock"
+LOCK="waylock -fail-color 0xfb4934 -init-color 0x282828 -input-color 0xd65d0e -ignore-empty-password -fork-on-lock"
 
 case $option in
 "$power") systemctl poweroff ;;
 "$reboot") systemctl reboot ;;
-"$suspend") systemctl suspend ;;
+"$suspend") $LOCK & systemctl suspend ;;
 "$lock") $LOCK ;;
 *) ;;
 esac

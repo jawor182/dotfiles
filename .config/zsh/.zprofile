@@ -1,4 +1,4 @@
-export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin/statusbar"
 export EDITOR="nvim"
 export FILES="lfcd"

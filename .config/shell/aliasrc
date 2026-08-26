@@ -20,8 +20,7 @@ ll="ls -l" \
 ls="ls --color=always --group-directories-first -hN" \
 restow="cd ~/dotfiles && stow -R ." \
 dev="npm run dev" \
-nb="newsboat" \
-pb="podboat" \
+nr="newsraft" \
 f="$FILES" \
 diff="diff --color" \
 rm="rm -fr" \
@@ -36,5 +35,3 @@ gd="git diff" \
 gs="git status" \
 gr="git restore" \
 gl="git log" \
-xcopy="xclip -selection clipboard" \
-xclear="xclip -selection clipboard /dev/null" \

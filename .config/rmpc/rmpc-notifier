@@ -22,4 +22,4 @@ if [ -z "$TITLE" ]; then
     TITLE="Unknown Title"
 fi
 
-notify-send -i "${ALBUM_ART_PATH}" "Now Playing" "$ARTIST - $TITLE"
+notify-send -i "${ALBUM_ART_PATH}" "Now Playing" "$ARTIST - $TITLE" -c mpd

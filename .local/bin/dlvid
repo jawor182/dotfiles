@@ -1,3 +1,3 @@
 #!/bin/sh
 
-tsp yt-dlp -f "bestvideo[height<=1080][vcodec^=avc1]+bestaudio/best[height<=1080]" --cookies-from-browser chromium:~/.config/net.imput.helium --remote-components ejs:github --merge-output-format mp4 --write-thumbnail --convert-thumbnails jpg --embed-thumbnail --add-metadata --extractor-args "youtube:player_js_version=actual" -o "$HOME/media/vids/%(title)s.%(ext)s" --exec "rm %(thumbnails.-1.filepath)q" "$1"
+tsp yt-dlp -f "bestvideo[height<=1080][vcodec^=avc1]+bestaudio/best[height<=1080]" --cookies-from-browser firefox:~/.config/mozilla/firefox/ --remote-components ejs:github --merge-output-format mp4 --write-thumbnail --convert-thumbnails jpg --embed-thumbnail --add-metadata --extractor-args "youtube:player_js_version=actual" -o "$HOME/media/vids/%(title)s.%(ext)s" --exec "rm %(thumbnails.-1.filepath)q" "$1"

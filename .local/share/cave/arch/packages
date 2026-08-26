@@ -36,8 +36,8 @@ sane
 simple-scan
 system-config-printer
 # DE utils
-dunst
 gammastep
+mako
 syncthing
 # GUI
 discord

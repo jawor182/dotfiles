@@ -56,7 +56,7 @@ cmd open &{{
         text/*|application/xml|application/javascript|application/x-theme|application/toml|application/typescript|application/x-desktop|application/x-troff-man|application/json|application/mbox|application/x-shellscript|inode/x-empty|application/x-subrip|audio/x-mod|inode/symlink|application/x-wine-extension-ini) lf -remote "send $id \$$EDITOR \$fx" ;;
         image/x-xcf) gimp "$fx" ;;
         image/vnd.djvu*|application/pdf|application/postscript) zathura "$fx" ;; 
-        image/*) nsxiv -a "$fx" ;; 
+        image/*) nsxiv "$fx" ;;
         audio/*ogg) setsid -f $TERMINAL -e mpv "$fx" ;;
         audio/*|video/x-ms-asf|video/*) setsid -f mpv "$fx" -quiet >/dev/null 2>&1 ;;
         application/*rar|application/*tar|application/gzip|application/zip|application/x-7z-compressed|application/x-xz) lf -remote "send $id extract \$fx" ;;
