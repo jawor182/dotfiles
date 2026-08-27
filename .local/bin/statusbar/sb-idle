@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if pgrep -x wlinhibitor >/dev/null 2>&1; then
+    output=""
+else
+    output=""
+fi
+
+printf "%s \n" "$output"
