@@ -71,9 +71,6 @@ bind index \005 next-undeleted		# Mouse wheel
 bind pager \031 previous-line		# Mouse wheel
 bind pager \005 next-line		# Mouse wheel
 bind editor <Tab> complete-query
-bind index,pager n next-unread
-bind index,pager p previous-unread
-bind index,pager \Cp print-message
 
 macro index,pager s ";<save-message>?<toggle-mailboxes>" "move mail"
 macro index,pager c ";<copy-message>?<toggle-mailboxes>" "copy mail"
