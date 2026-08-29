@@ -2,15 +2,15 @@
 # Format:
 # shortcut              path
 
-cfc                     ~/dotfiles/.config/rmpc/config.ron
 cfe                     ~/dotfiles/.config/mutt/muttrc
 cff                     ~/dotfiles/.config/foot/foot.ini
 cfl                     ~/dotfiles/.config/lf/lfrc
 cfm                     ~/dotfiles/.config/mpv/mpv.conf
 cfM                     ~/dotfiles/.config/mako/config
 cfn                     ~/dotfiles/.config/nvim/init.lua
+cfN                     ~/dotfiles/.config/newsraft/config
 cfr                     ~/dotfiles/.config/rofi/config.rasi
-cfR                     ~/dotfiles/.config/newsraft/config
+cfR                     ~/dotfiles/.config/rmpc/config.ron
 cft                     ~/dotfiles/.config/tmux/tmux.conf
 cfz                     ~/dotfiles/.config/zsh/.zshrc
 czp                     ~/dotfiles/.config/zsh/.zprofile
