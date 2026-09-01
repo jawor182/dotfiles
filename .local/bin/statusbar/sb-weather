@@ -1,11 +1,13 @@
 #!/bin/sh
 
+cache="$HOME/.cache/sb-weather"
 weather=$(curl -s "wttr.in/Szczecin?format=3" | awk '{print $3}' | sed 's/+//')
 
+[ ! -f "$cache" ] && echo $weather > $cache
+
 case "$BLOCK_BUTTON" in
-    1) weather ;;
+    1) cat $cache ;;
     6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-
-printf "%s\n" "$weather"
+cat "$cache"
