@@ -50,7 +50,7 @@ function lfcd () {
 }
 
 ff(){
-    fd $HOME -H --full-path $HOME/dotfiles/ -E "*.git" -t f | \
+    fd $HOME -H --full-path $HOME/dotfiles/ -E "*.git" -E ".local/share/themes/*" -t f | \
     fzf -e --bind "enter:become(nvim {})"
 }
 
