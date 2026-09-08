@@ -1,5 +1,6 @@
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin/statusbar"
+export TERMINAL="foot"
 export EDITOR="nvim"
 export FILES="lfcd"
 export BROWSER="librewolf"
@@ -27,6 +28,13 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export FZF_DEFAULT_OPTS="--layout=reverse"
 export BAT_THEME="gruvbox-dark"
 
+export XCURSOR_SIZE=24
+export XCURSOR_THEME="Bibata-Modern-Classic"
+export QT_QPA_PLATFORMTHEME="gtk3"
+export QT_QPA_PLATFORM=wayland
+export QT_SCALE_FACTOR=1
+export GTK_THEME="gruvgtk"
+
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec dwl-start-session
+    exec dwl-start-session
 fi

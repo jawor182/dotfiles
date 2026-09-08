@@ -27,3 +27,6 @@ default-timeout=0
 [category=mpd]
 default-timeout=8000
 group-by=category
+
+[category=date]
+width=280

@@ -2,7 +2,7 @@
 
 case $BLOCK_BUTTON in 
 
-    1) setsid -f "$TERMINAL" -c "floatingTerm" -e pulsemixer ;;
+    1) setsid -f "$TERMINAL" -a "floatingterm" -e pulsemixer ;;
     2) wpctl set-mute @DEFAULT_SINK@ toggle ;;
     4) wpctl set-volume @DEFAULT_SINK@ 5%+ ;;
     5) wpctl set-volume @DEFAULT_SINK@ 5%- ;;

@@ -1,5 +1,9 @@
 #!/bin/sh
 
+case "$BLOCK_BUTTON" in
+    1) toggle-idle ;;
+esac
+
 if pgrep -x wlinhibitor >/dev/null 2>&1; then
     output=""
 else

@@ -4,7 +4,6 @@ h="htop" \
 b="btop" \
 n="nvim" \
 nm="neomutt" \
-np="ncmpcpp" \
 sn="sudoedit" \
 p="sudo pacman" \
 y="yay" \
