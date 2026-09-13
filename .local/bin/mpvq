@@ -87,7 +87,6 @@ play() {
 
     setsid -f mpv \
         --playlist="$playlist" \
-        --speed=2 \
         --player-operation-mode=pseudo-gui \
         --input-ipc-server="$ipc_socket" \
         --script="$HOME/.config/mpv/scripts/mpvq-live-sync.lua" \

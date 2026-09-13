@@ -309,7 +309,6 @@ vim.keymap.set('n', '<leader>R', '<cmd>w<CR><cmd>restart<CR>',
     { desc = 'write and restart', silent = true, noremap = true })
 vim.keymap.set('n', '<leader>cc', '<cmd>nohlsearch<CR>',
     { desc = 'Clear search highlights', silent = true, noremap = true })
-vim.keymap.set('n', 'q:', '<Nop>')
 vim.keymap.set('n', '<leader>gf', function() require('conform').format({ async = true, lsp_fallback = true }) end,
     { desc = 'Format buffer' })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
