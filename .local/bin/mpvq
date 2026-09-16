@@ -88,6 +88,7 @@ play() {
     setsid -f mpv \
         --playlist="$playlist" \
         --player-operation-mode=pseudo-gui \
+        --speed=2 \
         --input-ipc-server="$ipc_socket" \
         --script="$HOME/.config/mpv/scripts/mpvq-live-sync.lua" \
         --wayland-app-id="mpvq" \
