@@ -13,6 +13,8 @@ echo "🔄 Starting backup: $outputFile"
 if tar -czvf "$outputFile" \
     --exclude="$HOME/dox/ISO" \
     --exclude="$HOME/dox/games" \
+    "$HOME/.local/state/mpd/playlists" \
+    "$HOME/.local/share/mail/" \
     "$HOME/dox" \
     "$HOME/repos" \
     "$HOME/keepassxc" \
