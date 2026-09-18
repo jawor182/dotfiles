@@ -22,7 +22,7 @@ set mouse
 set cursorpreviewfmt "\033[7;2m"
 
 # Keybinds
-
+map t
 map . set hidden!
 map <enter> shell
 map <esc> unselect-all
