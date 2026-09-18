@@ -8,7 +8,6 @@ swayidle
 wayland
 wayland-protocols
 wayland-utils
-waylock
 wl-clipboard
 wlr-randr
 wlroots0.20

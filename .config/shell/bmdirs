@@ -11,6 +11,7 @@ rp                      ~/repos/projects/
 wss                     ~/repos/wayland-suckless/
 wsb                     ~/repos/wayland-suckless/someblocks/
 wsd                     ~/repos/wayland-suckless/dwl/
+wsl                     ~/repos/wayland-suckless/wslock/
 sr                      ~/.local/src/
 dx                      ~/dox/
 dn                      ~/dox/notes/
